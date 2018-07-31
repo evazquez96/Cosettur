@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.israelc.cosettur">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/cosetturs"
+        android:label="COSSETURAPP"
+        android:roundIcon="@drawable/cosetturs"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".registro" />
+        <activity android:name=".recuperar" />
+        <activity android:name=".rutas" />
+        <activity android:name=".camion" />
+        <activity
+            android:name=".menu"
+            android:label="@string/title_activity_menu"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".mision"></activity>
+    </application>
+
+</manifest>
