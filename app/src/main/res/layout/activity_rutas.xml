@@ -19,18 +19,15 @@
             android:orientation="horizontal">
 
             <LinearLayout
-                android:layout_width="209dp"
+                android:layout_width="91dp"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/texto"
+                <ImageView
+                    android:id="@+id/imageView9"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:text="Nuestras Rutas"
-                    android:textColor="#393d42"
-                    android:textSize="26dp" />
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/cosetturs" />
             </LinearLayout>
 
             <LinearLayout
@@ -38,11 +35,14 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <ImageView
-                    android:id="@+id/logo"
+                <TextView
+                    android:id="@+id/textView17"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/cosetturs" />
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:textSize="25dp"
+                    android:textColor="#393d42"
+                    android:text="Rutas de Servicio" />
             </LinearLayout>
         </LinearLayout>
 
