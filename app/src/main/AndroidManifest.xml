@@ -24,7 +24,8 @@
             android:name=".menu"
             android:label="@string/title_activity_menu"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".mision"></activity>
+        <activity android:name=".mision" />
+        <activity android:name=".camiones"></activity>
     </application>
 
 </manifest>
