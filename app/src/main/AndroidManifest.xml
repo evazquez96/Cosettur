@@ -11,9 +11,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/cosetturs"
+        android:icon="@drawable/logo"
         android:label="COSSETURAPP"
-        android:roundIcon="@drawable/cosetturs"
+        android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
