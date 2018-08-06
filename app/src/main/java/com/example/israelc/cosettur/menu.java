@@ -1,6 +1,7 @@
 package com.example.israelc.cosettur;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -91,8 +92,29 @@ public class menu extends AppCompatActivity
 
         } else if (id == R.id.nav_share) {
 
-        } else if (id == R.id.nav_send) {
+            Uri uri = Uri.parse("https://www.cosettur.com/");
+            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+            startActivity(intent);
 
+
+        } else if (id == R.id.nav_send) {
+            String[] TO = {"superisraelsaya777@gmail.com"}; //aquí pon tu correo
+            String[] CC = {""};
+            Intent emailIntent = new Intent(Intent.ACTION_SEND);
+            emailIntent.setData(Uri.parse("mailto:"));
+            emailIntent.setType("text/plain");
+            emailIntent.putExtra(Intent.EXTRA_EMAIL, TO);
+            emailIntent.putExtra(Intent.EXTRA_CC, CC);
+// Esto podrás modificarlo si quieres, el asunto y el cuerpo del mensaje
+            emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Asunto");
+            emailIntent.putExtra(Intent.EXTRA_TEXT, "Escribe aquí tu mensaje");
+
+            try {
+                startActivity(Intent.createChooser(emailIntent, "Enviar email..."));
+                finish();
+            } catch (android.content.ActivityNotFoundException ex) {
+
+            }
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

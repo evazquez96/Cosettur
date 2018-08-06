@@ -6,12 +6,12 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/rutas"
-            android:icon="@drawable/descarga"
-            android:title="Rutas" />
+            android:icon="@drawable/ruts"
+            android:title="Rutas de Servicio" />
         <item
             android:id="@+id/elgir"
-            android:icon="@drawable/as"
-            android:title="Elegir camion" />
+            android:icon="@drawable/autoss"
+            android:title="Elegir Camion" />
 
     </group>
 
@@ -19,12 +19,12 @@
         <menu>
             <item
                 android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="pagiona web" />
+                android:icon="@drawable/loh"
+                android:title="Visita nuestra pagina" />
             <item
                 android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Gmail" />
+                android:icon="@drawable/mails"
+                android:title="Enviar correo" />
         </menu>
     </item>
 
