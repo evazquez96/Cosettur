@@ -55,12 +55,16 @@
                 android:id="@+id/textView25"
                 android:layout_width="match_parent"
                 android:layout_height="182dp"
+                android:layout_gravity="center_horizontal"
+                android:padding="@dimen/activity_horizontal_margin"
                 android:text="Resolvemos sus requerimientos de traslado con los más altos estándares de calidad en seguridad, puntualidad y comodidad. Atendiéndole con personal constantemente capacitado y excelentes vehículos exclusivamente de agencia.  El Espíritu de servicio con responsabilidad, respeto, honestidad y ética, son el código de gestión de nuestros colaboradoradores conjuntamente al compromiso y lealtad de todos nosotros para nuestros clientes, su empresa, comunidad y familia." />
 
             <TextView
                 android:id="@+id/textView31"
                 android:layout_width="match_parent"
                 android:layout_height="65dp"
+                android:layout_gravity="center_horizontal"
+                android:padding="@dimen/activity_horizontal_margin"
                 android:text="La pasión, fuerza, claridad y valores morales de la empresa se reflejan en los más de 50 años que tenemos dando el mejor servicio a nuestros clientes." />
         </LinearLayout>
     </LinearLayout>

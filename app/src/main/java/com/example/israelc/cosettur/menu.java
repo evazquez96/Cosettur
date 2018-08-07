@@ -113,8 +113,10 @@ public class menu extends AppCompatActivity
                 startActivity(Intent.createChooser(emailIntent, "Enviar email..."));
                 finish();
             } catch (android.content.ActivityNotFoundException ex) {
-
+                Intent intent2 = new Intent(menu.this,menu.class);
+                startActivity(intent2);
             }
+
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
