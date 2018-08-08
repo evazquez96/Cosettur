@@ -59,8 +59,8 @@ public class registro extends AppCompatActivity {
             // Modelo el request
             SoapObject request = new SoapObject(namespace, Metodo);
 
-            request.addProperty("user_id", "1111111");
-            request.addProperty("user_name", usuario.getText().toString());
+            request.addProperty("user_id", usuario.getText().toString());
+            request.addProperty("user_name", nombre.getText().toString());
             request.addProperty("user_pass", confirmar.getText().toString());
             request.addProperty("user_correo", correo.getText().toString());
             request.addProperty("user_tel", telefono.getText().toString());
