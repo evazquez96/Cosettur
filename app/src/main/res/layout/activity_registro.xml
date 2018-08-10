@@ -6,13 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".registro">
 
-    <ScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -45,7 +41,7 @@
 
                         <TextView
                             android:id="@+id/textView16"
-                            android:layout_width="190dp"
+                            android:layout_width="match_parent"
                             android:layout_height="80dp"
                             android:gravity="center"
                             android:text="Registrar"
@@ -55,155 +51,113 @@
 
                 </LinearLayout>
 
-                <LinearLayout
+                <ScrollView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/stilo"
-                    android:orientation="horizontal">
+                    android:layout_height="wrap_content">
 
                     <LinearLayout
-                        android:layout_width="15dp"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"></LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="84dp"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/textView4"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
-
-                        <TextView
-                            android:id="@+id/textView28"
-                            android:layout_width="match_parent"
-                            android:layout_height="48dp"
-                            android:gravity="bottom"
-                            android:text="Usuario"
-                            android:textColor="#393d42" />
-
-                        <TextView
-                            android:id="@+id/textView15"
-                            android:layout_width="match_parent"
-                            android:layout_height="45dp"
-                            android:gravity="bottom"
-                            android:text="Nombre(s)"
-                            android:textColor="#393d42" />
-
-                        <TextView
-                            android:id="@+id/textView19"
-                            android:layout_width="match_parent"
-                            android:layout_height="45dp"
-                            android:gravity="bottom"
-                            android:text="Telefono "
-                            android:textColor="#393d42" />
-
-                        <TextView
-                            android:id="@+id/textView20"
-                            android:layout_width="match_parent"
-                            android:layout_height="46dp"
-                            android:gravity="bottom"
-                            android:text="Correo"
-                            android:textColor="#393d42" />
-
-                        <TextView
-                            android:id="@+id/textView32"
-                            android:layout_width="match_parent"
-                            android:layout_height="48dp"
-
-                            android:gravity="bottom"
-                            android:text="                                                                  Contraseña"
-                            android:textColor="#393d42" />
-
-                        <TextView
-                            android:id="@+id/textView33"
-                            android:layout_width="match_parent"
-                            android:layout_height="38dp"
-                            android:gravity="bottom"
-                            android:text="Confirmar"
-                            android:textColor="#393d42" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="289dp"
-                        android:layout_height="match_parent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:orientation="vertical">
 
                         <TextView
                             android:id="@+id/textView29"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="10dp" />
 
                         <EditText
                             android:id="@+id/usuari"
-                            android:layout_width="match_parent"
-                            android:layout_height="57dp"
+                            android:layout_width="280dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/conotor"
                             android:ems="10"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+
+                            android:layout_margin="5dp"
                             android:inputType="textPersonName" />
+
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="match_parent"
+                            android:layout_height="10dp" />
 
                         <EditText
                             android:id="@+id/names"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_width="280dp"
+                            android:layout_height="40dp"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/conotor"
                             android:ems="10"
+                            android:layout_gravity="center"
+                            android:gravity="center"
                             android:inputType="textPersonName" />
+
+                        <TextView
+                            android:id="@+id/textView4"
+                            android:layout_width="match_parent"
+                            android:layout_height="10dp"
+                          />
 
                         <EditText
                             android:id="@+id/tel"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_width="280dp"
+                            android:layout_margin="5dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/conotor"
                             android:ems="10"
+                            android:layout_gravity="center"
+                            android:gravity="center"
                             android:inputType="phone" />
+                        <TextView
+
+                            android:layout_width="match_parent"
+                            android:layout_height="10dp"
+                            />
 
                         <EditText
                             android:id="@+id/correo"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_width="280dp"
+                            android:layout_height="40dp"
+                            android:gravity="center"
+                            android:background="@drawable/conotor"
                             android:ems="10"
+                            android:layout_gravity="center"
+                            android:layout_margin="5dp"
                             android:inputType="textEmailAddress" />
+
+                        <TextView
+                            android:id="@+id/textView6"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
 
                         <EditText
                             android:id="@+id/pass"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_width="280dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/conotor"
                             android:ems="10"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:layout_margin="5dp"
                             android:inputType="textPassword" />
+
+                        <TextView
+
+                            android:layout_width="match_parent"
+                            android:layout_height="10dp"
+                         />
 
                         <EditText
                             android:id="@+id/pass2"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_width="280dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/conotor"
                             android:ems="10"
+                            android:layout_gravity="center"
+                            android:layout_margin="5dp"
+                            android:gravity="center"
                             android:inputType="textPassword" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"></LinearLayout>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="196dp"
-                    android:background="@drawable/stilo"
-                    android:orientation="horizontal">
-
-                    <LinearLayout
-                        android:layout_width="99dp"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical">
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="128dp"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical">
-
                         <TextView
                             android:id="@+id/textView18"
                             android:layout_width="match_parent"
@@ -211,20 +165,28 @@
 
                         <Button
                             android:id="@+id/res"
-                            android:layout_width="match_parent"
-                            android:layout_height="26dp"
-                            android:background="@android:color/holo_blue_dark"
+                            android:layout_width="100dp"
+                            android:layout_height="32dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/botones"
                             android:text="Registrar"
                             android:textColor="#ffffff" />
+                        <TextView
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
                     </LinearLayout>
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"></LinearLayout>
-                </LinearLayout>
+
+
+
+
+
+
+
+                </ScrollView>
 
             </LinearLayout>
-        </LinearLayout>
-    </ScrollView>
+
+
 </LinearLayout>
