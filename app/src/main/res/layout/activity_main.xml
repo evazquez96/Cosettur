@@ -8,12 +8,12 @@
     tools:context=".MainActivity">
 
     <ScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
 
             <LinearLayout
@@ -76,7 +76,7 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="398dp"
+                    android:layout_width="match_parent"
                     android:layout_height="198dp"
                     android:orientation="horizontal">
 
@@ -87,12 +87,11 @@
                         android:orientation="vertical">
 
                         <LinearLayout
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="56dp"
+                            android:layout_gravity="center"
                             android:orientation="horizontal">
-                            <TextView
-                                android:layout_width="30dp"
-                                android:layout_height="32dp" />
+
                             <TextView
                                 android:id="@+id/user"
                                 android:layout_width="130dp"
@@ -113,12 +112,11 @@
                         </LinearLayout>
 
                         <LinearLayout
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="59dp"
+                            android:layout_gravity="center"
                             android:orientation="horizontal">
-                            <TextView
-                                android:layout_width="30dp"
-                                android:layout_height="32dp" />
+
 
                             <TextView
                                 android:id="@+id/textView3"
@@ -152,13 +150,12 @@
                                 android:orientation="horizontal"></LinearLayout>
 
                             <LinearLayout
-                                android:layout_width="match_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="34dp"
+                                android:layout_gravity="center"
                                 android:orientation="horizontal">
 
-                                <TextView
-                                    android:layout_width="30dp"
-                                android:layout_height="32dp" />
+
 
                                 <Button
                                     android:id="@+id/in"
