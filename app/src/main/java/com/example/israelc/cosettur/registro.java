@@ -174,6 +174,12 @@ public class registro extends AppCompatActivity {
         correo = (EditText)findViewById(R.id.correo);
         contrasena = (EditText)findViewById(R.id.pass);
         confirmar = (EditText)findViewById(R.id.pass2);
+usuario.setHint(" Nombre de Usuario*");
+nombre.setHint(" Nombre Completo*");
+telefono.setHint(" Telefono*");
+correo.setHint(" Correo Electronico*");
+contrasena.setHint(" Contraseña*");
+confirmar.setHint(" Confirmar contraseña*");
 
         inicio.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -189,19 +195,19 @@ public class registro extends AppCompatActivity {
 
 
         if (usuario.getText().toString().equals("")){
-            usuario.setHint("Campo obligatorio*");
+            usuario.setHint(" Campo obligatorio*");
         } else {
             if(nombre.getText().toString().equals("")){
-                nombre.setHint("Campo obligatorio*");
+                nombre.setHint(" Campo obligatorio*");
             } else {
                 if (telefono.getText().toString().equals("")){
-                    telefono.setHint("Campo obligatorio*");
+                    telefono.setHint(" Campo obligatorio*");
                 } else {
                     if (correo.getText().toString().equals("")){
-                        correo.setHint("Campo obligatorio*");
+                        correo.setHint(" Campo obligatorio*");
                     } else {
                         if (contrasena.getText().toString().equals("")){
-                            contrasena.setHint("Campo obligatorio*");
+                            contrasena.setHint(" Campo obligatorio*");
                         } else {
                             if (confirmar.getText().toString().equals(contrasena.getText().toString())){
                                 consumirWS();
@@ -217,8 +223,8 @@ public class registro extends AppCompatActivity {
                             } else {
                                 confirmar.setText("");
                                 contrasena.setText("");
-                                confirmar.setHint("Las contraseñas no coinciden*");
-                                contrasena.setHint("Las contraseñas no coinciden*");
+                                confirmar.setHint(" Las contraseñas no coinciden*");
+                                contrasena.setHint(" Las contraseñas no coinciden*");
                             }
                         }
                     }
