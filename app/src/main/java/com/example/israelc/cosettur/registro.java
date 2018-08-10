@@ -123,36 +123,6 @@ public class registro extends AppCompatActivity {
                 return "error";
         }
 
-        private Registro getRegistro(JSONArray array, int index){
-            Registro registro=new Registro();
-
-            try{
-                JSONObject object=array.getJSONObject(index);
-                LinkedList<Dream> list=new LinkedList<Dream>();
-                Dream dream;
-                double inactivo;
-                double activo;
-                switch(index){
-                    case 0:
-                        inactivo=object.getDouble("inactivo");
-                        activo=object.getDouble("activo");
-                        registro.setActivo(activo);
-                        registro.setInactivo(inactivo);
-                        //Entra para obtener el registro de las 24 horas
-                        break;
-                    case 1:
-                        //Entra para obtener el registro de las ultimas 5 horas y media
-                        break;
-                    default:
-                        break;
-                }
-
-            }catch(JSONException e){
-                Log.e("JsonE",e.getMessage());
-            }
-
-            return registro;
-        }
         @Override
         protected void onPostExecute(String result){
             if(result.equals("ok")){
