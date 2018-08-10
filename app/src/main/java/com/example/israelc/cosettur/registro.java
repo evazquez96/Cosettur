@@ -51,7 +51,6 @@ public class registro extends AppCompatActivity {
     private static final String url = "http://node37032-env-8030779.jl.serv.net.mx:80/CosetturWS?wsdl";
 
     private SoapPrimitive resultado;
-    private Bitacora bitacora;
     public boolean consumirWS(){
         Boolean bandera=true;
         try {

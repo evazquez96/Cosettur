@@ -130,7 +130,7 @@
                                 android:textSize="23dp" />
 
                             <EditText
-                                android:id="@+id/contraseña"
+                                android:id="@+id/contrasena"
                                 android:layout_width="150dp"
                                 android:layout_height="match_parent"
                                 android:gravity="bottom"
