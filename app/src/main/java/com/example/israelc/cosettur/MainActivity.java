@@ -2,6 +2,7 @@ package com.example.israelc.cosettur;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -29,6 +30,7 @@ TextView recuperar;
 String a;
 String b;
 String result1;
+TextView aviso;
 
     // Metodo que queremos ejecutar en el servicio web
     private static final String Metodo = "inicio";
@@ -132,7 +134,7 @@ String result1;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+aviso=(TextView)findViewById(R.id.terminos);
         contra = (EditText) findViewById(R.id.contrasena);
         usuarios = (EditText) findViewById(R.id.users);
         registrar=(Button)findViewById(R.id.re);
@@ -163,6 +165,14 @@ recuperar.setOnClickListener(new View.OnClickListener() {
     public void onClick(View v) {
         Intent rec= new Intent(MainActivity.this,recuperar.class);
         startActivity(rec);
+    }
+});
+aviso.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        Uri uri = Uri.parse("https://www.cosettur.com/app/download/9959667419/Aviso+de+privacidad+Cosettur.pdf?t=1498142592");
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+        startActivity(intent);
     }
 });
 
