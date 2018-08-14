@@ -14,6 +14,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 import java.time.Instant;
 
@@ -92,9 +95,18 @@ public class menu extends AppCompatActivity
 
         } else if (id == R.id.nav_share) {
 
-            Uri uri = Uri.parse("https://www.cosettur.com/");
-            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-            startActivity(intent);
+            //Uri uri = Uri.parse("https://www.cosettur.com/");
+           // Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+           // startActivity(intent);
+
+
+            WebView myWebView = (WebView) findViewById(R.id.we);
+            WebSettings webSettings = myWebView.getSettings();
+            webSettings.setJavaScriptEnabled(true);
+            myWebView.setWebViewClient(new WebViewClient());
+            myWebView.loadUrl("https://docs.google.com/forms/d/e/1FAIpQLSc78IW6UWqlVSWOhuuXCox0iDx_4BKwx3CsTvpSq86PQDMb1A/viewform?usp=sf_link");
+
+
 
 
         } else if (id == R.id.nav_send) {

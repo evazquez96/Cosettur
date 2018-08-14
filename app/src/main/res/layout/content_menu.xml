@@ -9,18 +9,11 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".menu"
     tools:showIn="@layout/app_bar_menu">
-    <ScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="160dp"
+        android:layout_height="101dp"
         android:orientation="vertical">
 
         <ImageView
@@ -30,53 +23,11 @@
             app:srcCompat="@drawable/cosetturs" />
     </LinearLayout>
 
-    <LinearLayout
+    <WebView
+        android:id="@+id/we"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:background="@android:color/background_light" />
 
-        <LinearLayout
-            android:layout_width="13dp"
-            android:layout_height="match_parent"
-            android:orientation="vertical"></LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/textView30"
-                android:layout_width="match_parent"
-                android:layout_height="37dp"
-                android:gravity="center"
-                android:textSize="17dp"
-                android:textColor="@android:color/holo_blue_dark"
-                android:text="EXPERIENCIA" />
-
-            <TextView
-                android:id="@+id/textView42"
-                android:layout_width="match_parent"
-                android:layout_height="118dp"
-                android:text="Más de 50 años especializados en el traslado de alumnos, empresarios, familias, comunidades extranjeras, grupos religiosos, organizaciones culturales, turistas, artísticas, deportivas; nos han llevado a detectar y atender cada detalle importante para nuestros pasajeros." />
-
-            <TextView
-                android:id="@+id/textView43"
-                android:layout_width="match_parent"
-                android:layout_height="68dp"
-                android:text="La comodidad, puntualidad, y sobre todo la SEGURIDAD son la base de nuestra propuesta de Traslado.   " />
-
-            <TextView
-                android:id="@+id/textView45"
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:gravity="center"
-                android:text="¡¡Atenderle es un placer·!!"
-                android:textColor="@android:color/holo_blue_dark" />
-        </LinearLayout>
-    </LinearLayout>
-
-        </LinearLayout>
-    </ScrollView>
 
 </LinearLayout>
