@@ -64,7 +64,7 @@
                         <TextView
                             android:id="@+id/textView29"
                             android:layout_width="match_parent"
-                            android:layout_height="10dp" />
+                            android:layout_height="30dp" />
 
                         <EditText
                             android:id="@+id/usuari"
@@ -158,10 +158,30 @@
                             android:gravity="center"
                             android:inputType="textPassword" />
 
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"></LinearLayout>
+
                         <TextView
                             android:id="@+id/textView18"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="10dp" />
+
+                        <Switch
+                            android:id="@+id/switch2"
+                            android:layout_width="258dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Acepto terminos y condiciones  "
+                            android:textColor="#800080"
+                            android:gravity="center"
+                            android:textSize="19dp" />
+                        <TextView
+
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp" />
 
                         <Button
                             android:id="@+id/res"
@@ -171,6 +191,7 @@
                             android:background="@drawable/botones"
                             android:text="Registrar"
                             android:textColor="#ffffff" />
+
 
                         <TextView
 

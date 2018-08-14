@@ -151,11 +151,13 @@ registrar.setOnClickListener(new View.OnClickListener() {
 mein.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
-        b = contra.getText().toString();
-        a = usuarios.getText().toString();
+      //  b = contra.getText().toString();
+       // a = usuarios.getText().toString();
 
-        asyncBitacora ejec =new asyncBitacora();
-        ejec.execute();
+       // asyncBitacora ejec =new asyncBitacora();
+       // ejec.execute();
+        Intent inic= new Intent(MainActivity.this,menu.class);
+        startActivity(inic);
 
     }
 });
