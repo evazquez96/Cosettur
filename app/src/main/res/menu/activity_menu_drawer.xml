@@ -5,13 +5,25 @@
 
     <group android:checkableBehavior="single">
         <item
+            android:id="@+id/inicio"
+            android:icon="@drawable/loh"
+            android:title="Inicio" />
+        <item
             android:id="@+id/rutas"
             android:icon="@drawable/ruts"
             android:title="Rutas de Servicio" />
         <item
             android:id="@+id/elgir"
             android:icon="@drawable/autoss"
-            android:title="Elegir Camion" />
+            android:title="Disponibilidad" />
+        <item
+            android:id="@+id/suscribir"
+            android:icon="@drawable/bitacora"
+            android:title="Suscribir" />
+        <item
+            android:id="@+id/pago"
+            android:icon="@drawable/paypal"
+            android:title="Pagar Cuota" />
 
     </group>
 
@@ -19,7 +31,7 @@
         <menu>
             <item
                 android:id="@+id/nav_share"
-                android:icon="@drawable/loh"
+                android:icon="@drawable/inter"
                 android:title="Visita nuestra pagina" />
             <item
                 android:id="@+id/nav_send"

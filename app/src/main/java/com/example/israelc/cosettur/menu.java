@@ -14,6 +14,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 import java.time.Instant;
 
@@ -26,6 +29,11 @@ public class menu extends AppCompatActivity
         setContentView(R.layout.activity_menu);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        WebView myWebView = (WebView) findViewById(R.id.we);
+        WebSettings webSettings = myWebView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+        myWebView.setWebViewClient(new WebViewClient());
+        myWebView.loadUrl("https://sites.google.com/view/cossetur/p%C3%A1gina-principal");
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -80,6 +88,15 @@ public class menu extends AppCompatActivity
         int id = item.getItemId();
 
 
+        if (id == R.id.inicio) {
+            WebView myWebView = (WebView) findViewById(R.id.we);
+            WebSettings webSettings = myWebView.getSettings();
+            webSettings.setJavaScriptEnabled(true);
+            myWebView.setWebViewClient(new WebViewClient());
+            myWebView.loadUrl("https://sites.google.com/view/cossetur/p%C3%A1gina-principal");
+
+        }
+
         if (id == R.id.rutas) {
 
 
@@ -90,15 +107,32 @@ public class menu extends AppCompatActivity
             Intent elcamion= new Intent(menu.this,camion.class);
             startActivity(elcamion);
 
-        } else if (id == R.id.nav_share) {
+        }
+    else if (id == R.id.suscribir) {
+            WebView myWebView = (WebView) findViewById(R.id.we);
+            WebSettings webSettings = myWebView.getSettings();
+            webSettings.setJavaScriptEnabled(true);
+            myWebView.setWebViewClient(new WebViewClient());
+            myWebView.loadUrl("https://docs.google.com/forms/d/e/1FAIpQLSc78IW6UWqlVSWOhuuXCox0iDx_4BKwx3CsTvpSq86PQDMb1A/viewform?usp=sf_link");
 
-            Uri uri = Uri.parse("https://www.cosettur.com/");
-            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-            startActivity(intent);
+
+        }
+        else if (id == R.id.nav_share) {
+
+
+            WebView myWebView = (WebView) findViewById(R.id.we);
+            WebSettings webSettings = myWebView.getSettings();
+            webSettings.setJavaScriptEnabled(true);
+            myWebView.setWebViewClient(new WebViewClient());
+            myWebView.loadUrl("https://www.cosettur.com/");
+
+
+
+
 
 
         } else if (id == R.id.nav_send) {
-            String[] TO = {"superisraelsaya777@gmail.com"}; //aquí pon tu correo
+            String[] TO = {"cosseru@gmail.com"}; //aquí pon tu correo
             String[] CC = {""};
             Intent emailIntent = new Intent(Intent.ACTION_SEND);
             emailIntent.setData(Uri.parse("mailto:"));
@@ -106,8 +140,8 @@ public class menu extends AppCompatActivity
             emailIntent.putExtra(Intent.EXTRA_EMAIL, TO);
             emailIntent.putExtra(Intent.EXTRA_CC, CC);
 // Esto podrás modificarlo si quieres, el asunto y el cuerpo del mensaje
-            emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Asunto");
-            emailIntent.putExtra(Intent.EXTRA_TEXT, "Escribe aquí tu mensaje");
+            emailIntent.putExtra(Intent.EXTRA_SUBJECT, "");
+            emailIntent.putExtra(Intent.EXTRA_TEXT, "");
 
             try {
                 startActivity(Intent.createChooser(emailIntent, "Enviar email..."));
