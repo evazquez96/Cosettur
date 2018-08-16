@@ -33,13 +33,13 @@ String result1;
 TextView aviso;
 
     // Metodo que queremos ejecutar en el servicio web
-    private static final String Metodo = "inicio";
+    private static final String Metodo = "login";
     // Namespace definido en el servicio web
-    private static final String namespace = "http://prueba/";
+    private static final String namespace = "http://webservice.cosettur.com/";
     // namespace + metodo
-    private static final String accionSoap = "http://prueba/inicio";
+    private static final String accionSoap = "http://webservice.cosettur.com/login";
     // Fichero de definicion del servcio web
-    private static final String url = "http://node37458-env-8450796.jl.serv.net.mx/Prueba?wsdl";
+    private static final String url = "http://node37874-env-3073930.jl.serv.net.mx/UserWS?wsdl";
 
     private SoapPrimitive resultado;
 
