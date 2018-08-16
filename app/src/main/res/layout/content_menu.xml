@@ -23,11 +23,11 @@
             app:srcCompat="@drawable/cosetturs" />
     </LinearLayout>
 
-    <WebView
-        android:id="@+id/we"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@android:color/background_light" />
+        android:layout_height="match_parent">
+
+    </FrameLayout>
 
 
 </LinearLayout>
