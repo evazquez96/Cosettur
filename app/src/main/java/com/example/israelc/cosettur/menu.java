@@ -97,6 +97,13 @@ public class menu extends AppCompatActivity
 
         }
 
+        if (id == R.id.pago) {
+
+            Intent pagar= new Intent(menu.this,Paypal.class);
+            startActivity(pagar);
+
+        }
+
         if (id == R.id.rutas) {
 
 
