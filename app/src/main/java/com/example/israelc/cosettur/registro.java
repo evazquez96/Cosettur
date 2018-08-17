@@ -212,7 +212,7 @@ confirmar.setHint(" Confirmar contraseña*");
                                         bb = nombre.getText().toString();
                                         cc = confirmar.getText().toString();
                                         dd = telefono.getText().toString();
-                                        cc = correo.getText().toString();
+                                        ee = correo.getText().toString();
 
                                         asyncBitacora v = new asyncBitacora();
                                         v.execute();
