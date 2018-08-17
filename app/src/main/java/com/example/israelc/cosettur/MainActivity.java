@@ -50,8 +50,8 @@ TextView aviso;
         try {
 
             SoapObject request = new SoapObject(namespace, Metodo);
-            request.addProperty("p1", a);
-            request.addProperty("p2", b);
+            request.addProperty("user", a);
+            request.addProperty("pass", b);
 
             // Modelo el Sobre
             SoapSerializationEnvelope sobre = new SoapSerializationEnvelope(SoapEnvelope.VER11);
@@ -113,7 +113,7 @@ TextView aviso;
 
         public void llenarDatos() {
 
-            if (result1.equals("true")) {
+            if (result1.equals("1")) {
 
 
                 Intent a = new Intent(MainActivity.this, menu.class);
@@ -151,13 +151,27 @@ registrar.setOnClickListener(new View.OnClickListener() {
 mein.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
-      //  b = contra.getText().toString();
-       // a = usuarios.getText().toString();
 
-       // asyncBitacora ejec =new asyncBitacora();
-       // ejec.execute();
-        Intent inic= new Intent(MainActivity.this,menu.class);
-        startActivity(inic);
+
+        if (usuarios.getText().toString().equals("")){
+            usuarios.setHint("*Campo obligatorio");
+        } else {
+
+            if (contra.getText().toString().equals("")) {
+                contra.setHint("*Campo obligatorio");
+
+
+            } else {
+
+                b = contra.getText().toString();
+                a = usuarios.getText().toString();
+
+                asyncBitacora ejec =new asyncBitacora();
+                ejec.execute();
+
+            }
+
+        }
 
     }
 });
