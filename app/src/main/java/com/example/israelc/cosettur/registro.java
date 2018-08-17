@@ -37,6 +37,12 @@ public class registro extends AppCompatActivity {
     EditText correo;
     EditText contrasena;
     EditText confirmar;
+    String resulting;
+    String aa;
+    String bb;
+    String cc;
+    String dd;
+    String ee;
 
 
     // Metodo que queremos ejecutar en el servicio web
@@ -46,12 +52,12 @@ public class registro extends AppCompatActivity {
 
     // Namespace definido en el servicio web
     //private static final String namespace = "http://app.mexamerik.com";
-    private static final String namespace = "http://service.models.cosettur.com/";
+    private static final String namespace = "http://webservice.cosettur.com/";
 
     // namespace + metodo
-    private static final String accionSoap = "http://service.models.cosettur.com/insertaUsuario";
+    private static final String accionSoap = "http://webservice.cosettur.com/insertaUsuario";
     // Fichero de definicion del servcio web
-    private static final String url = "http://node37032-env-8030779.jl.serv.net.mx:80/CosetturWS?wsdl";
+    private static final String url = "http://node37874-env-3073930.jl.serv.net.mx/UserWS?wsdl";
 
     private SoapPrimitive resultado;
     public boolean consumirWS(){
@@ -61,11 +67,11 @@ public class registro extends AppCompatActivity {
             // Modelo el request
             SoapObject request = new SoapObject(namespace, Metodo);
 
-            request.addProperty("user_id", usuario.getText().toString());
-            request.addProperty("user_name", nombre.getText().toString());
-            request.addProperty("user_pass", confirmar.getText().toString());
-            request.addProperty("user_correo", correo.getText().toString());
-            request.addProperty("user_tel", telefono.getText().toString());
+            request.addProperty("user", aa);
+            request.addProperty("nombre", bb);
+            request.addProperty("pass", cc);
+            request.addProperty("telefono", dd);
+            request.addProperty("correo", ee);
 
             //request.addProperty("name", "MA0096");
             // String s=new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(new java.util.Date());
@@ -129,10 +135,29 @@ public class registro extends AppCompatActivity {
         protected void onPostExecute(String result){
             if(result.equals("ok")){
                 Log.e("resultado",resultado.toString());
+                resulting = resultado.toString();
+                LlenarDatos();
             }else{
                 Log.e("ERROR", "Error al consumir el webService");
             }
         }
+    }
+
+    public void LlenarDatos() {
+
+        if (resulting.equals("1")) {
+
+            Intent registro = new Intent(registro.this, MainActivity.class);
+            startActivity(registro);
+            Toast.makeText(registro.this, usuario.getText().toString() + " ha sido registrado correctaente", Toast.LENGTH_LONG).show();
+
+        } else {
+
+            Toast.makeText(registro.this, "No te has podido registrar intentalo nuevamente", Toast.LENGTH_LONG).show();
+
+
+        }
+
     }
 
     @Override
@@ -182,16 +207,16 @@ confirmar.setHint(" Confirmar contraseña*");
                             contrasena.setHint(" Campo obligatorio*");
                         } else {
                             if (confirmar.getText().toString().equals(contrasena.getText().toString())){
-                                consumirWS();
-                                if (consumirWS()==true){
-                                    asyncBitacora v=new asyncBitacora();
-                                    v.execute();
-                                    Intent registro= new Intent(registro.this,MainActivity.class);
-                                    startActivity(registro);
-                                    Toast.makeText(registro.this,usuario.getText().toString()+" ha sido registrado correctaente", Toast.LENGTH_SHORT).show();
-                                } else {
-                                    Toast.makeText(registro.this,"No se pudo registrar", Toast.LENGTH_SHORT).show();
-                                }
+
+                                        aa = usuario.getText().toString();
+                                        bb = nombre.getText().toString();
+                                        cc = confirmar.getText().toString();
+                                        dd = telefono.getText().toString();
+                                        cc = correo.getText().toString();
+
+                                        asyncBitacora v = new asyncBitacora();
+                                        v.execute();
+
                             } else {
                                 confirmar.setText("");
                                 contrasena.setText("");
