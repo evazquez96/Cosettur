@@ -33,7 +33,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".mision" />
         <activity android:name=".camiones" />
-        <activity android:name=".vision"></activity>
+        <activity android:name=".vision" />
+        <activity android:name=".Paypal"></activity>
     </application>
 
 </manifest>

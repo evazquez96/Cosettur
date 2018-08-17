@@ -5,6 +5,7 @@ import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -26,6 +27,7 @@ import org.ksoap2.serialization.SoapSerializationEnvelope;
 import org.ksoap2.transport.HttpTransportSE;
 
 import java.util.LinkedList;
+import java.util.regex.Pattern;
 
 public class registro extends AppCompatActivity {
     Button inicio;
@@ -35,6 +37,7 @@ public class registro extends AppCompatActivity {
     EditText correo;
     EditText contrasena;
     EditText confirmar;
+
 
     // Metodo que queremos ejecutar en el servicio web
     //private static final String Metodo = "getRegistroBitacora";
