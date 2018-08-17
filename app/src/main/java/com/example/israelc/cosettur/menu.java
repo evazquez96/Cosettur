@@ -35,9 +35,11 @@ public class menu extends AppCompatActivity
         setContentView(R.layout.activity_menu);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-
-
+        WebView myWebView = (WebView) findViewById(R.id.we);
+        WebSettings webSettings = myWebView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+        myWebView.setWebViewClient(new WebViewClient());
+        myWebView.loadUrl("https://sites.google.com/view/cossetur/p%C3%A1gina-principal");
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -70,6 +72,12 @@ public class menu extends AppCompatActivity
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             Intent mis= new Intent(menu.this,mision.class);
+            startActivity(mis);
+
+            return true;
+        }
+        if (id == R.id.cerrar) {
+            Intent mis= new Intent(menu.this,MainActivity.class);
             startActivity(mis);
 
             return true;
