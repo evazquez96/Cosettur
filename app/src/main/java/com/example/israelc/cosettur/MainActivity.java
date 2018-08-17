@@ -1,9 +1,14 @@
 package com.example.israelc.cosettur;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -113,18 +118,15 @@ TextView aviso;
 
         public void llenarDatos() {
 
-            if (result1.equals("1")) {
-
-
-                Intent a = new Intent(MainActivity.this, menu.class);
+            if (result1.equals("1")) { Toast.makeText(MainActivity.this,"Bienvenido", Toast.LENGTH_SHORT).show();
+            Intent a = new Intent(MainActivity.this, menu.class);
                 startActivity(a);
             } else {
 
                 Toast.makeText(MainActivity.this,"Usuario o contraseña incorrecta", Toast.LENGTH_SHORT).show();
                 contra.setText("");
                 usuarios.setText("");
-
-            }
+                }
 
         }
     }
@@ -168,6 +170,7 @@ mein.setOnClickListener(new View.OnClickListener() {
 
                 asyncBitacora ejec =new asyncBitacora();
                 ejec.execute();
+                progreso();
 
             }
 
@@ -194,4 +197,47 @@ aviso.setOnClickListener(new View.OnClickListener() {
 
 
     }
+    private static int progress;
+    private ProgressBar progressBar;
+    private int progressStatus = 0;
+    private Handler handler = new Handler();
+    public void progreso(){
+
+        progress = 0;
+        progressBar = (ProgressBar) findViewById(R.id.progreso);
+        progressBar.setMax(50);
+        progressBar.setVisibility(View.VISIBLE);
+
+        progressBar.getIndeterminateDrawable().setColorFilter(Color.BLUE, PorterDuff.Mode.SRC_IN);
+        new Thread(new Runnable() {
+            public void run() {
+                while (progressStatus < 50) {
+                    progressStatus = doSomeWork();
+                    handler.post(new Runnable() {
+                        public void run() {
+                            progressBar.setProgress(progressStatus);
+                        }
+                    });
+                }
+                handler.post(new Runnable() {
+                    @SuppressLint("WrongConstant")
+                    public void run() {
+                        // ---0 - VISIBLE; 4 - INVISIBLE; 8 - GONE---
+                        progressBar.setVisibility(8);
+                    }
+                });
+            }
+
+            private int doSomeWork() {
+                try {
+                    // ---simulate doing some work---
+                    Thread.sleep(50);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                return ++progress;
+            }
+        }).start();
+    }
+
 }

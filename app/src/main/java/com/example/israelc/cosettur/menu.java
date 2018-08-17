@@ -1,6 +1,10 @@
 package com.example.israelc.cosettur;
 
+import android.annotation.SuppressLint;
 import android.app.Fragment;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.os.Handler;
 import android.support.v4.app.FragmentTransaction;
 import android.content.Intent;
 import android.net.Uri;
@@ -20,6 +24,7 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import java.time.Instant;
@@ -35,6 +40,7 @@ public class menu extends AppCompatActivity
         setContentView(R.layout.activity_menu);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        progreso();
         WebView myWebView = (WebView) findViewById(R.id.we);
         WebSettings webSettings = myWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
@@ -95,6 +101,7 @@ public class menu extends AppCompatActivity
         TextView txt=(TextView)findViewById(R.id.texto);
 
         if (id == R.id.inicio) {
+            progreso();
             LinearLayout con= (LinearLayout)findViewById(R.id.fr);
             con.setVisibility(View.GONE);
             txt.setText("Bienvenido");
@@ -133,6 +140,7 @@ public class menu extends AppCompatActivity
 
         }
     else if (id == R.id.suscribir) {
+            progreso();
             LinearLayout con= (LinearLayout)findViewById(R.id.fr);
             con.setVisibility(View.GONE);
             txt.setText("Bienvenido");
@@ -145,7 +153,7 @@ public class menu extends AppCompatActivity
         }
         else if (id == R.id.nav_share) {
 
-
+            progreso();
             LinearLayout con= (LinearLayout)findViewById(R.id.fr);
             con.setVisibility(View.GONE);
             txt.setText("Bienvenido");
@@ -186,6 +194,47 @@ public class menu extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+    private static int progress;
+    private ProgressBar progressBar;
+    private int progressStatus = 0;
+    private Handler handler = new Handler();
+    public void progreso(){
 
+        progress = 0;
+        progressBar = (ProgressBar) findViewById(R.id.progreso);
+        progressBar.setMax(50);
+        progressBar.setVisibility(View.VISIBLE);
+
+        progressBar.getIndeterminateDrawable().setColorFilter(Color.BLUE, PorterDuff.Mode.SRC_IN);
+        new Thread(new Runnable() {
+            public void run() {
+                while (progressStatus < 50) {
+                    progressStatus = doSomeWork();
+                    handler.post(new Runnable() {
+                        public void run() {
+                            progressBar.setProgress(progressStatus);
+                        }
+                    });
+                }
+                handler.post(new Runnable() {
+                    @SuppressLint("WrongConstant")
+                    public void run() {
+                        // ---0 - VISIBLE; 4 - INVISIBLE; 8 - GONE---
+                        progressBar.setVisibility(8);
+                    }
+                });
+            }
+
+            private int doSomeWork() {
+                try {
+                    // ---simulate doing some work---
+                    Thread.sleep(50);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                return ++progress;
+            }
+        }).start();
+    }
 
 }

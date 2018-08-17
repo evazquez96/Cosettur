@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import com.example.israelc.cosettur.helpers.Bitacora;
@@ -154,9 +155,7 @@ public class registro extends AppCompatActivity {
         } else {
 
             Toast.makeText(registro.this, "No te has podido registrar intentalo nuevamente", Toast.LENGTH_LONG).show();
-
-
-        }
+          }
 
     }
 
@@ -181,8 +180,16 @@ confirmar.setHint(" Confirmar contraseña*");
         inicio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Switch select;
+                select=(Switch)findViewById(R.id.cambio);
+                if(select.isChecked()){
+                    comprobando();
+                }else {
+                    Toast.makeText(registro.this, "No has aceptado terminos y condiciones", Toast.LENGTH_LONG).show();
+                }
 
-                comprobando();
+
+
 
             }
         });
