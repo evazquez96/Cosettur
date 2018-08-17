@@ -1,5 +1,7 @@
 package com.example.israelc.cosettur;
 
+import android.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -17,11 +19,15 @@ import android.view.MenuItem;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import java.time.Instant;
 
 public class menu extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,11 +35,7 @@ public class menu extends AppCompatActivity
         setContentView(R.layout.activity_menu);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        WebView myWebView = (WebView) findViewById(R.id.we);
-        WebSettings webSettings = myWebView.getSettings();
-        webSettings.setJavaScriptEnabled(true);
-        myWebView.setWebViewClient(new WebViewClient());
-        myWebView.loadUrl("https://sites.google.com/view/cossetur/p%C3%A1gina-principal");
+
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -48,12 +50,7 @@ public class menu extends AppCompatActivity
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
+
     }
 
     @Override
@@ -87,9 +84,14 @@ public class menu extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
+        TextView txt=(TextView)findViewById(R.id.texto);
 
         if (id == R.id.inicio) {
+            LinearLayout con= (LinearLayout)findViewById(R.id.fr);
+            con.setVisibility(View.GONE);
+            txt.setText("Bienvenido");
             WebView myWebView = (WebView) findViewById(R.id.we);
+            myWebView.setVisibility(View.VISIBLE);
             WebSettings webSettings = myWebView.getSettings();
             webSettings.setJavaScriptEnabled(true);
             myWebView.setWebViewClient(new WebViewClient());
@@ -106,9 +108,16 @@ public class menu extends AppCompatActivity
 
         if (id == R.id.rutas) {
 
+            txt.setText("Rutas de servicio");
+            WebView myWebView = (WebView) findViewById(R.id.we);
+            myWebView.setVisibility(View.GONE);
+            LinearLayout con= (LinearLayout)findViewById(R.id.fr);
+            con.setVisibility(View.VISIBLE);
 
-            Intent rut= new Intent(menu.this,rutas.class);
-            startActivity(rut);
+            BlankFragment ini = new BlankFragment();
+            FragmentTransaction transaction= getSupportFragmentManager().beginTransaction();
+            transaction.replace(R.id.contenedor,ini);
+            transaction.commit();
 
         } else if (id == R.id.elgir) {
             Intent elcamion= new Intent(menu.this,camion.class);
@@ -116,23 +125,28 @@ public class menu extends AppCompatActivity
 
         }
     else if (id == R.id.suscribir) {
+            LinearLayout con= (LinearLayout)findViewById(R.id.fr);
+            con.setVisibility(View.GONE);
+            txt.setText("Bienvenido");
             WebView myWebView = (WebView) findViewById(R.id.we);
+            myWebView.setVisibility(View.VISIBLE);
             WebSettings webSettings = myWebView.getSettings();
             webSettings.setJavaScriptEnabled(true);
             myWebView.setWebViewClient(new WebViewClient());
             myWebView.loadUrl("https://docs.google.com/forms/d/e/1FAIpQLSdy4eBAykFIpHNLdn3HRlcENBd39Cikht8vUzIC99hP0OTmvg/viewform?usp=sf_link");
-
-
         }
         else if (id == R.id.nav_share) {
 
 
+            LinearLayout con= (LinearLayout)findViewById(R.id.fr);
+            con.setVisibility(View.GONE);
+            txt.setText("Bienvenido");
             WebView myWebView = (WebView) findViewById(R.id.we);
+            myWebView.setVisibility(View.VISIBLE);
             WebSettings webSettings = myWebView.getSettings();
             webSettings.setJavaScriptEnabled(true);
             myWebView.setWebViewClient(new WebViewClient());
             myWebView.loadUrl("https://www.cosettur.com/");
-
 
 
 
@@ -164,4 +178,6 @@ public class menu extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+
 }
