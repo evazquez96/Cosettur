@@ -13,7 +13,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="72dp"
+            android:layout_height="50dp"
             android:background="@android:color/background_light"
             android:orientation="horizontal">
 
@@ -24,9 +24,9 @@
 
                 <ImageView
                     android:id="@+id/imageView8"
-                    android:layout_width="76dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/cosetturs" />
+                    app:srcCompat="@drawable/logo1" />
             </LinearLayout>
 
             <LinearLayout

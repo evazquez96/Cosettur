@@ -25,6 +25,8 @@ import org.ksoap2.serialization.SoapPrimitive;
 import org.ksoap2.serialization.SoapSerializationEnvelope;
 import org.ksoap2.transport.HttpTransportSE;
 
+import java.net.URL;
+
 
 public class MainActivity extends AppCompatActivity {
 Button registrar;
@@ -182,8 +184,29 @@ mein.setOnClickListener(new View.OnClickListener() {
 recuperar.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
-        Intent rec= new Intent(MainActivity.this,recuperar.class);
-        startActivity(rec);
+       // Intent rec= new Intent(MainActivity.this,recuperar.class);
+      //  startActivity(rec);
+Intent email= new Intent(Intent.ACTION_SEND);
+        String[] TO = {"superisraelsaya777@gmail.com"}; //aquí pon tu correo
+        String[] CC = {""};
+        Intent emailIntent = new Intent(Intent.ACTION_SEND);
+        emailIntent.setData(Uri.parse("mailto:"));
+        emailIntent.setType("text/plain");
+        emailIntent.putExtra(Intent.EXTRA_EMAIL, TO);
+        emailIntent.putExtra(Intent.EXTRA_CC, CC);
+// Esto podrás modificarlo si quieres, el asunto y el cuerpo del mensaje
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "recuperacion de contraseña");
+        emailIntent.putExtra(Intent.EXTRA_TEXT, "Solicito mi Contraseña");
+
+        try {
+            startActivity(Intent.createChooser(emailIntent, "Enviar email..."));
+            finish();
+        } catch (android.content.ActivityNotFoundException ex) {
+            Toast.makeText(MainActivity.this,
+                    "No tienes clientes de email instalados.", Toast.LENGTH_SHORT).show();
+        }
+
+
     }
 });
 aviso.setOnClickListener(new View.OnClickListener() {
