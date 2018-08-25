@@ -119,26 +119,9 @@ public class menu extends AppCompatActivity
 
         if (id == R.id.pago) {
 
-           // Intent pagar= new Intent(menu.this,Paypal.class);
-            //startActivity(pagar);
-            String[] TO = {"cosettur.sopòrte@gmail.com"}; //aquí pon tu correo
-            String[] CC = {""};
-            Intent emailIntent = new Intent(Intent.ACTION_SEND);
-            emailIntent.setData(Uri.parse("mailto:"));
-            emailIntent.setType("text/plain");
-            emailIntent.putExtra(Intent.EXTRA_EMAIL, TO);
-            emailIntent.putExtra(Intent.EXTRA_CC, CC);
-// Esto podrás modificarlo si quieres, el asunto y el cuerpo del mensaje
-            emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Pago");
-            emailIntent.putExtra(Intent.EXTRA_TEXT, "Solicitud orden de pago");
+           Intent pagar= new Intent(menu.this,Paypal.class);
+            startActivity(pagar);
 
-            try {
-                startActivity(Intent.createChooser(emailIntent, "Enviar email..."));
-                finish();
-            } catch (android.content.ActivityNotFoundException ex) {
-                Toast.makeText(menu.this,
-                        "No tienes clientes de email instalados.", Toast.LENGTH_SHORT).show();
-            }
 
         }
 

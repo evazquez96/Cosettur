@@ -7,14 +7,20 @@ import android.widget.TextView;
 public class recuperar extends AppCompatActivity {
 TextView r1;
 TextView r2;
+    TextView r3;
+    TextView r4;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recuperar);
         r1=(TextView)findViewById(R.id.correo1);
-        r2=(TextView)findViewById(R.id.correo2);
 
+         r3=(TextView)findViewById(R.id.passw1);
+        r4=(TextView)findViewById(R.id.passw2);
         r1.setHint("    Correo electronico");
-        r2.setHint("    Confirmar Correo");
+
+        r3.setHint("    Nueva Contraseña");
+        r4.setHint("    Confirmar Contraseña");
+
     }
 }
