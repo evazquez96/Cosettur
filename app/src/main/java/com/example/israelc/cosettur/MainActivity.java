@@ -119,8 +119,9 @@ TextView aviso;
         public void llenarDatos() {
 
             if (result1.equals("1")) { Toast.makeText(MainActivity.this,"Bienvenido", Toast.LENGTH_SHORT).show();
-            Intent a = new Intent(MainActivity.this, menu.class);
-                startActivity(a);
+            Intent activi = new Intent(MainActivity.this, menu.class);
+            activi.putExtra("user",a);
+                startActivity(activi);
             } else {
 
                 Toast.makeText(MainActivity.this,"Usuario o contraseña incorrecta", Toast.LENGTH_SHORT).show();

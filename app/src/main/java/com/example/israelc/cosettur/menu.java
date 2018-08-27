@@ -29,10 +29,9 @@ import android.widget.TextView;
 
 import java.time.Instant;
 
-public class menu extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+public class menu extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-
+        TextView usuarito;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +50,14 @@ public class menu extends AppCompatActivity
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
+
+        String usuario = getIntent().getStringExtra("user");
+
+        usuarito = (TextView)findViewById(R.id.usurpador);
+
+        usuarito.setText("uhuduhdu");
+
+        System.out.println(usuario);
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
