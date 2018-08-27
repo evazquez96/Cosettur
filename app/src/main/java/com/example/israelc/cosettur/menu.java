@@ -34,7 +34,7 @@ import java.time.Instant;
 
 public class menu extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-        TextView usuarito;
+        TextView name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,8 +54,6 @@ public class menu extends AppCompatActivity implements NavigationView.OnNavigati
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        String usuario = getIntent().getStringExtra("user");
-
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
@@ -69,6 +67,9 @@ public class menu extends AppCompatActivity implements NavigationView.OnNavigati
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu, menu);
+        String usuario = getIntent().getStringExtra("user");
+        name = (TextView)findViewById(R.id.nameUser);
+        name.setText(usuario);
         return true;
     }
 

@@ -34,7 +34,6 @@
             android:textSize="27dp" />
 
 
-
     </LinearLayout>
     <ProgressBar
         android:id="@+id/progreso"
