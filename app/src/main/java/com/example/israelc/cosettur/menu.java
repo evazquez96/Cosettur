@@ -174,7 +174,7 @@ public class menu extends AppCompatActivity
 
         } else if (id == R.id.nav_send) {
 
-            String[] TO = {"cosettur.soporte@gmail.com"}; //aquí pon tu correo
+            String[] TO = {"atencionunitec@cosettur.com"}; //aquí pon tu correo
             String[] CC = {""};
             Intent emailIntent = new Intent(Intent.ACTION_SEND);
             emailIntent.setData(Uri.parse("mailto:"));

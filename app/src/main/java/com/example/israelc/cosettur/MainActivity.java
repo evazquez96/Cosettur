@@ -101,6 +101,8 @@ TextView aviso;
 
         @Override
         protected String doInBackground(String... strings) {
+
+
             if(conumirWs()){
                 return "ok";
             }else
