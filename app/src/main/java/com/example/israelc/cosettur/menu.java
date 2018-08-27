@@ -131,6 +131,7 @@ public class menu extends AppCompatActivity implements NavigationView.OnNavigati
             startActivity(pago);
 
         } else if (id == R.id.elgir) {
+
             Intent pago= new Intent(menu.this,camiones.class);
             startActivity(pago);
 
