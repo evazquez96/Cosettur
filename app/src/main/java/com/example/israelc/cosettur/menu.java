@@ -105,8 +105,7 @@ public class menu extends AppCompatActivity
 
         if (id == R.id.inicio) {
             progreso();
-            LinearLayout con= (LinearLayout)findViewById(R.id.fr);
-            con.setVisibility(View.GONE);
+
             txt.setText("Bienvenido");
             WebView myWebView = (WebView) findViewById(R.id.we);
             myWebView.setVisibility(View.VISIBLE);
@@ -127,16 +126,8 @@ public class menu extends AppCompatActivity
 
         if (id == R.id.rutas) {
 
-            txt.setText("Rutas de servicio");
-            WebView myWebView = (WebView) findViewById(R.id.we);
-            myWebView.setVisibility(View.GONE);
-            LinearLayout con= (LinearLayout)findViewById(R.id.fr);
-            con.setVisibility(View.VISIBLE);
-
-            BlankFragment ini = new BlankFragment();
-            FragmentTransaction transaction= getSupportFragmentManager().beginTransaction();
-            transaction.replace(R.id.contenedor,ini);
-            transaction.commit();
+            Intent pago= new Intent(menu.this,rutas.class);
+            startActivity(pago);
 
         } else if (id == R.id.elgir) {
             Intent pago= new Intent(menu.this,camiones.class);
@@ -145,8 +136,6 @@ public class menu extends AppCompatActivity
         }
     else if (id == R.id.suscribir) {
             progreso();
-            LinearLayout con= (LinearLayout)findViewById(R.id.fr);
-            con.setVisibility(View.GONE);
             txt.setText("Bienvenido");
             WebView myWebView = (WebView) findViewById(R.id.we);
             myWebView.setVisibility(View.VISIBLE);
@@ -158,8 +147,7 @@ public class menu extends AppCompatActivity
         else if (id == R.id.nav_share) {
 
             progreso();
-            LinearLayout con= (LinearLayout)findViewById(R.id.fr);
-            con.setVisibility(View.GONE);
+
             txt.setText("Bienvenido");
             WebView myWebView = (WebView) findViewById(R.id.we);
             myWebView.setVisibility(View.VISIBLE);
