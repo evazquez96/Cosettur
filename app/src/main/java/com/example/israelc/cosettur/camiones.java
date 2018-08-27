@@ -21,7 +21,7 @@ public class camiones extends AppCompatActivity {
     ImageView regre;
     ImageView imagen;
     WebView myWebView;
-    String[] element = {"","Naucalpan","Tlanepantla","Coacalco","C.Izcalli"};
+    String[] element = {"Seleccione una ruta","Naucalpan","Tlanepantla-Valle Dorado","Jardines del Recuerdo","Villas de la hacienda","Coacalco","C.Izcalli"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,15 +58,15 @@ public class camiones extends AppCompatActivity {
                        Toast.makeText(camiones.this, "naucalpan", Toast.LENGTH_LONG).show();
                        imagen.setVisibility(View.GONE);
                        myWebView.setWebViewClient(new WebViewClient());
-                       myWebView.loadUrl("https://drive.google.com/open?id=1n09RFLirEIMssKE8xqU3YxxijCd-3Zmh");
+                       myWebView.loadUrl("https://drive.google.com/open?id=1ExQJ2IABNMWxoPTMwVVxsOO95__tmpco");
                        break;
-                   case "Tlanepantla":
+                   case "Tlanepantla-Valle Dorado":
 
-                       Toast.makeText(camiones.this, "No esta Diponible la informacion", Toast.LENGTH_LONG).show();
+                       Toast.makeText(camiones.this, "Tlanepantla-Valle Dorado", Toast.LENGTH_LONG).show();
                        imagen.setVisibility(View.GONE);
-                      // Uri uri1 = Uri.parse("https://drive.google.com/open?id=1n09RFLirEIMssKE8xqU3YxxijCd-3Zmh");
-                       //Intent intent1 = new Intent(Intent.ACTION_VIEW, uri1);
-                      // startActivity(intent1);
+                       imagen.setVisibility(View.GONE);
+                       myWebView.setWebViewClient(new WebViewClient());
+                       myWebView.loadUrl("https://drive.google.com/open?id=1Q1I-v8dqtxHQuaqAtm-BjekRwQ2VMJjT");
                            break;
                    case "Coacalco":
 
@@ -80,7 +80,21 @@ public class camiones extends AppCompatActivity {
                        Toast.makeText(camiones.this, "C.Izcalli", Toast.LENGTH_LONG).show();
                        imagen.setVisibility(View.GONE);
                        myWebView.setWebViewClient(new WebViewClient());
-                       myWebView.loadUrl("https://drive.google.com/open?id=1n09RFLirEIMssKE8xqU3YxxijCd-3Zmh");
+                       myWebView.loadUrl("https://drive.google.com/open?id=1hPkMxXtMebJPn_Li4zyEH14uLiUfsOpG");
+                       break;
+                   case "Jardines del Recuerdo":
+                       Toast.makeText(camiones.this, "Jardines del Recuerdo", Toast.LENGTH_LONG).show();
+                       imagen.setVisibility(View.GONE);
+                       myWebView.setWebViewClient(new WebViewClient());
+                       myWebView.loadUrl("https://drive.google.com/open?id=1DoaWLm5JFu0BpJkh-dbE-k7IlJsyIhCV");
+
+                       break;
+                   case "Villas de la hacienda":
+                       Toast.makeText(camiones.this, "Jardines del Recuerdo", Toast.LENGTH_LONG).show();
+                       imagen.setVisibility(View.GONE);
+                       myWebView.setWebViewClient(new WebViewClient());
+                       myWebView.loadUrl("https://drive.google.com/open?id=1-IFJuU4QflIUb2dKuKhuoGqJZqzPipPP");
+
                        break;
                    case "":
                        imagen.setVisibility(View.VISIBLE);

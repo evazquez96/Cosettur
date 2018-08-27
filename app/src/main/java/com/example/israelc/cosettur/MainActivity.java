@@ -101,6 +101,8 @@ TextView aviso;
 
         @Override
         protected String doInBackground(String... strings) {
+
+
             if(conumirWs()){
                 return "ok";
             }else
@@ -121,8 +123,9 @@ TextView aviso;
         public void llenarDatos() {
 
             if (result1.equals("1")) { Toast.makeText(MainActivity.this,"Bienvenido", Toast.LENGTH_SHORT).show();
-            Intent a = new Intent(MainActivity.this, menu.class);
-                startActivity(a);
+            Intent activi = new Intent(MainActivity.this, menu.class);
+            activi.putExtra("user",a);
+                startActivity(activi);
             } else {
 
                 Toast.makeText(MainActivity.this,"Usuario o contraseña incorrecta", Toast.LENGTH_SHORT).show();
@@ -172,7 +175,7 @@ mein.setOnClickListener(new View.OnClickListener() {
 
                 asyncBitacora ejec =new asyncBitacora();
                 ejec.execute();
-                progreso();
+
 
             }
 
@@ -184,27 +187,9 @@ mein.setOnClickListener(new View.OnClickListener() {
 recuperar.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
-       // Intent rec= new Intent(MainActivity.this,recuperar.class);
-      //  startActivity(rec);
-Intent email= new Intent(Intent.ACTION_SEND);
-        String[] TO = {"superisraelsaya777@gmail.com"}; //aquí pon tu correo
-        String[] CC = {""};
-        Intent emailIntent = new Intent(Intent.ACTION_SEND);
-        emailIntent.setData(Uri.parse("mailto:"));
-        emailIntent.setType("text/plain");
-        emailIntent.putExtra(Intent.EXTRA_EMAIL, TO);
-        emailIntent.putExtra(Intent.EXTRA_CC, CC);
-// Esto podrás modificarlo si quieres, el asunto y el cuerpo del mensaje
-        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "recuperacion de contraseña");
-        emailIntent.putExtra(Intent.EXTRA_TEXT, "Solicito mi Contraseña");
+      Intent rec= new Intent(MainActivity.this,recuperar.class);
+       startActivity(rec);
 
-        try {
-            startActivity(Intent.createChooser(emailIntent, "Enviar email..."));
-            finish();
-        } catch (android.content.ActivityNotFoundException ex) {
-            Toast.makeText(MainActivity.this,
-                    "No tienes clientes de email instalados.", Toast.LENGTH_SHORT).show();
-        }
 
 
     }

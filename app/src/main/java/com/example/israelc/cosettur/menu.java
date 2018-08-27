@@ -32,10 +32,9 @@ import android.widget.Toast;
 
 import java.time.Instant;
 
-public class menu extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+public class menu extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-
+        TextView usuarito;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +53,14 @@ public class menu extends AppCompatActivity
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
+
+        String usuario = getIntent().getStringExtra("user");
+
+        usuarito = (TextView)findViewById(R.id.usurpador);
+
+        usuarito.setText("uhuduhdu");
+
+        System.out.println(usuario);
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
@@ -105,8 +112,7 @@ public class menu extends AppCompatActivity
 
         if (id == R.id.inicio) {
             progreso();
-            LinearLayout con= (LinearLayout)findViewById(R.id.fr);
-            con.setVisibility(View.GONE);
+
             txt.setText("Bienvenido");
             WebView myWebView = (WebView) findViewById(R.id.we);
             myWebView.setVisibility(View.VISIBLE);
@@ -119,41 +125,16 @@ public class menu extends AppCompatActivity
 
         if (id == R.id.pago) {
 
-           // Intent pagar= new Intent(menu.this,Paypal.class);
-            //startActivity(pagar);
-            String[] TO = {"cosettur.sopòrte@gmail.com"}; //aquí pon tu correo
-            String[] CC = {""};
-            Intent emailIntent = new Intent(Intent.ACTION_SEND);
-            emailIntent.setData(Uri.parse("mailto:"));
-            emailIntent.setType("text/plain");
-            emailIntent.putExtra(Intent.EXTRA_EMAIL, TO);
-            emailIntent.putExtra(Intent.EXTRA_CC, CC);
-// Esto podrás modificarlo si quieres, el asunto y el cuerpo del mensaje
-            emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Pago");
-            emailIntent.putExtra(Intent.EXTRA_TEXT, "Solicitud orden de pago");
+           Intent pagar= new Intent(menu.this,Paypal.class);
+            startActivity(pagar);
 
-            try {
-                startActivity(Intent.createChooser(emailIntent, "Enviar email..."));
-                finish();
-            } catch (android.content.ActivityNotFoundException ex) {
-                Toast.makeText(menu.this,
-                        "No tienes clientes de email instalados.", Toast.LENGTH_SHORT).show();
-            }
 
         }
 
         if (id == R.id.rutas) {
 
-            txt.setText("Rutas de servicio");
-            WebView myWebView = (WebView) findViewById(R.id.we);
-            myWebView.setVisibility(View.GONE);
-            LinearLayout con= (LinearLayout)findViewById(R.id.fr);
-            con.setVisibility(View.VISIBLE);
-
-            BlankFragment ini = new BlankFragment();
-            FragmentTransaction transaction= getSupportFragmentManager().beginTransaction();
-            transaction.replace(R.id.contenedor,ini);
-            transaction.commit();
+            Intent pago= new Intent(menu.this,rutas.class);
+            startActivity(pago);
 
         } else if (id == R.id.elgir) {
             Intent pago= new Intent(menu.this,camiones.class);
@@ -162,8 +143,6 @@ public class menu extends AppCompatActivity
         }
     else if (id == R.id.suscribir) {
             progreso();
-            LinearLayout con= (LinearLayout)findViewById(R.id.fr);
-            con.setVisibility(View.GONE);
             txt.setText("Bienvenido");
             WebView myWebView = (WebView) findViewById(R.id.we);
             myWebView.setVisibility(View.VISIBLE);
@@ -175,8 +154,7 @@ public class menu extends AppCompatActivity
         else if (id == R.id.nav_share) {
 
             progreso();
-            LinearLayout con= (LinearLayout)findViewById(R.id.fr);
-            con.setVisibility(View.GONE);
+
             txt.setText("Bienvenido");
             WebView myWebView = (WebView) findViewById(R.id.we);
             myWebView.setVisibility(View.VISIBLE);
@@ -191,7 +169,7 @@ public class menu extends AppCompatActivity
 
         } else if (id == R.id.nav_send) {
 
-            String[] TO = {"cosettur.soporte@gmail.com"}; //aquí pon tu correo
+            String[] TO = {"atencionunitec@cosettur.com"}; //aquí pon tu correo
             String[] CC = {""};
             Intent emailIntent = new Intent(Intent.ACTION_SEND);
             emailIntent.setData(Uri.parse("mailto:"));
