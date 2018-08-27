@@ -15,11 +15,11 @@
         <item
             android:id="@+id/elgir"
             android:icon="@drawable/autoss"
-            android:title="Disponibilidad" />
+            android:title="Cuotas" />
         <item
             android:id="@+id/suscribir"
             android:icon="@drawable/bitacora"
-            android:title="Suscribir" />
+            android:title="Inscribir" />
         <item
             android:id="@+id/pago"
             android:icon="@drawable/paypal"
@@ -37,6 +37,14 @@
                 android:id="@+id/nav_send"
                 android:icon="@drawable/mails"
                 android:title="Enviar correo" />
+            <item
+                android:id="@+id/whats"
+                android:icon="@drawable/wa"
+                android:title="WhatsApp line-1" />
+            <item
+                android:id="@+id/whats2"
+                android:icon="@drawable/wa"
+                android:title="WhatsApp line-2" />
         </menu>
     </item>
 

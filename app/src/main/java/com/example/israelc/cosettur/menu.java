@@ -2,6 +2,7 @@ package com.example.israelc.cosettur;
 
 import android.annotation.SuppressLint;
 import android.app.Fragment;
+import android.content.ComponentName;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Handler;
@@ -11,6 +12,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.telephony.PhoneNumberUtils;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -26,6 +28,7 @@ import android.webkit.WebViewClient;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.time.Instant;
 
@@ -84,7 +87,7 @@ public class menu extends AppCompatActivity implements NavigationView.OnNavigati
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            Intent mis= new Intent(menu.this,mision.class);
+            Intent mis= new Intent(menu.this,vision.class);
             startActivity(mis);
 
             return true;
@@ -109,8 +112,7 @@ public class menu extends AppCompatActivity implements NavigationView.OnNavigati
 
         if (id == R.id.inicio) {
             progreso();
-            LinearLayout con= (LinearLayout)findViewById(R.id.fr);
-            con.setVisibility(View.GONE);
+
             txt.setText("Bienvenido");
             WebView myWebView = (WebView) findViewById(R.id.we);
             myWebView.setVisibility(View.VISIBLE);
@@ -123,33 +125,24 @@ public class menu extends AppCompatActivity implements NavigationView.OnNavigati
 
         if (id == R.id.pago) {
 
-            Intent pagar= new Intent(menu.this,Paypal.class);
+           Intent pagar= new Intent(menu.this,Paypal.class);
             startActivity(pagar);
+
 
         }
 
         if (id == R.id.rutas) {
 
-            txt.setText("Rutas de servicio");
-            WebView myWebView = (WebView) findViewById(R.id.we);
-            myWebView.setVisibility(View.GONE);
-            LinearLayout con= (LinearLayout)findViewById(R.id.fr);
-            con.setVisibility(View.VISIBLE);
-
-            BlankFragment ini = new BlankFragment();
-            FragmentTransaction transaction= getSupportFragmentManager().beginTransaction();
-            transaction.replace(R.id.contenedor,ini);
-            transaction.commit();
+            Intent pago= new Intent(menu.this,rutas.class);
+            startActivity(pago);
 
         } else if (id == R.id.elgir) {
-            Intent elcamion= new Intent(menu.this,camion.class);
-            startActivity(elcamion);
+            Intent pago= new Intent(menu.this,camiones.class);
+            startActivity(pago);
 
         }
     else if (id == R.id.suscribir) {
             progreso();
-            LinearLayout con= (LinearLayout)findViewById(R.id.fr);
-            con.setVisibility(View.GONE);
             txt.setText("Bienvenido");
             WebView myWebView = (WebView) findViewById(R.id.we);
             myWebView.setVisibility(View.VISIBLE);
@@ -161,8 +154,7 @@ public class menu extends AppCompatActivity implements NavigationView.OnNavigati
         else if (id == R.id.nav_share) {
 
             progreso();
-            LinearLayout con= (LinearLayout)findViewById(R.id.fr);
-            con.setVisibility(View.GONE);
+
             txt.setText("Bienvenido");
             WebView myWebView = (WebView) findViewById(R.id.we);
             myWebView.setVisibility(View.VISIBLE);
@@ -176,7 +168,8 @@ public class menu extends AppCompatActivity implements NavigationView.OnNavigati
 
 
         } else if (id == R.id.nav_send) {
-            String[] TO = {"cosseru@gmail.com"}; //aquí pon tu correo
+
+            String[] TO = {"atencionunitec@cosettur.com"}; //aquí pon tu correo
             String[] CC = {""};
             Intent emailIntent = new Intent(Intent.ACTION_SEND);
             emailIntent.setData(Uri.parse("mailto:"));
@@ -191,10 +184,25 @@ public class menu extends AppCompatActivity implements NavigationView.OnNavigati
                 startActivity(Intent.createChooser(emailIntent, "Enviar email..."));
                 finish();
             } catch (android.content.ActivityNotFoundException ex) {
-                Intent intent2 = new Intent(menu.this,menu.class);
-                startActivity(intent2);
+                Toast.makeText(menu.this,
+                        "No tienes clientes de email instalados.", Toast.LENGTH_SHORT).show();
             }
 
+
+
+
+        }
+        else if (id == R.id.whats) {
+            Intent _intencion = new Intent("android.intent.action.MAIN");
+            _intencion.setComponent(new ComponentName("com.whatsapp","com.whatsapp.Conversation"));
+            _intencion.putExtra("jid", PhoneNumberUtils.stripSeparators("521" + "5531072936")+"@s.whatsapp.net");
+            startActivity(_intencion);
+        }
+        else if (id == R.id.whats2) {
+            Intent _intencion = new Intent("android.intent.action.MAIN");
+            _intencion.setComponent(new ComponentName("com.whatsapp","com.whatsapp.Conversation"));
+            _intencion.putExtra("jid", PhoneNumberUtils.stripSeparators("521" + "5566801443")+"@s.whatsapp.net");
+            startActivity(_intencion);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

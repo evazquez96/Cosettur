@@ -11,20 +11,20 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="64dp"
+        android:layout_height="50dp"
         android:background="@android:color/background_light"
         android:orientation="horizontal">
 
         <LinearLayout
-            android:layout_width="91dp"
+            android:layout_width="63dp"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
             <ImageView
                 android:id="@+id/imageView9"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/cosetturs" />
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/loc" />
         </LinearLayout>
 
         <LinearLayout
@@ -54,6 +54,16 @@
         android:text="De click en procesar orden para crear una nueva orden de pago"
         android:textSize="18dp" />
 
+
+    <Spinner
+        android:id="@+id/rutass"
+        android:layout_width="280dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:background="@android:drawable/btn_dropdown" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
 
     <Button
         android:id="@+id/order"

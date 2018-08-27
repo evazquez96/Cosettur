@@ -25,6 +25,8 @@ import org.ksoap2.serialization.SoapPrimitive;
 import org.ksoap2.serialization.SoapSerializationEnvelope;
 import org.ksoap2.transport.HttpTransportSE;
 
+import java.net.URL;
+
 
 public class MainActivity extends AppCompatActivity {
 Button registrar;
@@ -99,6 +101,8 @@ TextView aviso;
 
         @Override
         protected String doInBackground(String... strings) {
+
+
             if(conumirWs()){
                 return "ok";
             }else
@@ -171,7 +175,7 @@ mein.setOnClickListener(new View.OnClickListener() {
 
                 asyncBitacora ejec =new asyncBitacora();
                 ejec.execute();
-                progreso();
+
 
             }
 
@@ -183,8 +187,11 @@ mein.setOnClickListener(new View.OnClickListener() {
 recuperar.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
-        Intent rec= new Intent(MainActivity.this,recuperar.class);
-        startActivity(rec);
+      Intent rec= new Intent(MainActivity.this,recuperar.class);
+       startActivity(rec);
+
+
+
     }
 });
 aviso.setOnClickListener(new View.OnClickListener() {

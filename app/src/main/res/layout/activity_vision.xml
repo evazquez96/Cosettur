@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/background_light"
     tools:context=".vision">
+
     <ScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
@@ -23,7 +25,7 @@
                     android:id="@+id/imageView7"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/cosetturs" />
+                    app:srcCompat="@drawable/logo1" />
             </LinearLayout>
 
             <LinearLayout
@@ -46,9 +48,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="37dp"
                         android:gravity="center"
-                        android:textSize="17dp"
+                        android:text="EXPERIENCIA"
                         android:textColor="@android:color/holo_blue_dark"
-                        android:text="EXPERIENCIA" />
+                        android:textSize="17dp" />
 
                     <TextView
                         android:id="@+id/textView42"
