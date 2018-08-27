@@ -56,12 +56,6 @@ public class menu extends AppCompatActivity implements NavigationView.OnNavigati
 
         String usuario = getIntent().getStringExtra("user");
 
-        usuarito = (TextView)findViewById(R.id.usurpador);
-
-        usuarito.setText("uhuduhdu");
-
-        System.out.println(usuario);
-
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
