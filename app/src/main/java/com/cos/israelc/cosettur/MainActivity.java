@@ -1,11 +1,9 @@
-package com.example.israelc.cosettur;
+package com.cos.israelc.cosettur;
 
 import android.annotation.SuppressLint;
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Handler;
@@ -24,8 +22,6 @@ import org.ksoap2.serialization.SoapObject;
 import org.ksoap2.serialization.SoapPrimitive;
 import org.ksoap2.serialization.SoapSerializationEnvelope;
 import org.ksoap2.transport.HttpTransportSE;
-
-import java.net.URL;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -246,6 +242,14 @@ aviso.setOnClickListener(new View.OnClickListener() {
                 return ++progress;
             }
         }).start();
+    }
+    @Override
+    public void onBackPressed() {
+        finish();
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_HOME);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
     }
 
 }

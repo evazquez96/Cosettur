@@ -1,4 +1,4 @@
-package com.example.israelc.cosettur.helpers;
+package com.cos.israelc.cosettur.helpers;
 
 public class Dream {
 

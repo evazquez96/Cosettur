@@ -1,4 +1,4 @@
-package com.example.israelc.cosettur;
+package com.cos.israelc.cosettur;
 
 import android.content.Intent;
 import android.os.AsyncTask;

@@ -6,6 +6,17 @@
         android:orderInCategory="100"
         android:title="Acerca de nosotros"
         app:showAsAction="never" />
+
+    <item
+    android:id="@+id/contrato"
+    android:orderInCategory="100"
+    android:title="Contrato"
+    app:showAsAction="never" />
+    <item
+        android:id="@+id/pal"
+        android:orderInCategory="100"
+        android:title="Pagar"
+        app:showAsAction="never" />
     <item
         android:id="@+id/cerrar"
         android:orderInCategory="100"

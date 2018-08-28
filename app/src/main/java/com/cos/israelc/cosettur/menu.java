@@ -1,17 +1,13 @@
-package com.example.israelc.cosettur;
+package com.cos.israelc.cosettur;
 
 import android.annotation.SuppressLint;
-import android.app.Fragment;
 import android.content.ComponentName;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Handler;
-import android.support.v4.app.FragmentTransaction;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.telephony.PhoneNumberUtils;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -25,12 +21,9 @@ import android.view.MenuItem;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import java.time.Instant;
 
 public class menu extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -91,6 +84,18 @@ public class menu extends AppCompatActivity implements NavigationView.OnNavigati
             Intent mis= new Intent(menu.this,MainActivity.class);
             startActivity(mis);
 
+            return true;
+        }
+        if (id == R.id.contrato) {
+            Uri uri = Uri.parse("https://doc-0k-9g-docs.googleusercontent.com/docs/securesc/5tros3i3t3f5mfqhu78m4oodrhp3hksl/pkrgjnjhahpj84sqdf42tagmtc9jvp4u/1535486400000/00102860272948006612/12503108819792786313/1DSmfvo13PD82eE0q2Wekb-DHoue5g340?e=download&nonce=t38mv490t2o4u&user=12503108819792786313&hash=u17pvqersmp9tqkfmlra8rup762t3bqv");
+            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+            startActivity(intent);
+            return true;
+        }
+        if (id == R.id.pal) {
+            Uri uri = Uri.parse("https://doc-0k-b4-docs.googleusercontent.com/docs/securesc/5tros3i3t3f5mfqhu78m4oodrhp3hksl/3ojo1jds8pm725h75g2eq8dn4gq2iv43/1535486400000/12503108819792786313/12503108819792786313/1spkd3bZ_cPDmtuCtDQCzBV4qC9yrpvF4?e=download");
+            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+            startActivity(intent);
             return true;
         }
 

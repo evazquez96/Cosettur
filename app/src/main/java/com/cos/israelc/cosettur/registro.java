@@ -1,12 +1,10 @@
-package com.example.israelc.cosettur;
+package com.cos.israelc.cosettur;
 
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.util.Patterns;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -14,21 +12,11 @@ import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.Toast;
 
-import com.example.israelc.cosettur.helpers.Bitacora;
-import com.example.israelc.cosettur.helpers.Dream;
-import com.example.israelc.cosettur.helpers.Registro;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 import org.ksoap2.SoapEnvelope;
 import org.ksoap2.serialization.SoapObject;
 import org.ksoap2.serialization.SoapPrimitive;
 import org.ksoap2.serialization.SoapSerializationEnvelope;
 import org.ksoap2.transport.HttpTransportSE;
-
-import java.util.LinkedList;
-import java.util.regex.Pattern;
 
 public class registro extends AppCompatActivity {
     Button inicio;

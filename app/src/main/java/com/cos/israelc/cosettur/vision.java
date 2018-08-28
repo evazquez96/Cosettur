@@ -1,13 +1,13 @@
-package com.example.israelc.cosettur;
+package com.cos.israelc.cosettur;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class mision extends AppCompatActivity {
+public class vision extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mision);
+        setContentView(R.layout.activity_vision);
     }
 }
