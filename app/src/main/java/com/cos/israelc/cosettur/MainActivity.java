@@ -155,7 +155,7 @@ mein.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
 
-
+        Toast.makeText(MainActivity.this,"Espere un Momento..,", Toast.LENGTH_SHORT).show();
         if (usuarios.getText().toString().equals("")){
             usuarios.setHint("*Campo obligatorio");
         } else {

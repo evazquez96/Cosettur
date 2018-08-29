@@ -10,12 +10,12 @@
     <item
     android:id="@+id/contrato"
     android:orderInCategory="100"
-    android:title="Contrato"
+    android:title="Descargar Contrato"
     app:showAsAction="never" />
     <item
         android:id="@+id/pal"
         android:orderInCategory="100"
-        android:title="Pagar"
+        android:title="Referencia Bancaria"
         app:showAsAction="never" />
     <item
         android:id="@+id/cerrar"

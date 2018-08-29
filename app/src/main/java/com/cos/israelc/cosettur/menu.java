@@ -93,8 +93,7 @@ public class menu extends AppCompatActivity implements NavigationView.OnNavigati
             return true;
         }
         if (id == R.id.pal) {
-            Uri uri = Uri.parse("https://doc-0k-b4-docs.googleusercontent.com/docs/securesc/5tros3i3t3f5mfqhu78m4oodrhp3hksl/3ojo1jds8pm725h75g2eq8dn4gq2iv43/1535486400000/12503108819792786313/12503108819792786313/1spkd3bZ_cPDmtuCtDQCzBV4qC9yrpvF4?e=download");
-            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+            Intent intent = new Intent(menu.this,cuentas.class);
             startActivity(intent);
             return true;
         }

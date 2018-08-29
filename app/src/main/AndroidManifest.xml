@@ -14,8 +14,8 @@
         android:hardwareAccelerated="false"
         android:icon="@drawable/loc"
         android:label="CosetturApps"
-        android:roundIcon="@drawable/loc"
         android:largeHeap="true"
+        android:roundIcon="@drawable/loc"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
@@ -36,7 +36,8 @@
         <activity android:name=".mision" />
         <activity android:name=".camiones" />
         <activity android:name=".vision" />
-        <activity android:name=".Paypal"></activity>
+        <activity android:name=".Paypal" />
+        <activity android:name=".cuentas"></activity>
     </application>
 
 </manifest>
