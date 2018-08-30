@@ -87,7 +87,7 @@ public class menu extends AppCompatActivity implements NavigationView.OnNavigati
             return true;
         }
         if (id == R.id.contrato) {
-            Uri uri = Uri.parse("https://doc-0k-9g-docs.googleusercontent.com/docs/securesc/5tros3i3t3f5mfqhu78m4oodrhp3hksl/pkrgjnjhahpj84sqdf42tagmtc9jvp4u/1535486400000/00102860272948006612/12503108819792786313/1DSmfvo13PD82eE0q2Wekb-DHoue5g340?e=download&nonce=t38mv490t2o4u&user=12503108819792786313&hash=u17pvqersmp9tqkfmlra8rup762t3bqv");
+            Uri uri = Uri.parse("https://drive.google.com/open?id=1DSmfvo13PD82eE0q2Wekb-DHoue5g340");
             Intent intent = new Intent(Intent.ACTION_VIEW, uri);
             startActivity(intent);
             return true;
