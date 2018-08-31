@@ -23,6 +23,7 @@
         <item
             android:id="@+id/pago"
             android:icon="@drawable/paypal"
+            android:visible="false"
             android:title="Pagar Cuota" />
 
     </group>
