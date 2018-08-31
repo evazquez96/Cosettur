@@ -43,7 +43,6 @@ TextView aviso;
     private static final String accionSoap = "http://webservice.cosettur.com/login";
     // Fichero de definicion del servcio web
     private static final String url = "http://node37874-env-3073930.jl.serv.net.mx/UserWS?wsdl";
-
     private SoapPrimitive resultado;
 
     public boolean conumirWs() {
@@ -112,11 +111,12 @@ TextView aviso;
                     result1 = resultado.toString();
                     llenarDatos();
                 } catch (Exception e) {
-
+                    Toast.makeText(MainActivity.this,"Error de conexion Intente mas tarde", Toast.LENGTH_SHORT).show();
                 }
             }else{
                 Log.e("ERROR", "Error al consumir el webService");
                 System.out.println("Error al consumir");
+
             }
         }
 
