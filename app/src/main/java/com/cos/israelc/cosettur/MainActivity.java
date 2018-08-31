@@ -108,8 +108,12 @@ TextView aviso;
         @Override
         protected void onPostExecute(String result){
             if(result.equals("ok")){
-                result1 = resultado.toString();
-                llenarDatos();
+                try {
+                    result1 = resultado.toString();
+                    llenarDatos();
+                } catch (Exception e) {
+
+                }
             }else{
                 Log.e("ERROR", "Error al consumir el webService");
                 System.out.println("Error al consumir");
