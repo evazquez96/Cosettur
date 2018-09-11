@@ -18,8 +18,9 @@ ImageView atras;
             @Override
             public void onClick(View view) {
 
-                Intent neo= new Intent(rutas.this,menu.class);
-                startActivity(neo);
+              //  Intent neo= new Intent(rutas.this,menu.class);
+               // startActivity(neo);
+                finish();
 
             }
         });

@@ -36,8 +36,9 @@ public class camiones extends AppCompatActivity {
            @Override
            public void onClick(View v) {
 
-               Intent pago= new Intent(camiones.this,menu.class);
-               startActivity(pago);
+//               Intent pago= new Intent(camiones.this,menu.class);
+  //             startActivity(pago);
+               finish();
            }
        });
        spinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {

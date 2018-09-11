@@ -43,6 +43,7 @@ TextView aviso;
     private static final String accionSoap = "http://webservice.cosettur.com/login";
     // Fichero de definicion del servcio web
     private static final String url = "http://node37874-env-3073930.jl.serv.net.mx/UserWS?wsdl";
+
     private SoapPrimitive resultado;
 
     public boolean conumirWs() {
@@ -109,6 +110,7 @@ TextView aviso;
             if(result.equals("ok")){
                 try {
                     result1 = resultado.toString();
+
                     llenarDatos();
                 } catch (Exception e) {
                     Toast.makeText(MainActivity.this,"Error de conexion Intente mas tarde", Toast.LENGTH_SHORT).show();
@@ -122,10 +124,12 @@ TextView aviso;
 
         public void llenarDatos() {
 
-            if (result1.equals("1")) { Toast.makeText(MainActivity.this,"Bienvenido", Toast.LENGTH_SHORT).show();
+            if (result1.equals("1")) {
+                Toast.makeText(MainActivity.this,"Bienvenido", Toast.LENGTH_SHORT).show();
             Intent activi = new Intent(MainActivity.this, menu.class);
             activi.putExtra("user",a);
                 startActivity(activi);
+                finish();
             } else {
 
                 Toast.makeText(MainActivity.this,"Usuario o contraseña incorrecta", Toast.LENGTH_SHORT).show();
@@ -175,11 +179,10 @@ mein.setOnClickListener(new View.OnClickListener() {
 
                 asyncBitacora ejec =new asyncBitacora();
                 ejec.execute();
-
-
-            }
+                }
 
         }
+
 
     }
 });
@@ -192,6 +195,7 @@ recuperar.setOnClickListener(new View.OnClickListener() {
 
 
 
+
     }
 });
 aviso.setOnClickListener(new View.OnClickListener() {
@@ -200,6 +204,7 @@ aviso.setOnClickListener(new View.OnClickListener() {
         Uri uri = Uri.parse("https://www.cosettur.com/app/download/9959667419/Aviso+de+privacidad+Cosettur.pdf?t=1498142592");
         Intent intent = new Intent(Intent.ACTION_VIEW, uri);
         startActivity(intent);
+
     }
 });
 

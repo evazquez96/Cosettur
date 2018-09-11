@@ -110,12 +110,13 @@ public class recuperar extends AppCompatActivity {
 
         private void resultData() {
 
-            Intent w = new Intent(recuperar.this, MainActivity.class);
+           // Intent w = new Intent(recuperar.this, MainActivity.class);
 
             if (result1.equals("1")) {
 
                 Toast.makeText(recuperar.this,"Contraseña cambiada satisfactoriamente", Toast.LENGTH_LONG).show();
-                startActivity(w);
+                //startActivity(w);
+                finish();
 
             } else {
 

@@ -83,6 +83,7 @@ public class menu extends AppCompatActivity implements NavigationView.OnNavigati
         if (id == R.id.cerrar) {
             Intent mis= new Intent(menu.this,MainActivity.class);
             startActivity(mis);
+            finish();
 
             return true;
         }
