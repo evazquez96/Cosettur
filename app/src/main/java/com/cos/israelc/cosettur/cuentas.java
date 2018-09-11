@@ -17,8 +17,9 @@ public class cuentas extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent neo= new Intent(cuentas.this,menu.class);
-                startActivity(neo);
+               //Intent neo= new Intent(cuentas.this,menu.class);
+                //startActivity(neo);
+                finish();
 
             }
         });
