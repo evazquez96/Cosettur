@@ -22,17 +22,9 @@
             <ImageView
                 android:id="@+id/atras"
                 android:layout_width="match_parent"
-                android:layout_height="24dp"
+                android:layout_height="match_parent"
                 app:srcCompat="@drawable/arriw" />
 
-            <TextView
-
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="Atras"
-                android:textColor="@color/colorPrimary"
-                android:textSize="15dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -86,20 +78,21 @@
                 android:theme="@style/AppTheme.AppBarOverlay" />
         </LinearLayout>
 
+        <WebView
+            android:id="@+id/we"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/stilo">
+
+
+        </WebView>
+
         <ImageView
             android:id="@+id/in"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:visibility="gone"
             app:srcCompat="@drawable/autoss" />
-
-        <WebView
-            android:id="@+id/we"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-
-        </WebView>
 
     </LinearLayout>
 
