@@ -88,13 +88,14 @@ public class camiones extends AppCompatActivity {
 
                        break;
                    case "Villas de la hacienda":
-                       Toast.makeText(camiones.this, "Jardines del Recuerdo", Toast.LENGTH_LONG).show();
+                       Toast.makeText(camiones.this, "Villas de la hacienda", Toast.LENGTH_LONG).show();
                        imagen.setVisibility(View.GONE);
                        myWebView.setWebViewClient(new WebViewClient());
                        myWebView.loadUrl("https://drive.google.com/open?id=1-IFJuU4QflIUb2dKuKhuoGqJZqzPipPP");
 
                        break;
-                   case "":
+                   case "Seleccione una ruta":
+
                        imagen.setVisibility(View.VISIBLE);
                        break;
 
