@@ -110,22 +110,26 @@ TextView aviso;
             if(result.equals("ok")){
                 try {
                     result1 = resultado.toString();
+
                     llenarDatos();
                 } catch (Exception e) {
-
+                    Toast.makeText(MainActivity.this,"Error de conexion Intente mas tarde", Toast.LENGTH_SHORT).show();
                 }
             }else{
                 Log.e("ERROR", "Error al consumir el webService");
                 System.out.println("Error al consumir");
+
             }
         }
 
         public void llenarDatos() {
 
-            if (result1.equals("1")) { Toast.makeText(MainActivity.this,"Bienvenido", Toast.LENGTH_SHORT).show();
+            if (result1.equals("1")) {
+                Toast.makeText(MainActivity.this,"Bienvenido", Toast.LENGTH_SHORT).show();
             Intent activi = new Intent(MainActivity.this, menu.class);
             activi.putExtra("user",a);
                 startActivity(activi);
+                finish();
             } else {
 
                 Toast.makeText(MainActivity.this,"Usuario o contraseña incorrecta", Toast.LENGTH_SHORT).show();
@@ -175,20 +179,21 @@ mein.setOnClickListener(new View.OnClickListener() {
 
                 asyncBitacora ejec =new asyncBitacora();
                 ejec.execute();
-
-
-            }
+                }
 
         }
 
+
     }
 });
+
 
 recuperar.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
       Intent rec= new Intent(MainActivity.this,recuperar.class);
        startActivity(rec);
+
 
 
 
@@ -200,6 +205,7 @@ aviso.setOnClickListener(new View.OnClickListener() {
         Uri uri = Uri.parse("https://www.cosettur.com/app/download/9959667419/Aviso+de+privacidad+Cosettur.pdf?t=1498142592");
         Intent intent = new Intent(Intent.ACTION_VIEW, uri);
         startActivity(intent);
+
     }
 });
 
