@@ -37,7 +37,8 @@
         <activity android:name=".camiones" />
         <activity android:name=".vision" />
         <activity android:name=".Paypal" />
-        <activity android:name=".cuentas"></activity>
+        <activity android:name=".cuentas" />
+        <activity android:name=".suscribir"></activity>
     </application>
 
 </manifest>
