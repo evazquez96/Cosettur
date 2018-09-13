@@ -15,19 +15,21 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-
-            android:layout_height="7mm"
-            android:background="@drawable/cabezal"
+            android:layout_height="10mm"
+            android:background="@android:color/background_light"
             android:orientation="horizontal">
 
-
+            <LinearLayout
+                android:layout_width="10mm"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/atr"
-                    android:layout_width="8mm"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     app:srcCompat="@drawable/arriw" />
-
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"

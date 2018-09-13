@@ -38,11 +38,7 @@
         <activity android:name=".vision" />
         <activity android:name=".Paypal" />
         <activity android:name=".cuentas" />
-<<<<<<< HEAD
         <activity android:name=".suscribir"></activity>
-=======
-        <activity android:name=".Horario"></activity>
->>>>>>> 511a358025d4076ef36697977f21158d00dcc84e
     </application>
 
 </manifest>
