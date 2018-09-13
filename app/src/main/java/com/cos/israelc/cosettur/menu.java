@@ -144,6 +144,7 @@ public class menu extends AppCompatActivity implements NavigationView.OnNavigati
         }
     else if (id == R.id.suscribir) {
 <<<<<<< HEAD
+<<<<<<< HEAD
             Intent pago= new Intent(menu.this,suscribir.class);
             startActivity(pago);
            // progreso();
@@ -157,13 +158,20 @@ public class menu extends AppCompatActivity implements NavigationView.OnNavigati
 =======
 
 
+=======
+            progreso();
+            txt.setText("Bienvenido");
+>>>>>>> parent of 228cd67... inscribir
             WebView myWebView = (WebView) findViewById(R.id.we);
             myWebView.setVisibility(View.VISIBLE);
             WebSettings webSettings = myWebView.getSettings();
             webSettings.setJavaScriptEnabled(true);
             myWebView.setWebViewClient(new WebViewClient());
             myWebView.loadUrl("https://docs.google.com/forms/d/e/1FAIpQLSdy4eBAykFIpHNLdn3HRlcENBd39Cikht8vUzIC99hP0OTmvg/viewform?usp=sf_link");
+<<<<<<< HEAD
 >>>>>>> 511a358025d4076ef36697977f21158d00dcc84e
+=======
+>>>>>>> parent of 228cd67... inscribir
         }
         else if (id == R.id.nav_share) {
 
