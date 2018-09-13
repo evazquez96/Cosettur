@@ -108,12 +108,12 @@ public class menu extends AppCompatActivity implements NavigationView.OnNavigati
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        TextView txt=(TextView)findViewById(R.id.texto);
+
 
         if (id == R.id.inicio) {
             progreso();
 
-            txt.setText("Bienvenido");
+
             WebView myWebView = (WebView) findViewById(R.id.we);
             myWebView.setVisibility(View.VISIBLE);
             WebSettings webSettings = myWebView.getSettings();
@@ -158,7 +158,7 @@ public class menu extends AppCompatActivity implements NavigationView.OnNavigati
 
             progreso();
 
-            txt.setText("Bienvenido");
+
             WebView myWebView = (WebView) findViewById(R.id.we);
             myWebView.setVisibility(View.VISIBLE);
             WebSettings webSettings = myWebView.getSettings();

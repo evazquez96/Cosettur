@@ -23,26 +23,19 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:background="@android:color/background_light"
+                    android:layout_height="8mm"
+                    android:background="@drawable/header"
                     android:orientation="horizontal">
 
-                    <LinearLayout
-                        android:layout_width="77dp"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical">
-
-                        <ImageView
+                         <ImageView
                             android:id="@+id/imageView2"
                             android:layout_width="79dp"
-                            android:layout_height="match_parent"
+                            android:layout_height="6.5mm"
+                             android:layout_gravity="center"
                             app:srcCompat="@drawable/logo1" />
-                    </LinearLayout>
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical">
+
+
 
                         <ProgressBar
                             android:id="@+id/progreso"
@@ -59,7 +52,7 @@
                             android:text="Iniciar Sesion        "
                             android:textColor="#393d42"
                             android:textSize="27dp" />
-                    </LinearLayout>
+
                 </LinearLayout>
 
                 <LinearLayout
