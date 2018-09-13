@@ -163,9 +163,14 @@ public class recuperar extends AppCompatActivity {
                 if (r4.getText().toString().equals("")) {
                     r4.setHint("*Campo obligatorio");
                 } else {
-
-                    getData();
-
+                    if(r3.getText().toString().equals(r4.getText().toString())) {
+                        getData();
+                    } else {
+                        r3.setText("");
+                        r4.setText("");
+                        r3.setHint("*Los campos no coinciden");
+                        r4.setHint("*Los campos no coinciden");
+                    }
                 }
 
             }
