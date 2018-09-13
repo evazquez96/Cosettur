@@ -38,7 +38,8 @@
         <activity android:name=".vision" />
         <activity android:name=".Paypal" />
         <activity android:name=".cuentas" />
-        <activity android:name=".suscribir"></activity>
+        <activity android:name=".suscribir" />
+        <activity android:name=".horario"></activity>
     </application>
 
 </manifest>

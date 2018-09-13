@@ -111,7 +111,7 @@ public class menu extends AppCompatActivity implements NavigationView.OnNavigati
 
 
         if (id == R.id.inicio) {
-            progreso();
+
 
 
             WebView myWebView = (WebView) findViewById(R.id.we);
@@ -143,16 +143,17 @@ public class menu extends AppCompatActivity implements NavigationView.OnNavigati
 
         }
     else if (id == R.id.suscribir) {
+            Intent pago= new Intent(menu.this,suscribir.class);
+            startActivity(pago);
 
 
-
-            WebView myWebView = (WebView) findViewById(R.id.we);
+          /*  WebView myWebView = (WebView) findViewById(R.id.we);
             myWebView.setVisibility(View.VISIBLE);
             WebSettings webSettings = myWebView.getSettings();
             webSettings.setJavaScriptEnabled(true);
             myWebView.setWebViewClient(new WebViewClient());
             myWebView.loadUrl("https://docs.google.com/forms/d/e/1FAIpQLSdy4eBAykFIpHNLdn3HRlcENBd39Cikht8vUzIC99hP0OTmvg/viewform?usp=sf_link");
-
+*/
         }
         else if (id == R.id.nav_share) {
 

@@ -169,13 +169,21 @@
 
                                 <Button
                                     android:id="@+id/in"
-                                    android:layout_width="192dp"
+                                    android:layout_width="140dp"
                                     android:layout_height="34dp"
                                     android:layout_centerVertical="true"
                                     android:background="@drawable/botones"
                                     android:text="Iniciar sesion"
                                     android:textColor="@android:color/background_light" />
-
+                                <Button
+                                    android:id="@+id/re"
+                                    android:layout_width="140dp"
+                                    android:layout_height="34dp"
+                                    android:layout_gravity="center"
+                                    android:textSize="15dp"
+                                    android:background="@drawable/buton2"
+                                    android:text="¡¡registrate!!"
+                                    android:textColor="@android:color/background_light" />
 
                             </LinearLayout>
 
@@ -203,15 +211,7 @@
                     android:textColor="@color/colorPrimary"
                     android:textSize="18dp" />
 
-                <Button
-                    android:id="@+id/re"
-                    android:layout_width="150dp"
-                    android:layout_height="34dp"
-                    android:layout_gravity="center"
-                    android:textSize="20dp"
-                    android:background="@android:color/transparent"
-                    android:text="¡¡registrate!!"
-                    android:textColor="#800080" />
+
                 <!--- <Button
                      android:id="@+id/goo"
                      android:layout_width="250dp"
