@@ -42,63 +42,86 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/stilo"
+            android:background="@drawable/hoj"
             android:orientation="vertical" >
 
 
-            <EditText
-                android:id="@+id/cor"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="7mm"
-                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:layout_margin="18dp"
+                android:background="@android:color/background_light"
+                android:orientation="vertical">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_gravity="center"
                 android:layout_margin="10dp"
-                android:background="@drawable/conotor"
-                android:inputType="textEmailAddress" />
-
-
-
-            <EditText
-                android:id="@+id/padre"
                 android:layout_width="match_parent"
-                android:layout_height="7mm"
-                android:gravity="center"
-                android:layout_margin="10dp"
-                android:background="@drawable/conotor"
-                android:inputType="textPersonName"
-             />
-            <EditText
-                android:id="@+id/alum"
+                android:layout_height="match_parent">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/correo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Correo Electronico"
+                    android:inputType="textPersonName" />
+            </android.support.design.widget.TextInputLayout>
+
+
+            <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="7mm"
-                android:gravity="center"
                 android:layout_margin="10dp"
-                android:background="@drawable/conotor"
-                android:inputType="textPersonName"
-              />
+                android:layout_height="match_parent">
 
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/padre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Nombre del padre o tutor" />
+            </android.support.design.widget.TextInputLayout>
 
+            <android.support.design.widget.TextInputLayout
 
-            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/alumno"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Nombre del alumno" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
                 android:id="@+id/tel"
                 android:layout_width="match_parent"
-                android:layout_height="7mm"
-                android:gravity="center"
-                android:layout_margin="10dp"
-                android:background="@drawable/conotor"
-                android:inputType="phone" />
-            <EditText
-                android:id="@+id/cel"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/telephone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Telefono Personal"
+                    android:inputType="phone" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="7mm"
-                android:gravity="center"
-                android:layout_margin="10dp"
-                android:background="@drawable/conotor"
-                android:inputType="phone" />
+                android:layout_height="match_parent"
+                android:layout_margin="10dp">
 
-
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/celphone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Telefono Celular"
+                    android:inputType="phone" />
+            </android.support.design.widget.TextInputLayout>
 
             <LinearLayout
-                android:layout_width="50mm"
+                android:layout_width="match_parent"
                 android:layout_height="8mm"
                 android:layout_margin="10dp"
                 android:layout_gravity="center"
@@ -121,7 +144,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="40mm"
+                android:layout_width="match_parent"
                 android:layout_height="8mm"
                 android:layout_margin="10dp"
                 android:layout_gravity="center"
@@ -228,6 +251,9 @@
                     android:layout_height="match_parent"
                     />
             </LinearLayout>
+
+            </LinearLayout>
+
             <Button
                 android:id="@+id/siguiente"
                 android:layout_width="50mm"
@@ -237,8 +263,6 @@
                 android:layout_margin="10dp"
                 android:textColor="@android:color/background_light"
                 android:text="Guardar y crear horario" />
-
-
         </LinearLayout>
     </ScrollView>
 
