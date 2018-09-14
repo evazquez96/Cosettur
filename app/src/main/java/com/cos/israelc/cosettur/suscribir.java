@@ -48,7 +48,7 @@ String cicle;
         setContentView(R.layout.activity_suscribir);
         gradi=(Spinner)findViewById(R.id.grado);
         sems=(Spinner)findViewById(R.id.semestre);
-        rot=(Spinner)findViewById(R.id.rutas);
+        rot=(Spinner)findViewById(R.id.Ruta);
         cic=(Spinner)findViewById(R.id.ciclo);
         mod=(Spinner)findViewById(R.id.modalida);
         lol=(Spinner)findViewById(R.id.localidad);
