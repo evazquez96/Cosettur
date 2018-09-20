@@ -32,4 +32,5 @@ dependencies {
     implementation files('src/test/java/ksoap2-android-2.5.2.jar')
     implementation 'com.paypal.sdk:paypal-android-sdk:2.14.4'
     implementation 'com.itextpdf:itextg:5.5.10'
+    compile 'com.commit451:PhotoView:1.2.4'
 }
