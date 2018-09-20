@@ -1,14 +1,13 @@
 package com.cos.israelc.cosettur;
+
 import android.content.Context;
-import android.graphics.Color;
 import android.graphics.pdf.PdfDocument;
 import android.os.Environment;
 import android.util.Log;
-import com.itextpdf.text.Image;
+
 import com.itextpdf.text.BadElementException;
 import com.itextpdf.text.BaseColor;
 import com.itextpdf.text.DocumentException;
-import com.itextpdf.text.Element;
 import com.itextpdf.text.Font;
 import com.itextpdf.text.Image;
 import com.itextpdf.text.PageSize;
@@ -24,19 +23,18 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import com.itextpdf.text.pdf.draw.DottedLineSeparator;
-public class Templatepdf {
+public class horariopdf {
     private Context context;
     private File pdf2;
     private Document document;
-
     private PdfWriter pdfWriter;
     private Paragraph paragraph;
-    private Font ftitle=new Font(Font.FontFamily.TIMES_ROMAN,12,Font.BOLD,BaseColor.BLUE);
-    private Font fstitle=new Font(Font.FontFamily.TIMES_ROMAN,12,Font.BOLD,BaseColor.BLUE);
+    private Font ftitle=new Font(Font.FontFamily.TIMES_ROMAN,22,Font.BOLDITALIC);
+    private Font fstitle=new Font(Font.FontFamily.TIMES_ROMAN,22,Font.BOLDITALIC);
     private Font ftext=new Font(Font.FontFamily.TIMES_ROMAN,15,Font.BOLD);
-    private Font fht=new Font(Font.FontFamily.TIMES_ROMAN,12,Font.BOLD,BaseColor.BLUE);
+    private Font fht=new Font(Font.FontFamily.TIMES_ROMAN,15,Font.BOLD);
 
-    public Templatepdf(Context context) {
+    public horariopdf(Context context) {
 
         this.context=context;
     }
@@ -64,7 +62,8 @@ public class Templatepdf {
 
         //if(!folder.exists())
         folder.mkdirs();
-        pdf2=new File(folder,"contrato"+".pdf");
+        pdf2=new File(folder,"horario"+".pdf");
+
     }
     public void closedocument(){
 
@@ -93,7 +92,7 @@ public class Templatepdf {
         }
     }
     private void addChildp(Paragraph childparagraph){
-        childparagraph.setAlignment(Element.ALIGN_RIGHT);
+        childparagraph.setAlignment(com.itextpdf.text.Element.ALIGN_CENTER);
         paragraph.add(childparagraph);
 
     }
@@ -146,8 +145,7 @@ public class Templatepdf {
 
     }
     public void lines(String texto) throws DocumentException {
-        Paragraph p = new Paragraph(texto,ftext);
-        p.setAlignment(Element.ALIGN_CENTER);
+        Paragraph p = new Paragraph(texto);
         p.getAlignment();
         DottedLineSeparator dottedline = new DottedLineSeparator();
         dottedline.setOffset(-2);
@@ -157,11 +155,5 @@ public class Templatepdf {
     } public void imagenes() throws IOException, BadElementException {
 
     }
-    public void createimage() throws IOException, DocumentException {
-        Paragraph p = new Paragraph();
-        Image imagen = Image.getInstance("android.resource://\" + getPackageName() +\"/\"+R.drawable.loc.png");
-        imagen.setAlignment(Element.ALIGN_LEFT);
-        imagen.scaleAbsoluteWidth(20f);
-        document.add(imagen);
-    }
+
 }

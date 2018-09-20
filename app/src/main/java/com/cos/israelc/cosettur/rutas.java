@@ -16,7 +16,7 @@ ImageView atras;
     ImageView atras3;
     ImageView atras4;
     ImageView atras5;
-PhotoViewAttacher zomm;
+    PhotoViewAttacher zomm;
     PhotoViewAttacher zomm1;
     PhotoViewAttacher zomm2;
     PhotoViewAttacher zomm3;
