@@ -39,7 +39,8 @@
         <activity android:name=".Paypal" />
         <activity android:name=".cuentas" />
         <activity android:name=".suscribir" />
-        <activity android:name=".horario"></activity>
+        <activity android:name=".horario" />
+        <activity android:name=".Instrucciones"></activity>
     </application>
 
 </manifest>
