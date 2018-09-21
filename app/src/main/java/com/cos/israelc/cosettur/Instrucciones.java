@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 public class Instrucciones extends AppCompatActivity {
@@ -13,19 +14,21 @@ public class Instrucciones extends AppCompatActivity {
     final Context context = this;
 
     SharedPreferences sharedPrefe = getSharedPreferences("opcion",context.MODE_PRIVATE);
+    Button acept;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_instrucciones);
 
+        acept = (Button) findViewById(R.id.aceptar);
         SharedPreferences sharedPrefer = getPreferences(context.MODE_PRIVATE);
         Boolean ne = sharedPrefer.getBoolean("opc",false);
         if(ne == true){
 
         }
 
-        sig.setOnClickListener(new View.OnClickListener() {
+        acept.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -34,19 +37,13 @@ public class Instrucciones extends AppCompatActivity {
                 SharedPreferences sharedPrefer = getPreferences(context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPrefer.edit();
 
-                if(select.isChecked()){
-                    Intent nuevo= new Intent(condiciones.this,LoginActivity.class);
+
+                    Intent nuevo= new Intent(Instrucciones.this,MainActivity.class);
                     startActivity(nuevo);
                     bandera=true;
                     editor.putBoolean("opc",bandera);
                     editor.commit();
 
-                }
-
-                else {
-                    Toast.makeText(Instrucciones.this,"error",Toast.LENGTH_LONG).show();
-
-                }
             }
         });
 
