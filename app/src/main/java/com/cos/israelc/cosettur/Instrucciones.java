@@ -11,38 +11,36 @@ import android.widget.Toast;
 
 public class Instrucciones extends AppCompatActivity {
 
-    final Context context = this;
-
-    SharedPreferences sharedPrefe = getSharedPreferences("opcion",context.MODE_PRIVATE);
     Button acept;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_instrucciones);
-
+        final Context context = this;
+        SharedPreferences sharedPrefe = getSharedPreferences("opcion",context.MODE_PRIVATE);
         acept = (Button) findViewById(R.id.aceptar);
-        SharedPreferences sharedPrefer = getPreferences(context.MODE_PRIVATE);
+
+
+     SharedPreferences sharedPrefer = getPreferences(context.MODE_PRIVATE);
         Boolean ne = sharedPrefer.getBoolean("opc",false);
         if(ne == true){
 
         }
 
-        acept.setOnClickListener(new View.OnClickListener() {
+       acept.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                boolean bandera;
+             boolean bandera;
 
-                SharedPreferences sharedPrefer = getPreferences(context.MODE_PRIVATE);
-                SharedPreferences.Editor editor = sharedPrefer.edit();
-
-
-                    Intent nuevo= new Intent(Instrucciones.this,MainActivity.class);
+              SharedPreferences sharedPrefer = getPreferences(context.MODE_PRIVATE);
+              SharedPreferences.Editor editor = sharedPrefer.edit();
+                Intent nuevo= new Intent(Instrucciones.this,inicio.class);
                     startActivity(nuevo);
-                    bandera=true;
-                    editor.putBoolean("opc",bandera);
-                    editor.commit();
+                   bandera=true;
+                  editor.putBoolean("opc",bandera);
+                  editor.commit();
 
             }
         });

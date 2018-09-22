@@ -18,13 +18,7 @@
         android:roundIcon="@drawable/loc"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".MainActivity"></activity>
         <activity android:name=".registro" />
         <activity android:name=".recuperar" />
         <activity android:name=".rutas" />
@@ -40,7 +34,18 @@
         <activity android:name=".cuentas" />
         <activity android:name=".suscribir" />
         <activity android:name=".horario" />
-        <activity android:name=".Instrucciones"></activity>
+        <activity android:name=".Instrucciones"  android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".inicio"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+
+        </activity>
     </application>
 
 </manifest>
