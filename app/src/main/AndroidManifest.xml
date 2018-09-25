@@ -19,21 +19,30 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity"></activity>
-        <activity android:name=".registro" />
-        <activity android:name=".recuperar" />
-        <activity android:name=".rutas" />
-        <activity android:name=".camion" />
+        <activity android:name=".registro"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".recuperar"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".rutas"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".camion"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity
             android:name=".menu"
             android:label="@string/title_activity_menu"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".mision" />
-        <activity android:name=".camiones" />
+        <activity android:name=".camiones"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity android:name=".vision" />
-        <activity android:name=".Paypal" />
-        <activity android:name=".cuentas" />
-        <activity android:name=".suscribir" />
-        <activity android:name=".horario" />
+        <activity android:name=".Paypal"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".cuentas"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".suscribir"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".horario"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity android:name=".Instrucciones"  android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
