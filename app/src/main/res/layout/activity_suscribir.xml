@@ -53,29 +53,23 @@
                 android:layout_margin="18dp"
                 android:background="@android:color/background_light"
                 android:orientation="vertical">
-
-            <android.support.design.widget.TextInputLayout
-                android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <android.support.design.widget.TextInputEditText
-                    android:id="@+id/correoss"
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Correo Electronico"
-                    android:inputType="textPersonName" />
-            </android.support.design.widget.TextInputLayout>
+                    android:gravity="center"
+                    android:text="Datos personales"
+                    android:textSize="18dp"
+                    android:textColor="@android:color/holo_blue_light"/>
 
 
-            <android.support.design.widget.TextInputLayout
+                <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_margin="10dp"
                 android:layout_height="match_parent">
 
                 <android.support.design.widget.TextInputEditText
                     android:id="@+id/padre"
+                    android:inputType="textPersonName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Nombre del padre o tutor" />
@@ -91,6 +85,7 @@
                     android:id="@+id/alumno"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
                     android:hint="Nombre del alumno" />
             </android.support.design.widget.TextInputLayout>
 
@@ -119,7 +114,93 @@
                     android:layout_height="wrap_content"
                     android:hint="Telefono Celular"
                     android:inputType="phone" />
+
             </android.support.design.widget.TextInputLayout>
+
+
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:gravity="center"
+               android:text="Domicilo"
+               android:textSize="18dp"
+               android:textColor="@android:color/holo_blue_light"/>
+
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/noext"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="No Exterior" />
+                </android.support.design.widget.TextInputLayout>
+
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/noint"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="No Interior" />
+                </android.support.design.widget.TextInputLayout>
+
+
+
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/Localidad"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Localidad" />
+                    </android.support.design.widget.TextInputLayout>
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/Nopost"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Codigo Postal" />
+                    </android.support.design.widget.TextInputLayout>
+
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <android.support.design.widget.TextInputEditText
+
+                        android:id="@+id/correoss"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="municipio"
+                        android:inputType="textPersonName" />
+                </android.support.design.widget.TextInputLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Servicios"
+                    android:textSize="18dp"
+                    android:textColor="@android:color/holo_blue_light"/>
 
             <LinearLayout
                 android:layout_width="match_parent"

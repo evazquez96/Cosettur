@@ -41,7 +41,7 @@ public class Instrucciones extends AppCompatActivity {
                    bandera=true;
                   editor.putBoolean("opc",bandera);
                   editor.commit();
-
+                    finish();
             }
         });
 
