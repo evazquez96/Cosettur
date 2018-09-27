@@ -2,11 +2,14 @@ package com.cos.israelc.cosettur;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Handler;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -23,9 +26,15 @@ import org.ksoap2.serialization.SoapPrimitive;
 import org.ksoap2.serialization.SoapSerializationEnvelope;
 import org.ksoap2.transport.HttpTransportSE;
 
+import static android.Manifest.permission.INTERNET;
+import static android.Manifest.permission.READ_PHONE_STATE;
+import static android.Manifest.permission.READ_SMS;
+import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
+
 
 public class MainActivity extends AppCompatActivity {
-Button registrar;
+    public static final int RequestPermissionCode = 8;
+    Button registrar;
 Button mein;
 EditText contra;
 EditText usuarios;
@@ -144,6 +153,8 @@ TextView aviso;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        configurarPermisos();
+
         setContentView(R.layout.activity_main);
 aviso=(TextView)findViewById(R.id.terminos);
         contra = (EditText) findViewById(R.id.contrasena);
@@ -260,6 +271,27 @@ aviso.setOnClickListener(new View.OnClickListener() {
         intent.addCategory(Intent.CATEGORY_HOME);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
+    }
+    private void configurarPermisos() {
+
+            ActivityCompat.requestPermissions(MainActivity.this, new String[]
+                    {       WRITE_EXTERNAL_STORAGE,
+                            READ_SMS,
+                            READ_PHONE_STATE,
+                            INTERNET
+                    }, RequestPermissionCode);
+        }
+
+
+    public boolean CheckingPermissionIsEnabledOrNot() {
+
+        int ReadSmsPermissionResult = ContextCompat.checkSelfPermission(getApplicationContext(), READ_SMS);
+        int ReadPhoneStatePermissionResult = ContextCompat.checkSelfPermission(getApplicationContext(), READ_PHONE_STATE);
+        int ReadSdPermissionResult = ContextCompat.checkSelfPermission(getApplicationContext(), WRITE_EXTERNAL_STORAGE);
+        int InternetPermissionResult = ContextCompat.checkSelfPermission(getApplicationContext(), INTERNET);
+
+        return ReadSmsPermissionResult == PackageManager.PERMISSION_GRANTED &&
+                ReadPhoneStatePermissionResult == PackageManager.PERMISSION_GRANTED && InternetPermissionResult == PackageManager.PERMISSION_GRANTED;
     }
 
 }

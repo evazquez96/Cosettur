@@ -4,10 +4,15 @@
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
+
         <item
             android:id="@+id/inicio"
             android:icon="@drawable/loh"
             android:title="Inicio" />
+        <item
+            android:id="@+id/suscribir"
+            android:icon="@drawable/bitacora"
+            android:title="Nueva Inscripcion" />
         <item
             android:id="@+id/rutas"
             android:icon="@drawable/ruts"
@@ -17,9 +22,10 @@
             android:icon="@drawable/autoss"
             android:title="Cuotas" />
         <item
-            android:id="@+id/suscribir"
-            android:icon="@drawable/bitacora"
-            android:title="Inscribir" />
+            android:id="@+id/nav_share"
+            android:icon="@drawable/inter"
+            android:title="Noticias" />
+
         <item
             android:id="@+id/pago"
             android:icon="@drawable/paypal"
@@ -30,10 +36,7 @@
 
     <item android:title="Contactanos">
         <menu>
-            <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/inter"
-                android:title="Visita nuestra pagina" />
+
             <item
                 android:id="@+id/nav_send"
                 android:icon="@drawable/mails"
