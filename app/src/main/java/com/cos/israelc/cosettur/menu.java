@@ -119,7 +119,7 @@ public class menu extends AppCompatActivity implements NavigationView.OnNavigati
             WebSettings webSettings = myWebView.getSettings();
             webSettings.setJavaScriptEnabled(true);
             myWebView.setWebViewClient(new WebViewClient());
-            myWebView.loadUrl("https://sites.google.com/view/cossetur/p%C3%A1gina-principal");
+            myWebView.loadUrl("https://www.cosettur.com/");
 
         }
 
@@ -165,7 +165,7 @@ public class menu extends AppCompatActivity implements NavigationView.OnNavigati
             WebSettings webSettings = myWebView.getSettings();
             webSettings.setJavaScriptEnabled(true);
             myWebView.setWebViewClient(new WebViewClient());
-            myWebView.loadUrl("https://www.cosettur.com/");
+            myWebView.loadUrl("https://sites.google.com/view/cossetur/p%C3%A1gina-principal ");
 
 
 

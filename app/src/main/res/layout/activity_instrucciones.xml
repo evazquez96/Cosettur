@@ -12,10 +12,10 @@
     <HorizontalScrollView
         android:id="@+id/horizontalScrollView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="97mm"
+        android:layout_height="match_parent"
         android:orientation="horizontal">
 
         <android.support.v7.widget.CardView
@@ -141,27 +141,21 @@
                     android:layout_height="151dp"
                     app:srcCompat="@drawable/loc" />
 
-                <TextView
+                <Button
+                    android:id="@+id/aceptar"
+                    android:layout_width="50mm"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:textColor="#ffffff"
+                    android:background="@drawable/buton2"
+                    android:text="Comenzar" />
 
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:textColor="@android:color/holo_blue_light"
-                    android:textSize="26dp"
-                    android:text="Delsiza" />
             </LinearLayout>
         </android.support.v7.widget.CardView>
 
     </LinearLayout>
     </HorizontalScrollView>
 
-    <Button
-        android:id="@+id/aceptar"
-        android:layout_width="50mm"
-        android:layout_height="35dp"
-        android:layout_gravity="center"
-        android:layout_margin="10dp"
-        android:textColor="#ffffff"
-        android:background="@drawable/buton2"
-        android:text="Siguiente" />
+
 </LinearLayout>
