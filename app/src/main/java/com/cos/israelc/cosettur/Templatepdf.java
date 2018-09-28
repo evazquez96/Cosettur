@@ -43,7 +43,7 @@ public class Templatepdf {
 
 
     public void opendocument(){
-        createfile();
+
         try {
 
             document=new Document(PageSize.A4);
@@ -56,7 +56,7 @@ public class Templatepdf {
 
     }
 
-    private void createfile(){
+    public void createfile(String name){
         String names=new SimpleDateFormat("dd-MM-yyyy HH:mm").format(new java.util.Date());
         String m=names;
         File folder= new File(Environment.getExternalStorageDirectory().toString(),"CosetturPDF");
@@ -64,7 +64,7 @@ public class Templatepdf {
 
         //if(!folder.exists())
         folder.mkdirs();
-        pdf2=new File(folder,"contrato"+".pdf");
+        pdf2=new File(folder,name+".pdf");
     }
     public void closedocument(){
 

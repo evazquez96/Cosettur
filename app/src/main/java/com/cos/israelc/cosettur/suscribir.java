@@ -9,6 +9,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.itextpdf.text.DocumentException;
@@ -19,6 +20,7 @@ public class suscribir extends AppCompatActivity {
     String alum;
     String tell;
     String call;
+     int pago;
 
     String grados;
     String semestres;
@@ -32,7 +34,7 @@ public class suscribir extends AppCompatActivity {
     String[] sem = {"Preparatoria","Licenciatura"};
 
     String[] model = {"Parcial","Completo"};
-    String[] rut = {"Naucalpan","Tlanepantla","Coacalco","C.Izcalli"};
+    String[] rut = {"Ruta","Naucalpan","Tlanepantla","Coacalco","C.Izcalli"};
     String[]ciclos={"ENERO-ABRIL","MAYO-AGOSTO","SEPTIEMBRE-DICIEMBRE"};
 
     Spinner gradi;
@@ -47,7 +49,7 @@ public class suscribir extends AppCompatActivity {
     TextInputEditText child;
     TextInputEditText phones;
     TextInputEditText cl;
-
+    TextView pagar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,7 +64,7 @@ public class suscribir extends AppCompatActivity {
         child=(TextInputEditText)findViewById(R.id.alumno);
         phones=(TextInputEditText)findViewById(R.id.telephone);
         cl=(TextInputEditText)findViewById(R.id.celphone);
-
+        pagar=(TextView)findViewById(R.id.idpag);
         gradi.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,sem));
         rot.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, rut));
         mod.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, model));
@@ -92,17 +94,21 @@ public class suscribir extends AppCompatActivity {
         rot.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String[]li1={"TEC MilenioTE","OPERAGUA","BOD.COMERCIAL MEXICANA","OXXO PALOMAS","PERINORTE"};
-                String[]li2={"METRO ROSARIO,CASA DE LA CULTURA,SUBURBANO TLALNE,TOKS COLIN,PLAZA TLALNE,RODEO SANTA FE"};
-                String[]l3={"VIPS ECHEGARAY","GLORIETA ","LAS AMERICAS","GRAN TERRAZA","LOMAS VERDES","CRISTOBAL COLON","HOSPITAL RIO ","LA ERA"};
-                String[]l4={"COSMOPOL","FUENTES DEL VALLE","ASTA BANDERA","VALLE DORADO"};
+                String[]li1={"Localidad","TEC MilenioTE","OPERAGUA","BOD.COMERCIAL MEXICANA","OXXO PALOMAS","PERINORTE"};
+                String[]li2={"Localidad","METRO ROSARIO,CASA DE LA CULTURA,SUBURBANO TLALNE,TOKS COLIN,PLAZA TLALNE,RODEO SANTA FE"};
+                String[]l3={"Localidad","VIPS ECHEGARAY","GLORIETA ","LAS AMERICAS","GRAN TERRAZA","LOMAS VERDES","CRISTOBAL COLON","HOSPITAL RIO ","LA ERA"};
+                String[]l4={"Localidad","COSMOPOL","FUENTES DEL VALLE","ASTA BANDERA","VALLE DORADO"};
                 lol=(Spinner)findViewById(R.id.localidad);
+                modal=mod.getSelectedItem().toString();
+                local=lol.getSelectedItem().toString();
                 String msupplier=rot.getSelectedItem().toString();
                 switch (msupplier){
 
                     case "Naucalpan":
+                    lol.setAdapter(new ArrayAdapter<String>(suscribir.this, android.R.layout.simple_spinner_item, l3));
 
-                        lol.setAdapter(new ArrayAdapter<String>(suscribir.this, android.R.layout.simple_spinner_item, l3));
+
+
                         break;
                     case "Tlanepantla":
                         lol.setAdapter(new ArrayAdapter<String>(suscribir.this, android.R.layout.simple_spinner_item, li2));
@@ -125,15 +131,27 @@ public class suscribir extends AppCompatActivity {
 
             }
         });
+        mod.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
+                                          @Override
+                                          public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                                              
+                                          }
+
+                                          @Override
+                                          public void onNothingSelected(AdapterView<?> adapterView) {
+
+                                          }
+                                      });
 
 
-        sig=(Button)findViewById(R.id.siguiente);
+                sig = (Button) findViewById(R.id.siguiente);
 
 
         sig.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
+
                     createpdf();
                 } catch (DocumentException e) {
                     e.printStackTrace();
@@ -143,6 +161,7 @@ public class suscribir extends AppCompatActivity {
                 finish();
             }
         });
+
     }
     public void createpdf() throws DocumentException {
 
@@ -160,6 +179,7 @@ public class suscribir extends AppCompatActivity {
         Toast.makeText(suscribir.this,"Guardando archivo", Toast.LENGTH_SHORT).show();
 
         Templatepdf tem=new Templatepdf(getApplicationContext());
+        tem.createfile(alum);
         tem.opendocument();
 
         tem.addMetaData("COSSETTUR","Ficha de Inscripcion","Cosetturapps");
@@ -203,6 +223,24 @@ public class suscribir extends AppCompatActivity {
 
 
         tem.closedocument();
+
+    }
+    public void calculo(){
+
+        rutasol=rot.getSelectedItem().toString();
+        modal=mod.getSelectedItem().toString();
+        local=lol.getSelectedItem().toString();
+
+        if(rutasol.equals("Naucalpan")&&modal.equals("Parcial")){
+        pago=3455;
+            Toast.makeText(suscribir.this,"Usted pagara"+pago, Toast.LENGTH_SHORT).show();
+
+        }
+
+    }
+    public void orden(){
+
+
 
     }
 

@@ -62,7 +62,7 @@ public class horariopdf {
 
         //if(!folder.exists())
         folder.mkdirs();
-        pdf2=new File(folder,"horario"+".pdf");
+        pdf2=new File(folder,m+".pdf");
 
     }
     public void closedocument(){
