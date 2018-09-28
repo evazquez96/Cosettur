@@ -33,8 +33,8 @@ public class suscribir extends AppCompatActivity {
 
     String[] sem = {"Preparatoria","Licenciatura"};
 
-    String[] model = {"Parcial","Completo"};
-    String[] rut = {"Naucalpan","Tlanepantla","Coacalco","C.Izcalli"};
+    String[] model={"Parcial","Completo","Parcial-Med","Completo-Med"};
+    String[] rut={"Naucalpan","Tlanepantla","Coacalco","C.Izcalli"};
     String[]ciclos={"ENERO-ABRIL","MAYO-AGOSTO","SEPTIEMBRE-DICIEMBRE"};
 
     Spinner gradi;
@@ -44,16 +44,21 @@ public class suscribir extends AppCompatActivity {
     Spinner mod;
     Spinner cic;
     Button sig;
+    Button coutas;
+    Button atrass;
     TextInputEditText correitos;
     TextInputEditText namesf;
     TextInputEditText child;
     TextInputEditText phones;
     TextInputEditText cl;
     TextView pagar;
+    TextView texc;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_suscribir);
+        coutas=(Button)findViewById(R.id.btncoutas);
+        atrass=(Button)findViewById(R.id.btnatr);
         gradi=(Spinner)findViewById(R.id.grado);
         sems=(Spinner)findViewById(R.id.semestre);
         rot=(Spinner)findViewById(R.id.Ruta);
@@ -65,10 +70,20 @@ public class suscribir extends AppCompatActivity {
         phones=(TextInputEditText)findViewById(R.id.telephone);
         cl=(TextInputEditText)findViewById(R.id.celphone);
         pagar=(TextView)findViewById(R.id.idpag);
+        texc=(TextView)findViewById(R.id.cuotas);
         gradi.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,sem));
         rot.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, rut));
         mod.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, model));
         cic.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, ciclos));
+
+        atrass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                finish();
+            }
+        });
+
         gradi.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
@@ -126,6 +141,12 @@ public class suscribir extends AppCompatActivity {
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
 
+            }
+        });
+        coutas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                calculo();
             }
         });
 
@@ -220,9 +241,46 @@ public class suscribir extends AppCompatActivity {
 
 
         if(rutasol.equals("Naucalpan")&&modal.equals("Parcial")){
-        pago=3455;
-            Toast.makeText(suscribir.this,"Usted pagara"+pago, Toast.LENGTH_SHORT).show();
+      pagar.setText("1620.00");
+      texc.setText("(Mil seicientos veinte pesos)4 pagos parciales");
 
+        }else if(rutasol.equals("Naucalpan")&&modal.equals("Completo")){
+                pagar.setText("6480.00");
+                texc.setText("(Seis Mil cuatrocientos ochenta pesos)");
+        }else if(rutasol.equals("Naucalpan")&&modal.equals("Completo-Med")){
+            pagar.setText("4860.00");
+            texc.setText("(Cuatro mil ochocientos secenta pesos)");
+        }else if(rutasol.equals("Naucalpan")&&modal.equals("Parcial-Med")){
+            pagar.setText("1215.00");
+            texc.setText("(Mil docientos quince pesos)4 pagos parciales");
+        }
+
+        else if(rutasol.equals("Coacalco")&&modal.equals("Completo")){
+            pagar.setText("8480.00");
+            texc.setText("(Ocho mil cuatrocientos ochenta peso)");
+        }else if(rutasol.equals("Coacalco")&&modal.equals("Completo-Med")){
+            pagar.setText("6360.00");
+            texc.setText("(Seis mil trecientos sesenta peso)");
+        }else if(rutasol.equals("Coacalco")&&modal.equals("Parcial")){
+            pagar.setText("2120.00");
+            texc.setText("(Mil docientos quince pesos)4 pagos parciales");
+        }else if(rutasol.equals("Coacalco")&&modal.equals("Parcial-Med")) {
+            pagar.setText("1590.00");
+            texc.setText("(Mil docientos quince pesos)4 pagos parciales");
+        }
+
+        else if(rutasol.equals("C.Izcalli")&&modal.equals("Completo")){
+            pagar.setText("8480.00");
+            texc.setText("(Ocho mil cuatrocientos ochenta peso)");
+        }else if(rutasol.equals("C.Izcalli")&&modal.equals("Completo-Med")){
+            pagar.setText("6360.00");
+            texc.setText("(Seis mil trecientos sesenta peso)");
+        }else if(rutasol.equals("C.Izcalli")&&modal.equals("Parcial")){
+            pagar.setText("2120.00");
+            texc.setText("(Mil docientos quince pesos)4 pagos parciales");
+        }else if(rutasol.equals("C.Izcalli")&&modal.equals("Parcial-Med")) {
+            pagar.setText("1590.00");
+            texc.setText("(Mil docientos quince pesos)4 pagos parciales");
         }
 
     }

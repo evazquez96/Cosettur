@@ -16,12 +16,12 @@
         android:background="@drawable/header"
         android:orientation="horizontal">
 
-        <ImageView
-            android:id="@+id/imageView7"
+        <Button
+            android:id="@+id/btnatr"
             android:layout_width="8mm"
             android:layout_gravity="center"
             android:layout_height="6.5mm"
-            app:srcCompat="@drawable/arriw" />
+           android:background="@drawable/arriw" />
 
         <TextView
             android:id="@+id/texto"
@@ -359,17 +359,21 @@
                         android:textSize="16dp"
                         android:textStyle="bold"
                         android:gravity="center"
-                        android:text="1729"/>
+                        android:text="Presiona calcular cuota"/>
                     <TextView
                         android:id="@+id/cuotas"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:gravity="center"
-                        android:textSize="12dp"
-                        android:textStyle="bold"
-                        android:text="(mil setecientos veintinueve pesos)Cuatro pagos mensuales"/>
+                        android:textSize="12dp" />
 
                 </LinearLayout>
+                <Button
+                    android:id="@+id/btncoutas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:text="Calcular cuota"/>
 
 
             </LinearLayout>

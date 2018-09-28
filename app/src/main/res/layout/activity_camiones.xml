@@ -21,54 +21,18 @@
                 android:layout_width="8mm"
                 android:layout_height="match_parent"
                 app:srcCompat="@drawable/arriw" />
-
-         <TextView
-                android:id="@+id/textView21"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="Cuotas por Servicio"
-                android:textColor="#393d42"
-                android:textSize="25dp" />
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="54dp"
+        <Spinner
+            android:id="@+id/rutass"
+            android:layout_width="226dp"
+            android:layout_height="48dp"
             android:layout_gravity="center"
-            android:orientation="horizontal">
+            android:layout_margin="10dp"
+           android:theme="@style/AppTheme.AppBarOverlay" />
 
 
-            <TextView
-                android:id="@+id/textView13"
-                android:layout_width="60dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:gravity="center_vertical"
-                android:text="Rutas"
-                android:textColor="#393d42"
-                android:textSize="23dp" />
-
-            <Spinner
-                android:id="@+id/rutass"
-                android:layout_width="226dp"
-                android:layout_height="48dp"
-                android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:background="@android:drawable/btn_dropdown"
-                android:theme="@style/AppTheme.AppBarOverlay" />
-        </LinearLayout>
     </LinearLayout>
-        <ImageView
+
+    <ImageView
             android:id="@+id/in"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

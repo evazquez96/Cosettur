@@ -18,7 +18,7 @@ public class camiones extends AppCompatActivity {
     ImageView regre;
     ImageView imagen;
     WebView myWebView;
-    String[] element = {"Seleccione una ruta","Naucalpan","Tlanepantla-Valle Dorado","Jardines del Recuerdo","Villas de la hacienda","Coacalco","C.Izcalli"};
+    String[] element = {"Rutas de Servicio","Naucalpan","Tlanepantla-Valle Dorado","Jardines del Recuerdo","Villas de la hacienda","Coacalco","C.Izcalli"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
