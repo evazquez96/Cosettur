@@ -117,7 +117,21 @@
 
             </android.support.design.widget.TextInputLayout>
 
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp">
 
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Cuota"/>
+                    <TextView
+                        android:id="@+id/idpag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" />
+
+                </LinearLayout>
            <TextView
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
@@ -332,6 +346,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     />
+
+
             </LinearLayout>
 
             </LinearLayout>
