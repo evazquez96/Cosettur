@@ -69,7 +69,7 @@ public class suscribir extends AppCompatActivity {
         rot.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, rut));
         mod.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, model));
         cic.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, ciclos));
-
+        calculo();
         gradi.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
@@ -99,8 +99,6 @@ public class suscribir extends AppCompatActivity {
                 String[]l3={"Localidad","VIPS ECHEGARAY","GLORIETA ","LAS AMERICAS","GRAN TERRAZA","LOMAS VERDES","CRISTOBAL COLON","HOSPITAL RIO ","LA ERA"};
                 String[]l4={"Localidad","COSMOPOL","FUENTES DEL VALLE","ASTA BANDERA","VALLE DORADO"};
                 lol=(Spinner)findViewById(R.id.localidad);
-                modal=mod.getSelectedItem().toString();
-                local=lol.getSelectedItem().toString();
                 String msupplier=rot.getSelectedItem().toString();
                 switch (msupplier){
 
@@ -131,26 +129,17 @@ public class suscribir extends AppCompatActivity {
 
             }
         });
-        mod.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
-                                          @Override
-                                          public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                                              
-                                          }
-
-                                          @Override
-                                          public void onNothingSelected(AdapterView<?> adapterView) {
-
-                                          }
-                                      });
 
 
-                sig = (Button) findViewById(R.id.siguiente);
+
+        sig=(Button)findViewById(R.id.siguiente);
 
 
         sig.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                try {
+
+              try {
 
                     createpdf();
                 } catch (DocumentException e) {
@@ -229,7 +218,7 @@ public class suscribir extends AppCompatActivity {
 
         rutasol=rot.getSelectedItem().toString();
         modal=mod.getSelectedItem().toString();
-        local=lol.getSelectedItem().toString();
+
 
         if(rutasol.equals("Naucalpan")&&modal.equals("Parcial")){
         pago=3455;
