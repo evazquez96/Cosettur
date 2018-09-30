@@ -31,6 +31,10 @@
             android:icon="@drawable/paypal"
             android:visible="false"
             android:title="Pagar Cuota" />
+        <item
+            android:id="@+id/documents"
+            android:icon="@drawable/documents"
+            android:title="Documentos" />
 
     </group>
 

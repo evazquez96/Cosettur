@@ -162,6 +162,7 @@ public class suscribir extends AppCompatActivity {
               try {
 
                     createpdf();
+                    orden();
                 } catch (DocumentException e) {
                     e.printStackTrace();
                 }
@@ -185,6 +186,8 @@ public class suscribir extends AppCompatActivity {
         alum=child.getText().toString();
         tell=phones.getText().toString();
         call=cl.getText().toString();
+        String pagarr=pagar.getText().toString();
+        String txt=texc.getText().toString();
         Toast.makeText(suscribir.this,"Guardando archivo", Toast.LENGTH_SHORT).show();
 
         Templatepdf tem=new Templatepdf(getApplicationContext());
@@ -225,12 +228,34 @@ public class suscribir extends AppCompatActivity {
         tem.addparagraph("III.- Ambas partes declaran que conocen y comprenden del contenido y naturaleza de este contrato y que el mismo se celebra de conformidad a la " +
                 "legislación civil aplicable y que no genera ni constituye relación de trabajo entre los contratantes y consecuentemente ninguna obligación derivada " +
                 "de la existencia de una relación o contrato de trabajo.. ");
-
+        tem.lines("C L A U S U L A S ");
+        tem.addparagraph("Primera.- Las partes contratantes se reconocen capacidad,  la personalidad y voluntad con la que comparecen a la celebración del este instrumento.-   ");
+        tem.addparagraph("Segunda. - Este contrato se celebra por un tiempo determinado y consecuentemente tendrá una vigencia y será obligatorio para las partes durante el período denominado ciclo 19-1 que para efectos del servicio de transporte escolar comprende del lunes 10 de septiembre 2018 al 14 de diciembre   2018 excepto los días no laborables marcados en el calendario de Unitec exceptuando sábados y domingos y período vacacional.  y que finalizado el período referido en éstas clausula, el presente contrato, quedará extinto terminando las fechas antes mencionadas.  \n" +
+                " ");
+        tem.addparagraph("Tercera.- El TRANSPORTISTA se obliga a prestar al PADRE DE FAMILIA los servicios  de transporte escolar  para el alumno(a) registrado en el formato de alta al sistema (ANEXO 1).-Estos servicios están expuestos en las declaraciones y con la modalidad solicitada por el padre o tutor. Para prestar los servicios que se contratan, el TRANSPORTISTA se obliga, a contar y obtener exclusivamente por su cuenta el equipo material y técnico. ");
+        tem.addparagraph("Cuarta.- El PADRE DE FAMILIA reconoce que el servicio se paga por alumno-usuario del servicio, de manera anticipada y se obliga a pagar al TRANSPORTISTA la cantidad derivada de la opción que escoja, a saber: ");
+        tem.addparagraph("-1 pago"+pagarr+txt);
+        tem.addparagraph("Dicho precio no será susceptible de variación alguna durante la vigencia de este contrato -a menos que exista un incremento fuera del control del transportista- y será liquidado mediante tarjeta de crédito o débito, efectivo, depósito o transferencia, en la cuenta que para el efecto designe el TRANSPORTISTA, con las modalidades que se convienen en este instrumento y las comisiones que se señalen por el uso de tarjeta de crédito o débito, pagaderos los primeros 5 días naturales de cada  mes durante la vigencia de este contrato, manifestando su conformidad con la firma del presente contrato. En caso de no realizarlo, el PADRE DE FAMILIA está de acuerdo en el pago de los recargos de la manera siguiente:");
+        tem.addparagraph("Del día 6 en adelante (naturales) del mes: 10% sobre monto parcial más IVA por cada parcialidad vencida Del DÍA OCHO EN ADELANTE SE SUSPENDERÁ EL SERVICIO HASTA LA RECEPCIÓN DEL PAGO CORRESPONDIENTE Una vez hecha la alta del alumno al servicio del transporte NO HAY REEMBOLSOS, DEVOLUCIONES, BONIFICACIONES NI BAJAS ");
+        tem.addparagraph("Asimismo, el padre o tutor reconoce y acepta de manera voluntaria que deberá firmar los documentos de garantía de pago (pagarés) a favor del transportista y que es su responsabilidad recordar fechas de pago e igualmente de forma personal recoger los documentos cancelados en el módulo del servicio u oficinas del transportista previa cita ");
+        tem.addparagraph("El Padre de Familia RECONOCE QUE SE LE  HA EXPLICADO el proceso para facturación y  QUE debido a los requerimientos de autoridades de SHCP en caso de no solicitar la factura los primeros 5 días naturales del mes corriente, ya no podrá solicitarla, debido a que se facturara como “Público en General”, manifestando su conformidad con la firma del presente contrato ");
+        tem.addparagraph("Quinta. - El TRANSPORTISTA, se obliga, a entregar el recibo respectivo al PADRE DE FAMILIA, así como de generar la factura electrónica correspondiente a solicitud del cliente una vez que obren en su poder los datos requeridos para la emisión de la misma.  \n" +
+                " ");
+        tem.addparagraph(" Que además de las obligaciones contenidas en el presente contrato y de las derivadas de la propia naturaleza del servicio de transporte escolar, el TRANSPORTISTA asume, de forma expresa, las siguientes:");
+        tem.addparagraph("1. A realizar el transporte escolar cumpliendo el itinerario, horario y calendario señalados. ");
+        tem.addparagraph("2. A poner a disposición del servicio de transporte escolar, vehículos que cuenten con un buen estado de conservación y de uso y que cumplan, asimismo, las condiciones técnicas exigidas para el cumplimiento del servicio objeto del presente contrato (aún y si fuera una unidad particular) ");
+        tem.addparagraph("3.- A tener suscrita una póliza de seguro, de conformidad a lo exigido en materia de transporte escolar y de circulación de vehículos. ");
+        tem.addparagraph("4.- A ofrecer como mecanismo de queja, reclamación o inconformidad el horario de atención de la oficina mismo que es de lunes a viernes de 9 a 14 hrs y adicionalmente la comunicación vía celular de la titular de la empresa como vía de expresión de quejas, sugerencias, opiniones; así como, el correo de COSETTUR@YAHOO.COM.MX.   ");
+        tem.addparagraph("Sexta – Son causas de rescisión del presente contrato sin responsabilidad para el transportista, el faltar al reglamento del servicio mismo que es leído, explicado y entregado una copia del mismo al Padre o tutor legal y/o  usuario en el momento de contratación y el cual  se encuentra como anexo al presente.(Anexo 2) ");
+        tem.addparagraph("Séptima.- Ambas partes aceptan y reconocen expresamente que el presente contrato, no crea ni genera ni constituye una relación de trabajo, por lo que ambas partes quedan relevados de cualquier obligación de carácter laboral regulada y sancionada por la ley federal del trabajo.  Es importante señalar que este contrato sólo tendrá efecto entre las partes que lo otorgan, sin afectar a terceros");
+        tem.addparagraph("Octava.-Ambas partes están de acuerdo en que en lo no previsto, se aplique lo dispuesto por el Código Civil D.F. y que en caso de controversia o conflicto sobre la interpretación, aplicación y alcances de este contrato, se someten a la  jurisdicción de los tribunales competentes DEL DF. ");
+        tem.addparagraph("Novena.-  Ambas partes manifiestan que conocen y aprueban el contenido y alcances de este instrumento, por lo que lo firman al calce (Abajo) y al margen (A un lado de la hoja) como prueba eficaz de su pleno y total consentimiento, expresando que en él no concurre violencia física o moral, coacción o vicio alguno de la voluntad, a los ___ días del mes de ______________del año 2018 en la ciudad de Tlalnepantla de Baz, Estado de  México.  ");
+        tem.addparagraph("EL TRANSPORTISTA  ");
+        tem.lines("Asesor Ejecutivo Elsa C Trujillo Romero. ");
+        tem.addparagraph(" EL PADRE DE FAMILIA ");
+        tem.lines(padres);
         tem.addparagraph("Nuevo León Núm. 110 Fracc Jacarandas Tlalnepantla B., Méx. CP 54050 Teléfono 5397 0032 Facabook:cosetturtransportepersonas www.cosettur.com TWITER:@cosettur");
         tem.lines("");
-
-
-
         tem.closedocument();
 
     }
@@ -246,10 +271,10 @@ public class suscribir extends AppCompatActivity {
 
         }else if(rutasol.equals("Naucalpan")&&modal.equals("Completo")){
                 pagar.setText("6480.00");
-                texc.setText("(Seis Mil cuatrocientos ochenta pesos)");
+                texc.setText("(Seis Mil cuatrocientos ochenta pesos)cuatrimestral");
         }else if(rutasol.equals("Naucalpan")&&modal.equals("Completo-Med")){
             pagar.setText("4860.00");
-            texc.setText("(Cuatro mil ochocientos secenta pesos)");
+            texc.setText("(Cuatro mil ochocientos secenta pesos)cuatrimestral");
         }else if(rutasol.equals("Naucalpan")&&modal.equals("Parcial-Med")){
             pagar.setText("1215.00");
             texc.setText("(Mil docientos quince pesos)4 pagos parciales");
@@ -257,10 +282,10 @@ public class suscribir extends AppCompatActivity {
 
         else if(rutasol.equals("Coacalco")&&modal.equals("Completo")){
             pagar.setText("8480.00");
-            texc.setText("(Ocho mil cuatrocientos ochenta peso)");
+            texc.setText("(Ocho mil cuatrocientos ochenta peso)cuatrimestral");
         }else if(rutasol.equals("Coacalco")&&modal.equals("Completo-Med")){
             pagar.setText("6360.00");
-            texc.setText("(Seis mil trecientos sesenta peso)");
+            texc.setText("(Seis mil trecientos sesenta peso)cuatrimestral");
         }else if(rutasol.equals("Coacalco")&&modal.equals("Parcial")){
             pagar.setText("2120.00");
             texc.setText("(Mil docientos quince pesos)4 pagos parciales");
@@ -271,10 +296,10 @@ public class suscribir extends AppCompatActivity {
 
         else if(rutasol.equals("C.Izcalli")&&modal.equals("Completo")){
             pagar.setText("8480.00");
-            texc.setText("(Ocho mil cuatrocientos ochenta peso)");
+            texc.setText("(Ocho mil cuatrocientos ochenta peso)cuatrimestral");
         }else if(rutasol.equals("C.Izcalli")&&modal.equals("Completo-Med")){
             pagar.setText("6360.00");
-            texc.setText("(Seis mil trecientos sesenta peso)");
+            texc.setText("(Seis mil trecientos sesenta peso)cuatriemestral");
         }else if(rutasol.equals("C.Izcalli")&&modal.equals("Parcial")){
             pagar.setText("2120.00");
             texc.setText("(Mil docientos quince pesos)4 pagos parciales");
@@ -284,9 +309,28 @@ public class suscribir extends AppCompatActivity {
         }
 
     }
-    public void orden(){
+    public void orden() throws DocumentException {
+        String pa=pagar.getText().toString();
+        String mo=texc.getText().toString();
+        Templatepdf tem=new Templatepdf(getApplicationContext());
+        tem.createfile("contrato-"+alum);
+        tem.opendocument();
+        tem.addMetaData("COSSETTUR","Ficha de Inscripcion","Cosetturapps");
+        tem.addtitle("Proveedor de Servicios Educativos\n" +
+                "Transportación y Turismo","RFC COS 160907 JZ5","atencionunitec@cosettur.com\n" +
+                "cosettur@yahoo.com.mx");
+        tem.lines("Formato de pago");
+        tem.addparagraph("Monto a pagar: "+pagar+texc);
+        tem.addparagraph("Datos Bancario :  Hsbc");
+        tem.addparagraph("A Nombre de: COSETTUR S.A. DE C.V.");
+        tem.addparagraph("NO de cuenta: 4060-2729-03");
+        tem.addparagraph("Clave Interbancaria: 0211-8004-0602-33");
 
-
+        tem.addparagraph("Datos Bancario :  BANORTE");
+        tem.addparagraph("A Nombre de: Maria Luisa Torres Sorroza");
+        tem.addparagraph("NO de cuenta: 0248-8430-67");
+        tem.addparagraph("Clave Interbancaria: 0721-8000-2488-67");
+        tem.closedocument();
 
     }
 

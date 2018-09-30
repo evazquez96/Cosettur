@@ -1,14 +1,17 @@
 package com.cos.israelc.cosettur;
 
 import android.annotation.SuppressLint;
+import android.content.ActivityNotFoundException;
 import android.content.ComponentName;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
+import android.os.Environment;
 import android.os.Handler;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.telephony.PhoneNumberUtils;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -24,6 +27,8 @@ import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.io.File;
 
 public class menu extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -187,7 +192,7 @@ public class menu extends AppCompatActivity implements NavigationView.OnNavigati
             try {
                 startActivity(Intent.createChooser(emailIntent, "Enviar email..."));
                 finish();
-            } catch (android.content.ActivityNotFoundException ex) {
+            } catch (ActivityNotFoundException ex) {
                 Toast.makeText(menu.this,
                         "No tienes clientes de email instalados.", Toast.LENGTH_SHORT).show();
             }
@@ -207,6 +212,14 @@ public class menu extends AppCompatActivity implements NavigationView.OnNavigati
             _intencion.setComponent(new ComponentName("com.whatsapp","com.whatsapp.Conversation"));
             _intencion.putExtra("jid", PhoneNumberUtils.stripSeparators("521" + "5566801443")+"@s.whatsapp.net");
             startActivity(_intencion);
+        }
+        else if (id == R.id.documents) {
+
+            String folderPath = Environment.getExternalStorageDirectory()+"/pathTo/CosetturPDF";
+            Intent intent = new Intent();
+            intent.setAction(Intent.ACTION_GET_CONTENT); Uri myUri = Uri.parse(folderPath);
+            intent.setDataAndType(myUri , "pdf/*"); startActivity(intent);
+
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
