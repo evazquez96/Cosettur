@@ -87,8 +87,8 @@ public class suscribir extends AppCompatActivity {
         gradi.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
-                String[] grade1 = {"1","2","3","4","5","6"};
-                String[] grade2 = {"1","2","3","4","5","6","7","8","9"};
+                String[] grade1 = {"1","2","3","4","5","6","7","8","9"};
+                String[] grade2 = {"1","2","3","4","5","6","7","8","9","10","11","12"};
                 sems=(Spinner)findViewById(R.id.semestre);
                 String msupplier=gradi.getSelectedItem().toString();
                 switch (msupplier){
@@ -108,10 +108,10 @@ public class suscribir extends AppCompatActivity {
         rot.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String[]li1={"TEC MilenioTE","OPERAGUA","BOD.COMERCIAL MEXICANA","OXXO PALOMAS","PERINORTE"};
-                String[]li2={"METRO ROSARIO","CASA DE LA CULTURA","SUBURBANO TLALNE","TOKS COLIN","PLAZA TLALNE","RODEO SANTA FE"};
-                String[]l3={"VIPS ECHEGARAY","GLORIETA ","LAS AMERICAS","GRAN TERRAZA","LOMAS VERDES","CRISTOBAL COLON","HOSPITAL RIO ","LA ERA"};
-                String[]l4={"COSMOPOL","FUENTES DEL VALLE","ASTA BANDERA","VALLE DORADO"};
+                String[]li1={"Vips San Miguel","OPERAGUA","Bod. Comercial Mexicana","OXXO Palomas","Telpalcapan","Perinorte"};//cizcalli
+                String[]li2={"Pte Cipreses","Dep. Carlos Hermosillo","Banamex/CFE","Mercado Tenayo","Banorte tenayuca","Suburbano TLALNE","Iglesia Reyes Iztacala","TOKS Mario Colin","PLAZA TLALNE","Vicky Form","Glorieta Los bastones","Santa Monica"};//tlane
+                String[]l3={"Vips Echegaray","Glorieta las americas ","Plaza Gran Terraza","Incorp. Lomas Verdez","Cristobal Colon","Hospital Rio de la Loza ","LA ERA","Blvb Bellavista 54"};//naucalpan
+                String[]l4={"COSMOPOL","Fuentes del valle","Asta bandera","La Quebrada","OXXO Barrientos","Valle Dorado"};//coacalco
                 lol=(Spinner)findViewById(R.id.localidad);
                 String msupplier=rot.getSelectedItem().toString();
                 switch (msupplier){
@@ -263,40 +263,73 @@ public class suscribir extends AppCompatActivity {
 
         rutasol=rot.getSelectedItem().toString();
         modal=mod.getSelectedItem().toString();
-
-
+        local=lol.getSelectedItem().toString();
+//naucalpan
         if(rutasol.equals("Naucalpan")&&modal.equals("Parcial")){
       pagar.setText("1620.00");
-      texc.setText("(Mil seicientos veinte pesos)4 pagos parciales");
+      texc.setText("(Mil seiscientos veinte pesos)4 pagos parciales");
 
         }else if(rutasol.equals("Naucalpan")&&modal.equals("Completo")){
-                pagar.setText("6480.00");
-                texc.setText("(Seis Mil cuatrocientos ochenta pesos)cuatrimestral");
+                pagar.setText("6156.00");
+                texc.setText("(Seis mil ciento cincuenta y seis pesos)Un solo pago");
         }else if(rutasol.equals("Naucalpan")&&modal.equals("Completo-Med")){
             pagar.setText("4860.00");
-            texc.setText("(Cuatro mil ochocientos secenta pesos)cuatrimestral");
+            texc.setText("(Cuatro mil ochocientos secenta)cuatrimestral");
         }else if(rutasol.equals("Naucalpan")&&modal.equals("Parcial-Med")){
             pagar.setText("1215.00");
-            texc.setText("(Mil docientos quince pesos)4 pagos parciales");
+            texc.setText("(Mil docientos quince)4 pagos parciales");
         }
-
-        else if(rutasol.equals("Coacalco")&&modal.equals("Completo")){
-            pagar.setText("8480.00");
-            texc.setText("(Ocho mil cuatrocientos ochenta peso)cuatrimestral");
-        }else if(rutasol.equals("Coacalco")&&modal.equals("Completo-Med")){
+//coacalco precio 1
+    else if(modal.equals("Completo")&&(local.equals("COSMOPOL")||local.equals("Fuentes del valle")||local.equals("Asta bandera"))){
+            pagar.setText("8056");
+            texc.setText("(Ocho mil Cincuenta y seis)Un solo pago");
+        }else if(modal.equals("Completo-Med")&&(local.equals("COSMOPOL")||local.equals("Fuentes del valle")||local.equals("Asta bandera"))){
             pagar.setText("6360.00");
             texc.setText("(Seis mil trecientos sesenta peso)cuatrimestral");
-        }else if(rutasol.equals("Coacalco")&&modal.equals("Parcial")){
+        }else if(modal.equals("Parcial")&&(local.equals("COSMOPOL")||local.equals("Fuentes del valle")||local.equals("Asta bandera"))){
             pagar.setText("2120.00");
             texc.setText("(Mil docientos quince pesos)4 pagos parciales");
-        }else if(rutasol.equals("Coacalco")&&modal.equals("Parcial-Med")) {
+        }else if(modal.equals("Parcial-Med")&&(local.equals("COSMOPOL")||local.equals("Fuentes del valle")||local.equals("Asta bandera"))) {
             pagar.setText("1590.00");
             texc.setText("(Mil docientos quince pesos)4 pagos parciales");
         }
 
-        else if(rutasol.equals("C.Izcalli")&&modal.equals("Completo")){
-            pagar.setText("8480.00");
+        else if(modal.equals("Completo")&&local.equals("La Quebrada")){
+            pagar.setText("4560.00");
             texc.setText("(Ocho mil cuatrocientos ochenta peso)cuatrimestral");
+        }else if(modal.equals("Completo-Med")&&local.equals("La Quebrada")){
+            pagar.setText("3120.00");
+            texc.setText("(Seis mil trecientos sesenta peso)cuatrimestral");
+        }else if(modal.equals("Parcial")&&local.equals("La Quebrada")){
+            pagar.setText("1200.00");
+            texc.setText("(Mil docientos quince pesos)4 pagos parciales");
+        }else if(modal.equals("Parcial-Med")&&local.equals("La Quebrada")) {
+            pagar.setText("780.00");
+            texc.setText("(Mil docientos quince pesos)4 pagos parciales");
+        }
+//cocalco 3*/
+        else if(modal.equals("Completo")&&(local.equals("OXXO Barrientos")||local.equals("Valle Dorado"))){
+            pagar.setText("3920.00");
+            texc.setText("(tres mil novecientos veinte)cuatrimestral");
+        }else if(modal.equals("Completo-Med")&&(local.equals("OXXO Barrientos")||local.equals("Valle Dorado"))){
+            pagar.setText("2920.00");
+            texc.setText("(Seis mil trecientos sesenta peso)cuatrimestral");
+        }else if(modal.equals("Parcial")&&(local.equals("OXXO Barrientos")||local.equals("Valle Dorado"))){
+            pagar.setText("980.00");
+            texc.setText("(Mil docientos quince pesos)4 pagos parciales");
+        }else if(modal.equals("Parcial-Med")&&(local.equals("OXXO Barrientos")||local.equals("Valle Dorado"))) {
+            pagar.setText("730.00");
+            texc.setText("(Mil docientos quince pesos)4 pagos parciales");
+        }
+
+
+
+
+
+
+        else if(rutasol.equals("C.Izcalli")&&modal.equals("Completo")){
+            pagar.setText("8056.00");
+            texc.setText("(Ocho mil cuatrocientos ochenta peso)un solo pago");
         }else if(rutasol.equals("C.Izcalli")&&modal.equals("Completo-Med")){
             pagar.setText("6360.00");
             texc.setText("(Seis mil trecientos sesenta peso)cuatriemestral");
@@ -306,7 +339,37 @@ public class suscribir extends AppCompatActivity {
         }else if(rutasol.equals("C.Izcalli")&&modal.equals("Parcial-Med")) {
             pagar.setText("1590.00");
             texc.setText("(Mil docientos quince pesos)4 pagos parciales");
+            //tlane 1
+        }else if(modal.equals("Completo")&&(local.equals("Pte Cipreses")||local.equals("Dep. Carlos Hermosillo")||local.equals("Banamex/CFE")||local.equals("Mercado Tenayo")||local.equals("Suburbano TLALNE")||local.equals("Banorte tenayuca"))){
+           pagar.setText("4560.00");
+           texc.setText("cuatro mil ochocientos");
+        }else if(modal.equals("Parcial")&&(local.equals("Pte Cipreses")||local.equals("Dep. Carlos Hermosillo")||local.equals("Banamex/CFE")||local.equals("Mercado Tenayo")||local.equals("Suburbano TLALNE")||local.equals("Banorte tenayuca"))){
+            pagar.setText("1200.00");
+            texc.setText("cuatro mil ochocientos");
+        }else if(modal.equals("Completo-Med")&&(local.equals("Pte Cipreses")||local.equals("Dep. Carlos Hermosillo")||local.equals("Banamex/CFE")||local.equals("Mercado Tenayo")||local.equals("Suburbano TLALNE")||local.equals("Banorte tenayuca"))){
+            pagar.setText("3120.00");
+            texc.setText("cuatro mil ochocientos");
+        }else if(modal.equals("Parcial-Med")&&(local.equals("Pte Cipreses")||local.equals("Dep. Carlos Hermosillo")||local.equals("Banamex/CFE")||local.equals("Mercado Tenayo")||local.equals("Suburbano TLALNE")||local.equals("Banorte tenayuca"))){
+            pagar.setText("780.00");
+            texc.setText("cuatro mil ochocientos");
         }
+//tlane 2
+        else if(modal.equals("Completo")&&(local.equals("Iglesia Reyes Iztacala")||local.equals("TOKS Mario Colin")||local.equals("PLAZA TLALNE")||local.equals("Vicky Form")||local.equals("Glorieta Los bastones")||local.equals("Santa Monica"))){
+            pagar.setText("3920.00");
+            texc.setText("cuatro mil ochocientos");
+        }else if(modal.equals("Parcial")&&(local.equals("Iglesia Reyes Iztacala")||local.equals("TOKS Mario Colin")||local.equals("PLAZA TLALNE")||local.equals("Vicky Form")||local.equals("Glorieta Los bastones")||local.equals("Santa Monica"))){
+            pagar.setText("980.00");
+            texc.setText("cuatro mil ochocientos");
+        }else if(modal.equals("Completo-Med")&&(local.equals("Iglesia Reyes Iztacala")||local.equals("TOKS Mario Colin")||local.equals("PLAZA TLALNE")||local.equals("Vicky Form")||local.equals("Glorieta Los bastones")||local.equals("Santa Monica"))){
+            pagar.setText("2920.00");
+            texc.setText("cuatro mil ochocientos");
+        }else if(modal.equals("Parcial-Med")&&(local.equals("Iglesia Reyes Iztacala")||local.equals("TOKS Mario Colin")||local.equals("PLAZA TLALNE")||local.equals("Vicky Form")||local.equals("Glorieta Los bastones")||local.equals("Santa Monica"))){
+            pagar.setText("730.00");
+            texc.setText("cuatro mil ochocientos");
+        }
+
+
+
 
     }
     public void orden() throws DocumentException {
