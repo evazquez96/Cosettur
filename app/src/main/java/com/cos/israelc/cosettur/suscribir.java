@@ -56,8 +56,10 @@ public class suscribir extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_suscribir);
         coutas=(Button)findViewById(R.id.btncoutas);
+        lol=(Spinner)findViewById(R.id.localidad);
         atrass=(Button)findViewById(R.id.btnatr);
         gradi=(Spinner)findViewById(R.id.grado);
         sems=(Spinner)findViewById(R.id.semestre);
@@ -75,7 +77,7 @@ public class suscribir extends AppCompatActivity {
         rot.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, rut));
         mod.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, model));
         cic.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, ciclos));
-
+        lol.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, ciclos));
         atrass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -104,6 +106,31 @@ public class suscribir extends AppCompatActivity {
 
             }
         });
+     mod.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+         @Override
+         public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+             calculo();
+
+         }
+
+         @Override
+         public void onNothingSelected(AdapterView<?> adapterView) {
+
+         }
+     });
+        lol.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+calculo();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+
 
         rot.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -112,27 +139,28 @@ public class suscribir extends AppCompatActivity {
                 String[]li2={"Pte Cipreses","Dep. Carlos Hermosillo","Banamex/CFE","Mercado Tenayo","Banorte tenayuca","Suburbano TLALNE","Iglesia Reyes Iztacala","TOKS Mario Colin","PLAZA TLALNE","Vicky Form","Glorieta Los bastones","Santa Monica"};//tlane
                 String[]l3={"Vips Echegaray","Glorieta las americas ","Plaza Gran Terraza","Incorp. Lomas Verdez","Cristobal Colon","Hospital Rio de la Loza ","LA ERA","Blvb Bellavista 54"};//naucalpan
                 String[]l4={"COSMOPOL","Fuentes del valle","Asta bandera","La Quebrada","OXXO Barrientos","Valle Dorado"};//coacalco
-                lol=(Spinner)findViewById(R.id.localidad);
+
                 String msupplier=rot.getSelectedItem().toString();
                 switch (msupplier){
 
                     case "Naucalpan":
                     lol.setAdapter(new ArrayAdapter<String>(suscribir.this, android.R.layout.simple_spinner_item, l3));
 
-
+calculo();
 
                         break;
                     case "Tlanepantla":
                         lol.setAdapter(new ArrayAdapter<String>(suscribir.this, android.R.layout.simple_spinner_item, li2));
+                    calculo();
                         break;
                     case "Coacalco":
 
                         lol.setAdapter(new ArrayAdapter<String>(suscribir.this, android.R.layout.simple_spinner_item, l4));
-
+calculo();
                         break;
                     case "C.Izcalli":
                         lol.setAdapter(new ArrayAdapter<String>(suscribir.this, android.R.layout.simple_spinner_item, li1));
-
+calculo();
                         break;
 
                 }
@@ -143,6 +171,8 @@ public class suscribir extends AppCompatActivity {
 
             }
         });
+
+
         coutas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -282,44 +312,44 @@ public class suscribir extends AppCompatActivity {
 //coacalco precio 1
     else if(modal.equals("Completo")&&(local.equals("COSMOPOL")||local.equals("Fuentes del valle")||local.equals("Asta bandera"))){
             pagar.setText("8056");
-            texc.setText("(Ocho mil Cincuenta y seis)Un solo pago");
+            texc.setText("(Ocho mil Cincuenta y seis pesos)Un solo pago");
         }else if(modal.equals("Completo-Med")&&(local.equals("COSMOPOL")||local.equals("Fuentes del valle")||local.equals("Asta bandera"))){
             pagar.setText("6360.00");
             texc.setText("(Seis mil trecientos sesenta peso)cuatrimestral");
         }else if(modal.equals("Parcial")&&(local.equals("COSMOPOL")||local.equals("Fuentes del valle")||local.equals("Asta bandera"))){
             pagar.setText("2120.00");
-            texc.setText("(Mil docientos quince pesos)4 pagos parciales");
+            texc.setText("(Dos mil ciento veinte pesos)4 pagos parciales");
         }else if(modal.equals("Parcial-Med")&&(local.equals("COSMOPOL")||local.equals("Fuentes del valle")||local.equals("Asta bandera"))) {
             pagar.setText("1590.00");
-            texc.setText("(Mil docientos quince pesos)4 pagos parciales");
+            texc.setText("(Mil quinientos noventa pesos)4 pagos parciales");
         }
 
         else if(modal.equals("Completo")&&local.equals("La Quebrada")){
             pagar.setText("4560.00");
-            texc.setText("(Ocho mil cuatrocientos ochenta peso)cuatrimestral");
+            texc.setText("(cuatro mil quinientos sesenta pesos)Un solo pago");
         }else if(modal.equals("Completo-Med")&&local.equals("La Quebrada")){
             pagar.setText("3120.00");
-            texc.setText("(Seis mil trecientos sesenta peso)cuatrimestral");
+            texc.setText("(tres mil ciento veinte pesos)cuatrimestral");
         }else if(modal.equals("Parcial")&&local.equals("La Quebrada")){
             pagar.setText("1200.00");
-            texc.setText("(Mil docientos quince pesos)4 pagos parciales");
+            texc.setText("(Mil docientos pesos)4 pagos parciales");
         }else if(modal.equals("Parcial-Med")&&local.equals("La Quebrada")) {
             pagar.setText("780.00");
-            texc.setText("(Mil docientos quince pesos)4 pagos parciales");
+            texc.setText("(setecientos ochenta pesos)4 pagos parciales");
         }
 //cocalco 3*/
         else if(modal.equals("Completo")&&(local.equals("OXXO Barrientos")||local.equals("Valle Dorado"))){
             pagar.setText("3920.00");
-            texc.setText("(tres mil novecientos veinte)cuatrimestral");
+            texc.setText("(tres mil novecientos veinte pesos)Un solo pago");
         }else if(modal.equals("Completo-Med")&&(local.equals("OXXO Barrientos")||local.equals("Valle Dorado"))){
             pagar.setText("2920.00");
-            texc.setText("(Seis mil trecientos sesenta peso)cuatrimestral");
+            texc.setText("(Dos mil novecientos veinte pesos)cuatrimestral");
         }else if(modal.equals("Parcial")&&(local.equals("OXXO Barrientos")||local.equals("Valle Dorado"))){
             pagar.setText("980.00");
-            texc.setText("(Mil docientos quince pesos)4 pagos parciales");
+            texc.setText("(novecientos ochenta pesos)4 pagos parciales");
         }else if(modal.equals("Parcial-Med")&&(local.equals("OXXO Barrientos")||local.equals("Valle Dorado"))) {
             pagar.setText("730.00");
-            texc.setText("(Mil docientos quince pesos)4 pagos parciales");
+            texc.setText("(setecientos vtreinta pesos)4 pagos parciales");
         }
 
 
@@ -329,43 +359,43 @@ public class suscribir extends AppCompatActivity {
 
         else if(rutasol.equals("C.Izcalli")&&modal.equals("Completo")){
             pagar.setText("8056.00");
-            texc.setText("(Ocho mil cuatrocientos ochenta peso)un solo pago");
+            texc.setText("(Ocho mil cincuenta y seis pesos)un solo pago");
         }else if(rutasol.equals("C.Izcalli")&&modal.equals("Completo-Med")){
             pagar.setText("6360.00");
-            texc.setText("(Seis mil trecientos sesenta peso)cuatriemestral");
+            texc.setText("(Seis mil trecientos sesenta pesos)cuatriemestral");
         }else if(rutasol.equals("C.Izcalli")&&modal.equals("Parcial")){
             pagar.setText("2120.00");
-            texc.setText("(Mil docientos quince pesos)4 pagos parciales");
+            texc.setText("(Mil docientos veinte pesos)4 pagos parciales");
         }else if(rutasol.equals("C.Izcalli")&&modal.equals("Parcial-Med")) {
             pagar.setText("1590.00");
-            texc.setText("(Mil docientos quince pesos)4 pagos parciales");
+            texc.setText("(Mil quinietos noventa pesos)4 pagos parciales");
             //tlane 1
         }else if(modal.equals("Completo")&&(local.equals("Pte Cipreses")||local.equals("Dep. Carlos Hermosillo")||local.equals("Banamex/CFE")||local.equals("Mercado Tenayo")||local.equals("Suburbano TLALNE")||local.equals("Banorte tenayuca"))){
            pagar.setText("4560.00");
-           texc.setText("cuatro mil ochocientos");
+           texc.setText("(cuatro mil quinietos sesenta pesos)Un solo pago");
         }else if(modal.equals("Parcial")&&(local.equals("Pte Cipreses")||local.equals("Dep. Carlos Hermosillo")||local.equals("Banamex/CFE")||local.equals("Mercado Tenayo")||local.equals("Suburbano TLALNE")||local.equals("Banorte tenayuca"))){
             pagar.setText("1200.00");
-            texc.setText("cuatro mil ochocientos");
+            texc.setText("(mil docientos pesos)4 pagos parciales");
         }else if(modal.equals("Completo-Med")&&(local.equals("Pte Cipreses")||local.equals("Dep. Carlos Hermosillo")||local.equals("Banamex/CFE")||local.equals("Mercado Tenayo")||local.equals("Suburbano TLALNE")||local.equals("Banorte tenayuca"))){
             pagar.setText("3120.00");
-            texc.setText("cuatro mil ochocientos");
+            texc.setText("(tres mil ciento veinte pesos)cuatrimestral");
         }else if(modal.equals("Parcial-Med")&&(local.equals("Pte Cipreses")||local.equals("Dep. Carlos Hermosillo")||local.equals("Banamex/CFE")||local.equals("Mercado Tenayo")||local.equals("Suburbano TLALNE")||local.equals("Banorte tenayuca"))){
             pagar.setText("780.00");
-            texc.setText("cuatro mil ochocientos");
+            texc.setText("(setecientos ochenta pesos)4 pagos parciales");
         }
 //tlane 2
         else if(modal.equals("Completo")&&(local.equals("Iglesia Reyes Iztacala")||local.equals("TOKS Mario Colin")||local.equals("PLAZA TLALNE")||local.equals("Vicky Form")||local.equals("Glorieta Los bastones")||local.equals("Santa Monica"))){
             pagar.setText("3920.00");
-            texc.setText("cuatro mil ochocientos");
+            texc.setText("(Tres mil novecientos veinte pesos)un solo pago");
         }else if(modal.equals("Parcial")&&(local.equals("Iglesia Reyes Iztacala")||local.equals("TOKS Mario Colin")||local.equals("PLAZA TLALNE")||local.equals("Vicky Form")||local.equals("Glorieta Los bastones")||local.equals("Santa Monica"))){
             pagar.setText("980.00");
-            texc.setText("cuatro mil ochocientos");
+            texc.setText("(novecientos ochenta pesos)4 pagos parciales");
         }else if(modal.equals("Completo-Med")&&(local.equals("Iglesia Reyes Iztacala")||local.equals("TOKS Mario Colin")||local.equals("PLAZA TLALNE")||local.equals("Vicky Form")||local.equals("Glorieta Los bastones")||local.equals("Santa Monica"))){
             pagar.setText("2920.00");
-            texc.setText("cuatro mil ochocientos");
+            texc.setText("(Dos mil novecientos veinte pesos)cuatrimestral");
         }else if(modal.equals("Parcial-Med")&&(local.equals("Iglesia Reyes Iztacala")||local.equals("TOKS Mario Colin")||local.equals("PLAZA TLALNE")||local.equals("Vicky Form")||local.equals("Glorieta Los bastones")||local.equals("Santa Monica"))){
             pagar.setText("730.00");
-            texc.setText("cuatro mil ochocientos");
+            texc.setText("(Setecientos treinta pesos)4 pagos parciales");
         }
 
 
