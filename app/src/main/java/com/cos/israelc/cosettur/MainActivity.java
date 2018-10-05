@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
     public static final int RequestPermissionCode = 8;
     Button registrar;
 Button mein;
+TextView help;
 EditText contra;
 EditText usuarios;
 TextView recuperar;
@@ -160,8 +161,18 @@ aviso=(TextView)findViewById(R.id.terminos);
         contra = (EditText) findViewById(R.id.contrasena);
         usuarios = (EditText) findViewById(R.id.users);
         registrar=(Button)findViewById(R.id.re);
+        help=(TextView) findViewById(R.id.helps);
 recuperar=(TextView)findViewById(R.id.recu) ;
 mein=(Button)findViewById(R.id.in);
+help.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+
+        Intent ayudar = new Intent(MainActivity.this,ayuda.class);
+        startActivity(ayudar);
+
+    }
+});
 
 registrar.setOnClickListener(new View.OnClickListener() {
     @Override
