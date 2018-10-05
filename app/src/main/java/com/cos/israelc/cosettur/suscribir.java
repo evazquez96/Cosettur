@@ -44,7 +44,6 @@ public class suscribir extends AppCompatActivity {
     Spinner mod;
     Spinner cic;
     Button sig;
-    Button coutas;
     Button atrass;
     TextInputEditText correitos;
     TextInputEditText namesf;
@@ -58,7 +57,6 @@ public class suscribir extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_suscribir);
-        coutas=(Button)findViewById(R.id.btncoutas);
         lol=(Spinner)findViewById(R.id.localidad);
         atrass=(Button)findViewById(R.id.btnatr);
         gradi=(Spinner)findViewById(R.id.grado);
@@ -173,12 +171,7 @@ calculo();
         });
 
 
-        coutas.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                calculo();
-            }
-        });
+
 
 
 
@@ -188,7 +181,7 @@ calculo();
         sig.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                alum=child.getText().toString();
               try {
 
                     createpdf();
@@ -197,6 +190,7 @@ calculo();
                     e.printStackTrace();
                 }
                 Intent pago= new Intent(suscribir.this,horario.class);
+              pago.putExtra("alumn_name",alum);
                 startActivity(pago);
                 finish();
             }
@@ -221,7 +215,7 @@ calculo();
         Toast.makeText(suscribir.this,"Guardando archivo", Toast.LENGTH_SHORT).show();
 
         Templatepdf tem=new Templatepdf(getApplicationContext());
-        tem.createfile(alum);
+        tem.createfile(alum+"contrato");
         tem.opendocument();
 
         tem.addMetaData("COSSETTUR","Ficha de Inscripcion","Cosetturapps");
@@ -406,14 +400,14 @@ calculo();
         String pa=pagar.getText().toString();
         String mo=texc.getText().toString();
         Templatepdf tem=new Templatepdf(getApplicationContext());
-        tem.createfile("contrato-"+alum);
+        tem.createfile(alum+"orden");
         tem.opendocument();
         tem.addMetaData("COSSETTUR","Ficha de Inscripcion","Cosetturapps");
         tem.addtitle("Proveedor de Servicios Educativos\n" +
                 "Transportación y Turismo","RFC COS 160907 JZ5","atencionunitec@cosettur.com\n" +
                 "cosettur@yahoo.com.mx");
         tem.lines("Formato de pago");
-        tem.addparagraph("Monto a pagar: "+pagar+texc);
+        tem.addparagraph("Monto a pagar: "+pa+mo);
         tem.addparagraph("Datos Bancario :  Hsbc");
         tem.addparagraph("A Nombre de: COSETTUR S.A. DE C.V.");
         tem.addparagraph("NO de cuenta: 4060-2729-03");

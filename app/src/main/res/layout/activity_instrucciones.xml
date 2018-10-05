@@ -25,7 +25,7 @@
             android:layout_margin="10dp">
 
             <LinearLayout
-                android:layout_width="350dp"
+                android:layout_width="320dp"
                 android:layout_height="match_parent"
                 android:background="@drawable/header"
                 android:orientation="vertical">
@@ -69,17 +69,20 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
              android:layout_margin="10dp">
-
-            <LinearLayout
-                android:layout_width="350dp"
+            <ScrollView
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/header"
+                android:background="@drawable/header">
+            <LinearLayout
+                android:layout_width="320dp"
+                android:layout_height="match_parent"
+
                 android:orientation="vertical">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
+                    android:layout_marginTop="5dp"
                     android:gravity="center"
                     android:text="Registrate"
                     android:textSize="30dp" />
@@ -87,16 +90,134 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:layout_margin="10dp"
-                    android:text="Esta es la Cosetturapp con ella podras suscribirte a cualquiera de nuestros servicios; ademas de conocer mas acerca de nosostros sigue atentamente las siguientes intruciones  "
-                    android:textSize="20dp" />
+                    android:gravity="left"
+                    android:layout_margin="5dp"
+                    android:text="Antes de registrarse visualice el aviso de privacidad presionando el link de la interfaz de inicio de sesión. Una vez realizado esto presione el boton Registar "
+                    android:textSize="15dp" />
+
+                <ImageView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="200dp"
+                    app:srcCompat="@drawable/m1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:textSize="15dp"
+                    android:text="Ingrese un nombre de usuario ejemplo mrojas123, nombre completo ejemplo  Mario Rojas Lopez, un numero telefónico celular, correo electrónico,  una contraseña , confirme su contraseña y para finalizar acepte los términos y condiciones plasmados en el aviso de privacidad "/>
+
 
                 <ImageView
 
                     android:layout_width="match_parent"
-                    android:layout_height="151dp"
-                    app:srcCompat="@drawable/loc" />
+                    android:layout_height="300dp"
+                    app:srcCompat="@drawable/i2m" />
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:textColor="@android:color/holo_blue_light"
+                    android:textSize="26dp"
+                    android:text="Desliza" />
+            </LinearLayout>
+            </ScrollView>
+        </android.support.v7.widget.CardView>
+
+
+        <android.support.v7.widget.CardView
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp">
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/header">
+                <LinearLayout
+                    android:layout_width="320dp"
+                    android:layout_height="match_parent"
+
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center"
+                        android:text="Iniciar sesíon"
+                        android:textSize="30dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_margin="5dp"
+                        android:text="Ingrese el nombre de usuario que ingreso seguido de la contraseña y presione el boton iniciar sesíon."
+                        android:textSize="15dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="En caso de olvidar la contraseña presione el link ¿Olvidaste tu contraseña? y recibira en su correo un enlace para recuperar su contraseña "/>
+
+                    <ImageView
+
+                        android:layout_width="200dp"
+                        android:layout_height="300dp"
+                        android:layout_gravity="center"
+                        app:srcCompat="@drawable/i3m" />
+
+
+                    <TextView
+
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textColor="@android:color/holo_blue_light"
+                        android:textSize="26dp"
+                        android:text="Desliza" />
+                </LinearLayout>
+            </ScrollView>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/header">
+            <LinearLayout
+                android:layout_width="320dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:gravity="center"
+                    android:text="Menu"
+                    android:textSize="30dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_margin="5dp"
+                    android:text="Desliza hacia la derecha para visualizar el menú de inicio y con el podrás conocer y utilizar cada uno de nuestros servicios"
+                    android:textSize="15dp" />
+
+                <ImageView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    app:srcCompat="@drawable/i4m" />
 
                 <TextView
 
@@ -105,53 +226,62 @@
                     android:gravity="center"
                     android:textColor="@android:color/holo_blue_light"
                     android:textSize="26dp"
-                    android:text="Delsiza" />
+                    android:text="Desliza" />
+
             </LinearLayout>
+         </ScrollView>
         </android.support.v7.widget.CardView>
+
         <android.support.v7.widget.CardView
-            android:id="@+id/card1"
+
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="10dp">
-
-            <LinearLayout
-                android:layout_width="350dp"
+            <ScrollView
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/header"
-                android:orientation="vertical">
+                android:background="@drawable/header">
+                <LinearLayout
+                    android:layout_width="320dp"
+                    android:layout_height="match_parent"
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:gravity="center"
-                    android:text="Inicia sesion"
-                    android:textSize="30dp" />
+                    android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="160dp"
-                    android:gravity="center"
-                    android:text="Esta es la Cosetturapp con ella podras suscribirte a cualquiera de nuestros servicios; ademas de conocer mas acerca de nosostros sigue atentamente las siguientes intruciones  "
-                    android:textSize="20dp" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center"
+                        android:text="Opciones"
+                        android:textSize="30dp" />
 
-                <ImageView
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_margin="5dp"
+                        android:text="Utilize el menu de opciones para conocer mas acerca de la APP y realizar otra operaciones descargar el contrato en pdf revisar referencias bancarias y  cerrar sesïon"
+                        android:textSize="15dp" />
 
-                    android:layout_width="match_parent"
-                    android:layout_height="151dp"
-                    app:srcCompat="@drawable/loc" />
+                    <ImageView
 
-                <Button
-                    android:id="@+id/aceptar"
-                    android:layout_width="50mm"
-                    android:layout_height="35dp"
-                    android:layout_gravity="center"
-                    android:layout_margin="10dp"
-                    android:textColor="#ffffff"
-                    android:background="@drawable/buton2"
-                    android:text="Comenzar" />
+                        android:layout_width="200dp"
+                        android:layout_height="300dp"
+                        android:layout_gravity="center"
+                        app:srcCompat="@drawable/i5m" />
 
-            </LinearLayout>
+
+                    <Button
+                        android:id="@+id/aceptar"
+                        android:layout_width="50mm"
+                        android:layout_height="35dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
+                        android:textColor="#ffffff"
+                        android:background="@drawable/buton2"
+                        android:text="Comenzar" />
+                </LinearLayout>
+            </ScrollView>
         </android.support.v7.widget.CardView>
 
     </LinearLayout>

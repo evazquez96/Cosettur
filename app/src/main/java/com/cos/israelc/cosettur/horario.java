@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.itextpdf.text.DocumentException;
+
 public class horario extends AppCompatActivity {
     Button fin;
     Spinner lunes1;
@@ -51,13 +53,18 @@ public class horario extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                create();
+                try {
+                    create();
+                } catch (DocumentException e) {
+                    e.printStackTrace();
+                }
                 finish();
             }
         });
 
     }
-    public void create(){
+    public void create() throws DocumentException {
+        String alumnos=getIntent().getStringExtra("alumn_name");
         String lu1=lunes1.getSelectedItem().toString();
         String lu2=lunes2.getSelectedItem().toString();
         String ma1=martes1.getSelectedItem().toString();
@@ -70,13 +77,17 @@ public class horario extends AppCompatActivity {
         String vi2=viernes2.getSelectedItem().toString();
         Toast.makeText(horario.this,"Guardando archivo", Toast.LENGTH_SHORT).show();
 
-        horariopdf tem=new horariopdf(getApplicationContext());
+        Templatepdf tem=new Templatepdf(getApplicationContext());
+        tem.createfile(alumnos+"horario");
         tem.opendocument();
 
         tem.addMetaData("COSSETTUR","Ficha de Inscripcion","Cosetturapps");
-        tem.addtitle("COSSETTUP","Ficha de Inscreipcion","Cosettuarpps");
+        tem.addtitle("Proveedor de Servicios Educativos\n" +
+                "Transportación y Turismo","RFC COS 160907 JZ5","atencionunitec@cosettur.com\n" +
+                "cosettur@yahoo.com.mx");
+        tem.lines("Horario Sugerido");
 
-        tem.addparagraph("Nombre del alumno:  ");
+        tem.addparagraph("Nombre del alumno:  "+alumnos);
         tem.addparagraph("                               Lunes  Martes  Miercoles  Juevez  Viernes");
         tem.addparagraph("Hora de Ascenso:    "+lu1+"     "+ma1+"     "+m11+"     "+je1+"     "+vi1 );
         tem.addparagraph("Hora de Descenso:   "+lu2+"     "+ma2+"     "+mi2+"     "+je2+"     "+vi2 );

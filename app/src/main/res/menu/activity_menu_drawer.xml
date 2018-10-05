@@ -12,7 +12,11 @@
         <item
             android:id="@+id/suscribir"
             android:icon="@drawable/bitacora"
-            android:title="Nueva Inscripcion" />
+            android:title="Incripcíon UNITEC" />
+        <item
+            android:id="@+id/documents"
+            android:icon="@drawable/documents"
+            android:title="Otros Servicios" />
         <item
             android:id="@+id/rutas"
             android:icon="@drawable/ruts"
@@ -31,10 +35,7 @@
             android:icon="@drawable/paypal"
             android:visible="false"
             android:title="Pagar Cuota" />
-        <item
-            android:id="@+id/documents"
-            android:icon="@drawable/documents"
-            android:title="Documentos" />
+
 
     </group>
 
