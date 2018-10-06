@@ -63,11 +63,12 @@
         </activity>
         <activity
             android:name=".inicio"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".ayuda"
             android:label="Ayuda"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".pages"></activity>
     </application>
 
 </manifest>

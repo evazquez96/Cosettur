@@ -213,7 +213,7 @@ mein.setOnClickListener(new View.OnClickListener() {
 recuperar.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
-      Intent rec= new Intent(MainActivity.this,recuperar.class);
+      Intent rec= new Intent(MainActivity.this,pages.class);
        startActivity(rec);
 
 
