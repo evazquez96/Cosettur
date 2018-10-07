@@ -406,6 +406,7 @@ calculo();
         tem.addtitle("Proveedor de Servicios Educativos\n" +
                 "Transportación y Turismo","RFC COS 160907 JZ5","atencionunitec@cosettur.com\n" +
                 "cosettur@yahoo.com.mx");
+        tem.createimage();
         tem.lines("Formato de pago");
         tem.addparagraph("Monto a pagar: "+pa+mo);
         tem.addparagraph("Datos Bancario :  Hsbc");

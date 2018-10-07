@@ -2,6 +2,7 @@ package com.cos.israelc.cosettur;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.pdf.PdfDocument;
+import android.net.Uri;
 import android.os.Environment;
 import android.util.Log;
 import com.itextpdf.text.Image;
@@ -21,6 +22,7 @@ import com.itextpdf.text.Document;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import com.itextpdf.text.pdf.draw.DottedLineSeparator;
@@ -157,11 +159,30 @@ public class Templatepdf {
     } public void imagenes() throws IOException, BadElementException {
 
     }
-    public void createimage() throws IOException, DocumentException {
-        Paragraph p = new Paragraph();
-        Image imagen = Image.getInstance("android.resource://\" + getPackageName() +\"/\"+R.drawable.loc.png");
-        imagen.setAlignment(Element.ALIGN_LEFT);
-        imagen.scaleAbsoluteWidth(20f);
-        document.add(imagen);
+    public void createimage()  {
+        try {
+
+
+            Paragraph p = new Paragraph("holaaaaaaaaaaaaaaaaaaaa",ftext);
+            p.setAlignment(Element.ALIGN_CENTER);
+            p.getAlignment();
+            DottedLineSeparator dottedline = new DottedLineSeparator();
+            dottedline.setOffset(-2);
+            dottedline.setGap(2f);
+            p.add(dottedline);
+            Uri uriImagen = Uri.parse("R.drawable.imagen");
+
+            String imageUrl = "http://jenkov.com/images/" +
+                    "20081123-20081123-3E1W7902-small-portrait.jpg";
+
+            Image image = Image.getInstance("logo.png");
+            image.setRotationDegrees(45f);
+            document.add(image);
+
+
+
+        } catch(Exception e){
+            e.printStackTrace();
+        }
     }
 }
