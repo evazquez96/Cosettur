@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/stilo"
+    tools:context=".horario">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="4dp"
+        android:background="@drawable/header"
+        android:orientation="horizontal">
+
+
+
+        <TextView
+            android:id="@+id/texto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+
+            android:text="Horario"
+            android:textColor="#393d42"
+            android:textSize="27dp" />
+
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical" >
+
+
+
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="6mm"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:text="lunes" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="7mm"
+        android:layout_gravity="center"
+        android:background="@drawable/header"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="4mm"
+            android:layout_height="match_parent"
+          android:gravity="center"
+            android:text="De:" />
+
+        <Spinner
+            android:id="@+id/l1"
+            android:layout_width="20mm"
+            android:layout_height="match_parent"
+                  />
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="4mm"
+            android:layout_height="match_parent"
+         android:gravity="center"
+            android:text="A :" />
+
+        <Spinner
+            android:id="@+id/l2"
+            android:layout_width="20mm"
+            android:layout_height="match_parent"
+           />
+    </LinearLayout>
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="6mm"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:text="Martes" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="7mm"
+        android:layout_gravity="center"
+        android:background="@drawable/header"
+        android:orientation="horizontal">
+
+        <TextView
+
+            android:layout_width="4mm"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="De:" />
+
+        <Spinner
+            android:id="@+id/m1"
+            android:layout_width="20mm"
+            android:layout_height="match_parent"
+            />
+
+        <TextView
+
+            android:layout_width="4mm"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="A :" />
+
+        <Spinner
+            android:id="@+id/m2"
+            android:layout_width="20mm"
+            android:layout_height="match_parent"
+            />
+    </LinearLayout>
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="6mm"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:text="Miercoles" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="7mm"
+        android:layout_gravity="center"
+        android:background="@drawable/header"
+        android:orientation="horizontal">
+
+        <TextView
+
+            android:layout_width="4mm"
+            android:layout_height="match_parent"
+            android:gravity="center"
+
+            android:text="De:" />
+
+        <Spinner
+            android:id="@+id/mi1"
+            android:layout_width="20mm"
+            android:layout_height="match_parent"
+            />
+
+        <TextView
+
+            android:layout_width="4mm"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="A :" />
+
+        <Spinner
+            android:id="@+id/mi2"
+            android:layout_width="20mm"
+            android:layout_height="match_parent"
+            />
+    </LinearLayout>
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="6mm"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:text="Jueves" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="7mm"
+        android:layout_gravity="center"
+        android:background="@drawable/header"
+        android:orientation="horizontal">
+
+        <TextView
+
+            android:layout_width="4mm"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="De:" />
+
+        <Spinner
+            android:id="@+id/j1"
+            android:layout_width="20mm"
+            android:layout_height="match_parent"
+            />
+
+        <TextView
+
+            android:layout_width="4mm"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="A :" />
+
+        <Spinner
+            android:id="@+id/j2"
+            android:layout_width="20mm"
+            android:layout_height="match_parent"
+            />
+    </LinearLayout>
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="6mm"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:text="Viernes" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="7mm"
+        android:layout_gravity="center"
+        android:background="@drawable/header"
+        android:orientation="horizontal">
+
+        <TextView
+
+            android:layout_width="4mm"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="De:" />
+
+        <Spinner
+            android:id="@+id/v1"
+            android:layout_width="20mm"
+            android:layout_height="match_parent"
+            />
+
+        <TextView
+
+            android:layout_width="4mm"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="A :" />
+
+        <Spinner
+            android:id="@+id/v2"
+            android:layout_width="20mm"
+            android:layout_height="match_parent"
+            />
+
+    </LinearLayout>
+            <Button
+                android:id="@+id/siguiente"
+                android:layout_width="30mm"
+                android:layout_height="7mm"
+                android:layout_gravity="center"
+                android:background="@drawable/botones"
+                android:layout_margin="10dp"
+                android:textColor="@android:color/background_light"
+                android:text="Guardar horario" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+</LinearLayout>

@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".suscribir">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="8mm"
+        android:layout_margin="4dp"
+        android:background="@drawable/header"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnatr"
+            android:layout_width="8mm"
+            android:layout_gravity="center"
+            android:layout_height="6.5mm"
+           android:background="@drawable/arriw" />
+
+        <TextView
+            android:id="@+id/texto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+
+            android:text="Ficha de Incripcion"
+            android:textColor="#393d42"
+            android:textSize="27dp" />
+
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/hoj"
+            android:orientation="vertical" >
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="18dp"
+                android:background="@android:color/background_light"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Datos personales"
+                    android:textSize="18dp"
+                    android:textColor="@android:color/holo_blue_light"/>
+
+
+                <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_margin="10dp"
+                android:layout_height="match_parent">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/padre"
+                    android:inputType="textPersonName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Nombre del padre o tutor" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/alumno"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:hint="Nombre del alumno" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/tel"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/telephone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Telefono Personal"
+                    android:inputType="phone" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/celphone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Telefono Celular"
+                    android:inputType="phone" />
+
+            </android.support.design.widget.TextInputLayout>
+
+
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:gravity="center"
+               android:text="Domicilo"
+               android:textSize="18dp"
+               android:textColor="@android:color/holo_blue_light"/>
+
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/noext"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="No Exterior" />
+                </android.support.design.widget.TextInputLayout>
+
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/noint"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="No Interior" />
+                </android.support.design.widget.TextInputLayout>
+
+
+
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/Localidad"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Localidad" />
+                    </android.support.design.widget.TextInputLayout>
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/Nopost"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Codigo Postal" />
+                    </android.support.design.widget.TextInputLayout>
+
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <android.support.design.widget.TextInputEditText
+
+                        android:id="@+id/correoss"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="municipio"
+                        android:inputType="textPersonName" />
+                </android.support.design.widget.TextInputLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Servicios"
+                    android:textSize="18dp"
+                    android:textColor="@android:color/holo_blue_light"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="8mm"
+                android:layout_margin="10dp"
+                android:layout_gravity="center"
+                android:background="@drawable/header"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="10mm"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:textColor="#393d42"
+                    android:text=" Grado :" />
+
+                <Spinner
+                    android:id="@+id/grado"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                 />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="8mm"
+                android:layout_margin="10dp"
+                android:layout_gravity="center"
+                android:background="@drawable/header"
+                android:orientation="horizontal">
+                <TextView
+
+                    android:layout_width="17mm"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:textColor="#393d42"
+                    android:text=" Semestre :" />
+
+                <Spinner
+                    android:id="@+id/semestre"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="8mm"
+                android:layout_margin="10dp"
+                android:layout_gravity="center"
+                android:background="@drawable/header"
+                android:orientation="horizontal">
+                <TextView
+
+                    android:layout_width="12mm"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:textColor="#393d42"
+                    android:text=" Ruta :" />
+
+                <Spinner
+                    android:id="@+id/Ruta"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="8mm"
+                android:layout_margin="10dp"
+                android:layout_gravity="center"
+                android:background="@drawable/header"
+                android:orientation="horizontal">
+                <TextView
+
+                    android:layout_width="17mm"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:textColor="#393d42"
+                    android:text=" localidad :" />
+
+                <Spinner
+                    android:id="@+id/localidad"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="8mm"
+                android:layout_margin="10dp"
+                android:layout_gravity="center"
+                android:background="@drawable/header"
+                android:orientation="horizontal">
+                <TextView
+
+                    android:layout_width="17mm"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:textColor="#393d42"
+                    android:text=" Modalidad :" />
+
+                <Spinner
+                    android:id="@+id/modalida"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="8mm"
+                android:layout_margin="10dp"
+                android:layout_gravity="center"
+                android:background="@drawable/header"
+                android:orientation="horizontal">
+                <TextView
+
+                    android:layout_width="17mm"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:textColor="#393d42"
+                    android:text=" Ciclo Escolar :" />
+
+
+                <Spinner
+                    android:id="@+id/ciclo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    />
+
+
+
+            </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textSize="18dp"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:text="Cuota : "/>
+                    <TextView
+                        android:id="@+id/idpag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textSize="16dp"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:text="Presiona calcular cuota"/>
+                    <TextView
+                        android:id="@+id/cuotas"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textSize="12dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+            <Button
+                android:id="@+id/siguiente"
+                android:layout_width="50mm"
+                android:layout_height="7mm"
+                android:layout_gravity="center"
+                android:background="@drawable/botones"
+                android:layout_margin="10dp"
+                android:textColor="@android:color/background_light"
+                android:text="Guardar y crear horario" />
+        </LinearLayout>
+    </ScrollView>
+
+
+
+
+</LinearLayout>

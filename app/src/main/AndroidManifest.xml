@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.israelc.cosettur">
+    package="com.cos.israelc.cosettur">
 
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_SMS" />
@@ -11,30 +11,64 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/logo"
-        android:label="COSSETURAPP"
-        android:roundIcon="@drawable/logo"
+        android:hardwareAccelerated="false"
+        android:icon="@drawable/loc"
+        android:label="CosetturApp"
+        android:largeHeap="true"
+        android:roundIcon="@drawable/loc"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity" />
+        <activity
+            android:name=".registro"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".recuperar"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".rutas"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".camion"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".menu"
+            android:label="@string/title_activity_menu"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".mision" />
+        <activity
+            android:name=".camiones"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".vision" />
+        <activity
+            android:name=".Paypal"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".cuentas"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".suscribir"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".horario"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".Instrucciones"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".registro" />
-        <activity android:name=".recuperar" />
-        <activity android:name=".rutas" />
-        <activity android:name=".camion" />
         <activity
-            android:name=".menu"
-            android:label="@string/title_activity_menu"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".mision" />
-        <activity android:name=".camiones" />
-        <activity android:name=".vision" />
-        <activity android:name=".Paypal"></activity>
+            android:name=".inicio"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".ayuda"
+            android:label="Ayuda"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".Main2Activity"></activity>
     </application>
 
 </manifest>

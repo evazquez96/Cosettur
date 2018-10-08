@@ -2,143 +2,137 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".rutas">
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="64dp"
-            android:background="@android:color/background_light"
+            android:layout_height="8mm"
+            android:layout_margin="4dp"
+            android:background="@drawable/header"
             android:orientation="horizontal">
 
-            <LinearLayout
-                android:layout_width="91dp"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+
 
                 <ImageView
-                    android:id="@+id/imageView9"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/cosetturs" />
-            </LinearLayout>
+                    android:id="@+id/atr"
+                    android:layout_width="8mm"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/arriw" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+
+
 
                 <TextView
                     android:id="@+id/textView17"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:textSize="25dp"
+                    android:text="Rutas de Servicio"
                     android:textColor="#393d42"
-                    android:text="Rutas de Servicio" />
-            </LinearLayout>
+                    android:textSize="25dp" />
+
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+
 
             <HorizontalScrollView
                 android:id="@+id/horizontalScrollView"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/your_id"
-                android:scrollbars="none">
+                android:layout_height="wrap_content">
 
-                <RelativeLayout
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:padding="2dp">
-
-                    <android.support.v7.widget.CardView
-                        android:id="@+id/cardThree"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="2dp"
-                        android:layout_toEndOf="@+id/cardTwo"
-                        android:padding="2dp">
+                  android:orientation="horizontal">
 
 
-                        <ImageView
-                            android:id="@+id/imageView11"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            app:srcCompat="@drawable/poster2white" />
-                    </android.support.v7.widget.CardView>
 
                     <android.support.v7.widget.CardView
                         android:id="@+id/cardOne"
-                        android:layout_width="match_parent"
+                        android:layout_width="60mm"
                         android:layout_height="match_parent"
-                        android:layout_toEndOf="@+id/cardfor"
-                        android:padding="2dp">
+                     android:background="@drawable/header"
+                        android:layout_margin="10dp">
 
 
                         <ImageView
                             android:id="@+id/imageView12"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            app:srcCompat="@drawable/poster3white" />
+                            app:srcCompat="@drawable/co" />
                     </android.support.v7.widget.CardView>
 
 
                     <android.support.v7.widget.CardView
                         android:id="@+id/cardfor"
-                        android:layout_width="match_parent"
+                        android:layout_width="103mm"
                         android:layout_height="match_parent"
-                        android:padding="2dp">
+                        android:layout_margin="10dp">
 
 
                         <ImageView
                             android:id="@+id/imageView17"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            app:srcCompat="@drawable/poster4white" />
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            app:srcCompat="@drawable/noche" />
                     </android.support.v7.widget.CardView>
 
 
                     <android.support.v7.widget.CardView
                         android:id="@+id/cardTwo"
-                        android:layout_width="match_parent"
+                        android:layout_width="55mm"
                         android:layout_height="match_parent"
-                        android:layout_marginStart="2dp"
-                        android:layout_toEndOf="@+id/cardOne"
-                        android:padding="2dp">
+                        android:layout_margin="10dp">
 
 
                         <ImageView
                             android:id="@+id/imageView13"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            app:srcCompat="@drawable/poster5white" />
+                            app:srcCompat="@drawable/naa" />
                     </android.support.v7.widget.CardView>
-                </RelativeLayout>
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/cardfive"
+                        android:layout_width="55mm"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp">
+
+
+                        <ImageView
+                            android:id="@+id/ima"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@drawable/tlane" />
+                    </android.support.v7.widget.CardView>
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/cardThree"
+                        android:layout_width="55mm"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp">
+
+
+                        <ImageView
+                            android:id="@+id/imageView11"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:srcCompat="@drawable/cisco" />
+                    </android.support.v7.widget.CardView>
+                </LinearLayout>
             </HorizontalScrollView>
 
 
-        </LinearLayout>
 
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/stilo"
-            android:orientation="horizontal"></LinearLayout>
 
-    </LinearLayout>
+
+
+
 </LinearLayout>

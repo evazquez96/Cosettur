@@ -2,18 +2,53 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".camiones">
 
-    <android.support.v7.widget.CardView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="8mm"
+        android:layout_margin="4dp"
+        android:background="@drawable/header"
+        android:orientation="horizontal">
 
-        <ImageView
-            android:id="@+id/imageView10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/poster2white" />
-    </android.support.v7.widget.CardView>
+
+
+            <ImageView
+                android:id="@+id/atras"
+                android:layout_width="8mm"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/arriw" />
+        <Spinner
+            android:id="@+id/rutass"
+            android:layout_width="226dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+           android:theme="@style/AppTheme.AppBarOverlay" />
+
+
+    </LinearLayout>
+
+    <ImageView
+            android:id="@+id/in"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/autoss" />
+        <WebView
+            android:id="@+id/we"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/stilo">
+
+
+        </WebView>
+
+
+
+
+
+
 </LinearLayout>
