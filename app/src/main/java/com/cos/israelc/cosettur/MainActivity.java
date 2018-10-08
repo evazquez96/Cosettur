@@ -1,6 +1,8 @@
 package com.cos.israelc.cosettur;
 
 import android.annotation.SuppressLint;
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
@@ -41,6 +43,8 @@ EditText contra;
 EditText usuarios;
 TextView recuperar;
 String a;
+   Context context = null;
+ProgressDialog pdialog = null;
 String b;
 String result1;
 TextView aviso;
@@ -155,7 +159,7 @@ TextView aviso;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         configurarPermisos();
-
+        context = this;
         setContentView(R.layout.activity_main);
 aviso=(TextView)findViewById(R.id.terminos);
         contra = (EditText) findViewById(R.id.contrasena);
@@ -213,7 +217,8 @@ mein.setOnClickListener(new View.OnClickListener() {
 recuperar.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
-      Intent rec= new Intent(MainActivity.this,pages.class);
+
+      Intent rec= new Intent(MainActivity.this,Main2Activity.class);
        startActivity(rec);
 
 

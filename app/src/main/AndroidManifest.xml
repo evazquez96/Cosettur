@@ -13,7 +13,7 @@
         android:allowBackup="true"
         android:hardwareAccelerated="false"
         android:icon="@drawable/loc"
-        android:label="CosetturApps"
+        android:label="CosetturApp"
         android:largeHeap="true"
         android:roundIcon="@drawable/loc"
         android:supportsRtl="true"
@@ -68,7 +68,7 @@
             android:name=".ayuda"
             android:label="Ayuda"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".pages"></activity>
+        <activity android:name=".Main2Activity"></activity>
     </application>
 
 </manifest>
