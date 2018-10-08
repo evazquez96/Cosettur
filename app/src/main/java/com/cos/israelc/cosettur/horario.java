@@ -12,6 +12,8 @@ import com.itextpdf.text.DocumentException;
 
 public class horario extends AppCompatActivity {
     Button fin;
+    String lu1,lu2,ma1,ma2,mie1,mie2,ju1,ju2,vie1,vie2;
+
     Spinner lunes1;
     Spinner lunes2;
     Spinner martes1;
@@ -95,6 +97,21 @@ public class horario extends AppCompatActivity {
 
 
 
+
+    }
+
+    public void datos(){
+
+       lu1=lunes1.getSelectedItem().toString();
+       lu2=lunes2.getSelectedItem().toString();
+       ma1=martes1.getSelectedItem().toString();
+       ma2=martes2.getSelectedItem().toString();
+       mie1=miercoles1.getSelectedItem().toString();
+       mie2=miercoles2.getSelectedItem().toString();
+       ju1=jueves1.getSelectedItem().toString();
+       ju2=jueves2.getSelectedItem().toString();
+       vie1=viernes1.getSelectedItem().toString();
+       vie2=viernes2.getSelectedItem().toString();
 
     }
 

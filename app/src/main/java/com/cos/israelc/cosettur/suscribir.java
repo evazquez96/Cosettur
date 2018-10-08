@@ -9,18 +9,21 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.itextpdf.text.DocumentException;
 
 public class suscribir extends AppCompatActivity {
+    String Users;
     String correos;
     String padres;
     String alum;
     String tell;
     String call;
      int pago;
+     int catrutas,catmodalidad,catgrado,catciclo;
 
     String grados;
     String semestres;
@@ -70,6 +73,7 @@ public class suscribir extends AppCompatActivity {
         phones=(TextInputEditText)findViewById(R.id.telephone);
         cl=(TextInputEditText)findViewById(R.id.celphone);
         pagar=(TextView)findViewById(R.id.idpag);
+        sems=(Spinner)findViewById(R.id.semestre);
         texc=(TextView)findViewById(R.id.cuotas);
         gradi.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,sem));
         rot.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, rut));
@@ -79,8 +83,34 @@ public class suscribir extends AppCompatActivity {
         atrass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 finish();
+            }
+        });
+        cic.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                String select=cic.getSelectedItem().toString();
+                switch (select){
+
+                    case"ENERO-ABRIL":
+                        catciclo=1;
+                        break;
+
+                    case"MAYO-AGOSTO":
+                        catciclo=2;
+                        break;
+
+                        case"SEPTIEMBRE-DICIEMBRE":
+                            catciclo=3;
+                        break;
+
+                }
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
             }
         });
 
@@ -89,15 +119,16 @@ public class suscribir extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
                 String[] grade1 = {"1","2","3","4","5","6","7","8","9"};
                 String[] grade2 = {"1","2","3","4","5","6","7","8","9","10","11","12"};
-                sems=(Spinner)findViewById(R.id.semestre);
+
                 String msupplier=gradi.getSelectedItem().toString();
                 switch (msupplier){
                     case "Preparatoria":
                         sems.setAdapter(new ArrayAdapter<String>(suscribir.this, android.R.layout.simple_spinner_item, grade1));
+                        catgrado=1;
                         break;
                     case"Licenciatura":
                         sems.setAdapter(new ArrayAdapter<String>(suscribir.this, android.R.layout.simple_spinner_item, grade2));
-
+                         catgrado=2;
                         break; }
             }@Override
             public void onNothingSelected(AdapterView<?> arg0) {
@@ -108,6 +139,27 @@ public class suscribir extends AppCompatActivity {
          @Override
          public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
              calculo();
+
+             String modell =mod.getSelectedItem().toString();
+
+             switch(modell){
+                 case "Parcial":
+                     catmodalidad=1;
+                     break;
+
+                 case "Completo":
+                     catmodalidad=2;
+                     break;
+                 case "Parcial-Med":
+                     catmodalidad=3;
+                     break;
+                 case "Completo-Med":
+                     catmodalidad=4;
+                     break;
+
+             }
+
+
 
          }
 
@@ -143,22 +195,26 @@ calculo();
 
                     case "Naucalpan":
                     lol.setAdapter(new ArrayAdapter<String>(suscribir.this, android.R.layout.simple_spinner_item, l3));
+                    catrutas=1;
 
-calculo();
+                    calculo();
 
                         break;
                     case "Tlanepantla":
                         lol.setAdapter(new ArrayAdapter<String>(suscribir.this, android.R.layout.simple_spinner_item, li2));
                     calculo();
+                        catrutas=2;
                         break;
                     case "Coacalco":
 
                         lol.setAdapter(new ArrayAdapter<String>(suscribir.this, android.R.layout.simple_spinner_item, l4));
-calculo();
+                       calculo();
+                        catrutas=3;
                         break;
                     case "C.Izcalli":
                         lol.setAdapter(new ArrayAdapter<String>(suscribir.this, android.R.layout.simple_spinner_item, li1));
-calculo();
+                       calculo();
+                        catrutas=4;
                         break;
 
                 }
@@ -419,6 +475,17 @@ calculo();
         tem.addparagraph("NO de cuenta: 0248-8430-67");
         tem.addparagraph("Clave Interbancaria: 0721-8000-2488-67");
         tem.closedocument();
+
+    }
+    public void datos(){
+
+        padres=namesf.getText().toString();//tutoR
+        alum=child.getText().toString();//tutoriado
+        local=lol.getSelectedItem().toString();//localidad
+        semestres=sems.getSelectedItem().toString();//semestre
+        tell=phones.getText().toString();//telefono
+        pago=Integer.parseInt(pagar.getText().toString());//pago
+
 
     }
 
