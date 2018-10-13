@@ -486,6 +486,7 @@ calculo();
         tell=phones.getText().toString();//telefono
         pago=Integer.parseInt(pagar.getText().toString());//pago
 
+        WebService.consumirWs(user,grado,semestres,ruta,local,modalidad,ciclo,padres,alum,entrada,salida,pago,tell);
 
     }
 

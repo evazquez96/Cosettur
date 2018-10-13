@@ -13,7 +13,7 @@ public class WebService {
 
     private SoapPrimitive resultado;
 
-    public Response conumirWs(String user, String grado, String semestre, String ruta, String localidad, String modalidad, String ciclo, String tutor, String tutorado, String entrada, String salida, String pago, String telefono) {
+    public static Response consumirWs(String user, String grado, String semestre, String ruta, String localidad, String modalidad, String ciclo, String tutor, String tutorado, String entrada, String salida, String pago, String telefono) {
 
         Response response = new Response();
 
