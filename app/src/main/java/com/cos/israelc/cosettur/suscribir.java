@@ -16,7 +16,7 @@ import android.widget.Toast;
 import com.itextpdf.text.DocumentException;
 
 public class suscribir extends AppCompatActivity {
-    String Users;
+    String user;
     String correos;
     String padres;
     String alum;
@@ -238,6 +238,7 @@ calculo();
             @Override
             public void onClick(View v) {
                 alum=child.getText().toString();
+                user=getIntent().getStringExtra("user");
               try {
 
                     createpdf();
@@ -247,6 +248,7 @@ calculo();
                 }
                 Intent pago= new Intent(suscribir.this,horario.class);
               pago.putExtra("alumn_name",alum);
+                pago.putExtra("user",user);
                 startActivity(pago);
                 finish();
             }
@@ -485,9 +487,9 @@ calculo();
         semestres=sems.getSelectedItem().toString();//semestre
         tell=phones.getText().toString();//telefono
         pago=Integer.parseInt(pagar.getText().toString());//pago
+        user=getIntent().getStringExtra("user");
 
-        WebService.consumirWs(user,grado,semestres,ruta,local,modalidad,ciclo,padres,alum,entrada,salida,pago,tell);
-
+      WebService.consumirWs(user,catgrado,semestres,catrutas,local,catmodalidad,catciclo,padres,alum,"","",pago,tell);
     }
 
 }

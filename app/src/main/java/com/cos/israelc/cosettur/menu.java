@@ -148,7 +148,12 @@ public class menu extends AppCompatActivity implements NavigationView.OnNavigati
 
         }
     else if (id == R.id.suscribir) {
+
+            String usuario;
+            usuario=name.getText().toString();
+
             Intent pago= new Intent(menu.this,suscribir.class);
+            pago.putExtra("user",usuario);
             startActivity(pago);
 
 

@@ -8,11 +8,12 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.cos.israelc.cosettur.WebService;
 import com.itextpdf.text.DocumentException;
 
 public class horario extends AppCompatActivity {
     Button fin;
-    String lu1,lu2,ma1,ma2,mie1,mie2,ju1,ju2,vie1,vie2;
+    String lu1,lu2,ma1,ma2,mie1,mie2,ju1,ju2,vie1,vie2, user;
 
     Spinner lunes1;
     Spinner lunes2;
@@ -112,7 +113,26 @@ public class horario extends AppCompatActivity {
        ju2=jueves2.getSelectedItem().toString();
        vie1=viernes1.getSelectedItem().toString();
        vie2=viernes2.getSelectedItem().toString();
+       String entradas[] = new String[5];
+       String salidas[]= new String[5];
+        user=getIntent().getStringExtra("user");
 
+        entradas[0]=lu1;
+        entradas[1]=ma1;
+        entradas[2]=mie1;
+        entradas[3]=ju1;
+        entradas[4]=vie1;
+
+        salidas[0]=lu2;
+        salidas[1]=ma2;
+        salidas[2]=mie2;
+        salidas[3]=ju2;
+        salidas[4]=vie2;
+
+        WebService servicio= new WebService();
+
+
+servicio.consumirWs(user,"","","","","","","","",entradas,salidas,"","");
     }
 
 }
