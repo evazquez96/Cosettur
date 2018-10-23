@@ -2,6 +2,7 @@ package com.cos.israelc.cosettur;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -27,6 +28,7 @@ public class Main2Activity extends AppCompatActivity {
     ProgressDialog pdialog = null;
     Context context = null;
     Button login;
+    int numero;
     String rec, subject, textMessage;
 
 
@@ -44,6 +46,8 @@ public class Main2Activity extends AppCompatActivity {
             public void onClick(View view) {
 
          validar();
+
+
 
             }
         });
@@ -75,13 +79,13 @@ public class Main2Activity extends AppCompatActivity {
 
         @Override
         protected String doInBackground(String... params) {
-
+getnumero();
             try{
                 Message message = new MimeMessage(session);
                 message.setFrom(new InternetAddress("testfrom354@gmail.com"));
                 message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(rec));
                 message.setSubject("recuperacion de contraseña");
-                message.setContent("https://sites.google.com/view/recuperacioncosettur/p%C3%A1gina-principal?authuser=1", "text/html; charset=utf-8");
+                message.setContent("Gracias por usau Cosetturapp su numero de verificaion es: "+numero, "text/html; charset=utf-8");
                 Transport.send(message);
             } catch(MessagingException e) {
                 e.printStackTrace();
@@ -93,11 +97,17 @@ public class Main2Activity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(String result) {
+            String valid=numero+"";
             pdialog.dismiss();
             reciep.setText("");
             msg.setText("");
             sub.setText("");
             Toast.makeText(getApplicationContext(), "Message sent", Toast.LENGTH_LONG).show();
+            Intent recupera= new Intent(Main2Activity.this,recuperar.class);
+            recupera.putExtra("number",valid);
+            startActivity(recupera);
+
+            finish();
         }
     }
     public void validar(){
@@ -118,6 +128,10 @@ if(reciep.getText().toString().equals("")){
 }
 
     }
+public void getnumero(){
 
+    numero = (int) (Math.random() * 9999) + 1000;
+
+}
 
 }

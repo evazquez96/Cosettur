@@ -11,20 +11,28 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_margin="4dp"
-        android:background="@drawable/header"
+        android:background="#152E4D"
         android:orientation="horizontal">
 
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
 
+            app:srcCompat="@drawable/lib" />
 
         <TextView
             android:id="@+id/texto"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
+            android:layout_marginLeft="50dp"
+            android:gravity="center_vertical"
 
             android:text="Horario"
-            android:textColor="#393d42"
+            android:textColor="#ffffff"
             android:textSize="27dp" />
+
+
 
 
     </LinearLayout>

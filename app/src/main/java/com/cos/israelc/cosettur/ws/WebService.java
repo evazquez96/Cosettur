@@ -1,4 +1,14 @@
-package com.cos.israelc.cosettur;
+package com.cos.israelc.cosettur.ws;
+
+import android.util.Log;
+
+import com.cos.israelc.cosettur.models.Response;
+
+import org.ksoap2.SoapEnvelope;
+import org.ksoap2.serialization.SoapObject;
+import org.ksoap2.serialization.SoapPrimitive;
+import org.ksoap2.serialization.SoapSerializationEnvelope;
+import org.ksoap2.transport.HttpTransportSE;
 
 public class WebService {
 
@@ -10,10 +20,11 @@ public class WebService {
     private static final String accionSoap = "http://ws.cosettur.com/inscribirHorario";
     // Fichero de definicion del servcio web
     private static final String url = "http://node37874-env-3073930.jl.serv.net.mx/ROOT-289/CosetturWS?wsdl";
+    private static SoapPrimitive resultado;
 
-    private SoapPrimitive resultado;
 
-    public static Response consumirWs(String user, String grado, String semestre, String ruta, String localidad, String modalidad, String ciclo, String tutor, String tutorado, String entrada, String salida, String pago, String telefono) {
+
+    public static Response consumirWs(String user, String grado, String semestre, String ruta, String localidad, String modalidad, String ciclo, String tutor, String tutorado, String[] entrada, String[] salida, String pago, String telefono) {
 
         Response response = new Response();
 
@@ -51,7 +62,7 @@ public class WebService {
             // Resultado
             resultado = (SoapPrimitive) sobre.getResponse();
 
-            response.setResponses(resultado.toString);
+            response.setResponses(Integer.parseInt(resultado.toString()));
 
 
         } catch (Exception e) {

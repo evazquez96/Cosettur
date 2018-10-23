@@ -1,4 +1,4 @@
-package com.cos.israelc.cosettur;
+package com.cos.israelc.cosettur.models;
 
 public class Request {
 

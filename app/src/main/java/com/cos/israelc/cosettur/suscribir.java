@@ -13,6 +13,7 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.cos.israelc.cosettur.ws.WebService;
 import com.itextpdf.text.DocumentException;
 
 public class suscribir extends AppCompatActivity {
@@ -488,8 +489,8 @@ calculo();
         tell=phones.getText().toString();//telefono
         pago=Integer.parseInt(pagar.getText().toString());//pago
         user=getIntent().getStringExtra("user");
-
-      WebService.consumirWs(user,catgrado,semestres,catrutas,local,catmodalidad,catciclo,padres,alum,"","",pago,tell);
+//int user= 0;
+    //  WebService.consumirWs(user,catgrado,semestres,catrutas,local,catmodalidad,catciclo,padres,alum,"","",pago,tell);
     }
 
 }

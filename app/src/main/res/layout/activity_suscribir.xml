@@ -13,15 +13,15 @@
         android:layout_width="match_parent"
         android:layout_height="8mm"
         android:layout_margin="4dp"
-        android:background="@drawable/header"
+        android:background="#152E4D"
         android:orientation="horizontal">
 
         <Button
             android:id="@+id/btnatr"
             android:layout_width="8mm"
             android:layout_gravity="center"
-            android:layout_height="6.5mm"
-           android:background="@drawable/arriw" />
+            android:layout_height="match_parent"
+           android:background="@drawable/izq" />
 
         <TextView
             android:id="@+id/texto"
@@ -30,7 +30,7 @@
             android:gravity="center"
 
             android:text="Ficha de Incripcion"
-            android:textColor="#393d42"
+            android:textColor="#ffffff"
             android:textSize="27dp" />
 
 

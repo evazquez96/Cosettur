@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="8mm"
         android:layout_margin="4dp"
-        android:background="@drawable/header"
+        android:background="#152E4D"
         android:orientation="horizontal">
 
 
@@ -20,7 +20,7 @@
                 android:id="@+id/atras"
                 android:layout_width="8mm"
                 android:layout_height="match_parent"
-                app:srcCompat="@drawable/arriw" />
+                app:srcCompat="@drawable/izq" />
         <Spinner
             android:id="@+id/rutass"
             android:layout_width="226dp"

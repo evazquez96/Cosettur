@@ -14,7 +14,7 @@
             android:layout_width="match_parent"
             android:layout_height="8mm"
             android:layout_margin="4dp"
-            android:background="@drawable/header"
+            android:background="#152E4D"
             android:orientation="horizontal">
 
 
@@ -23,7 +23,7 @@
                     android:id="@+id/atr"
                     android:layout_width="8mm"
                     android:layout_height="match_parent"
-                    app:srcCompat="@drawable/arriw" />
+                    app:srcCompat="@drawable/izq" />
 
 
 
@@ -34,7 +34,7 @@
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:text="Rutas de Servicio"
-                    android:textColor="#393d42"
+                    android:textColor="#ffffff"
                     android:textSize="25dp" />
 
         </LinearLayout>

@@ -22,10 +22,12 @@ public class recuperar extends AppCompatActivity {
     TextView r2;
     TextView r3;
     TextView r4;
+
     String correo;
     String contra;
     String result1;
     Button recovery;
+
 
     // Metodo que queremos ejecutar en el servicio web
     private static final String Metodo = "cambiarPass";
@@ -134,6 +136,7 @@ public class recuperar extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recuperar);
         r1=(TextView)findViewById(R.id.correo1);
+        r2=(TextView)findViewById(R.id.number);
         r3=(TextView)findViewById(R.id.passw1);
         r4=(TextView)findViewById(R.id.passw2);
         recovery = (Button)findViewById(R.id.recover);
@@ -145,27 +148,9 @@ public class recuperar extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-               // verificBox();
+          validacion();
 
 
-                String[] TO = {"cosettur.soporte@gmail.com"}; //aquí pon tu correo
-                String[] CC = {"superisraelsaya777@gmail.com"};
-                Intent emailIntent = new Intent(Intent.ACTION_SEND);
-                emailIntent.setData(Uri.parse("mailto:"));
-                emailIntent.setType("text/plain");
-                emailIntent.putExtra(Intent.EXTRA_EMAIL, TO);
-                emailIntent.putExtra(Intent.EXTRA_CC, CC);
-// Esto podrás modificarlo si quieres, el asunto y el cuerpo del mensaje
-                emailIntent.putExtra(Intent.EXTRA_SUBJECT, "");
-                emailIntent.putExtra(Intent.EXTRA_TEXT, "");
-
-                try {
-                    startActivity(Intent.createChooser(emailIntent, "Enviar email..."));
-                    finish();
-                } catch (ActivityNotFoundException ex) {
-                    Toast.makeText(recuperar.this,
-                            "No tienes clientes de email instalados.", Toast.LENGTH_SHORT).show();
-                }
 
             }
         });
@@ -205,6 +190,20 @@ public class recuperar extends AppCompatActivity {
         contra = r4.getText().toString();
         asyncBitacora q = new asyncBitacora();
         q.execute();
+
+    }
+    public void validacion(){
+        String numero ;
+        String nams;
+        nams=r2.getText().toString();
+        numero=getIntent().getStringExtra("number");
+        if(r2.getText().toString().equals(numero)){
+
+            verificBox();
+        }else {
+
+            r2.setHint("NUMERO INCORRECTO");
+            r2.setText("");        }
 
     }
 }

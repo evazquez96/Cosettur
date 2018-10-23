@@ -8,7 +8,8 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.cos.israelc.cosettur.WebService;
+
+import com.cos.israelc.cosettur.ws.WebService;
 import com.itextpdf.text.DocumentException;
 
 public class horario extends AppCompatActivity {
@@ -129,10 +130,10 @@ public class horario extends AppCompatActivity {
         salidas[3]=ju2;
         salidas[4]=vie2;
 
-        WebService servicio= new WebService();
+       // WebService servicio= new WebService();
 
 
-servicio.consumirWs(user,"","","","","","","","",entradas,salidas,"","");
+//servicio.consumirWs(user,"","","","","","","","",entradas,salidas,"","");
     }
 
 }
