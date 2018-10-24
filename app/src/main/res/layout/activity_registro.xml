@@ -57,27 +57,18 @@
                         android:layout_margin="10dp"
                         android:orientation="vertical">
 
-                        <TextView
-                            android:id="@+id/textView29"
-                            android:layout_width="match_parent"
-                            android:layout_height="30dp" />
-
                         <EditText
                             android:id="@+id/usuari"
                             android:layout_width="280dp"
                             android:layout_height="40dp"
                             android:layout_gravity="center"
-                            android:layout_margin="5dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="5dp"
                             android:background="@drawable/liniassss"
                             android:ems="10"
 
                             android:gravity="center"
                             android:inputType="textPersonName" />
-
-                        <TextView
-                            android:id="@+id/textView2"
-                            android:layout_width="match_parent"
-                            android:layout_height="10dp" />
 
                         <EditText
                             android:id="@+id/names"
@@ -90,11 +81,6 @@
                             android:gravity="center"
                             android:inputType="textPersonName" />
 
-                        <TextView
-                            android:id="@+id/textView4"
-                            android:layout_width="match_parent"
-                            android:layout_height="10dp" />
-
                         <EditText
                             android:id="@+id/tel"
                             android:layout_width="280dp"
@@ -105,11 +91,6 @@
                             android:ems="10"
                             android:gravity="center"
                             android:inputType="phone" />
-
-                        <TextView
-
-                            android:layout_width="match_parent"
-                            android:layout_height="10dp" />
 
                         <EditText
                             android:id="@+id/correo"
@@ -122,11 +103,6 @@
                             android:gravity="center"
                             android:inputType="textEmailAddress" />
 
-                        <TextView
-                            android:id="@+id/textView6"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
-
                         <EditText
                             android:id="@+id/pass"
                             android:layout_width="280dp"
@@ -138,10 +114,7 @@
                             android:gravity="center"
                             android:inputType="textPassword" />
 
-                        <TextView
 
-                            android:layout_width="match_parent"
-                            android:layout_height="10dp" />
 
                         <EditText
                             android:id="@+id/pass2"

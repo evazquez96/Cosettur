@@ -84,8 +84,8 @@ getnumero();
                 Message message = new MimeMessage(session);
                 message.setFrom(new InternetAddress("testfrom354@gmail.com"));
                 message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(rec));
-                message.setSubject("recuperacion de contraseña");
-                message.setContent("Gracias por usau Cosetturapp su numero de verificaion es: "+numero, "text/html; charset=utf-8");
+                message.setSubject("RECUPERACION DE CONTRESEÑA");
+                message.setContent("Gracias por usar Cosetturapp su numero de verificacion es: "+numero, "text/html; charset=utf-8");
                 Transport.send(message);
             } catch(MessagingException e) {
                 e.printStackTrace();
@@ -98,6 +98,7 @@ getnumero();
         @Override
         protected void onPostExecute(String result) {
             String valid=numero+"";
+            String mail=reciep.getText().toString();
             pdialog.dismiss();
             reciep.setText("");
             msg.setText("");
@@ -105,6 +106,7 @@ getnumero();
             Toast.makeText(getApplicationContext(), "Message sent", Toast.LENGTH_LONG).show();
             Intent recupera= new Intent(Main2Activity.this,recuperar.class);
             recupera.putExtra("number",valid);
+            recupera.putExtra("mail",mail);
             startActivity(recupera);
 
             finish();

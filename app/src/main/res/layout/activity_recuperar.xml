@@ -26,7 +26,7 @@
                     android:layout_height="match_parent"
                     android:layout_margin="2dp"
                     android:layout_gravity="center"
-                    app:srcCompat="@drawable/ima1" />
+                    app:srcCompat="@drawable/izq" />
 
 
 
@@ -55,6 +55,14 @@
             android:background="@drawable/header"
             android:layout_margin="10dp"
             android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_margin="10dp"
+                android:textColor="#393d42"
+                android:textSize="19dp"
+                android:text="Recibira un codigo de verificacion de cuatro digitos en su correo. Si no recibe el mensaje intente de nuevo o verifique el correo"/>
 
             <EditText
                 android:id="@+id/number"
@@ -62,8 +70,8 @@
                 android:layout_height="36dp"
                 android:layout_gravity="center"
 
-                android:layout_marginTop="20dp"
-                android:background="@drawable/conotor"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/liniassss"
                 android:ems="10"
                 android:hint="codigo de verificacion"
                 android:gravity="center"
@@ -74,8 +82,8 @@
                 android:layout_width="280dp"
                 android:layout_height="36dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/conotor"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/liniassss"
                 android:ems="10"
                 android:gravity="center"
                 android:inputType="textEmailAddress" />
@@ -85,8 +93,8 @@
                 android:layout_width="280dp"
                 android:layout_height="36dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/conotor"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/liniassss"
                 android:ems="10"
                 android:gravity="center"
                 android:inputType="textPassword" />
@@ -96,8 +104,8 @@
                 android:layout_width="280dp"
                 android:layout_height="36dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/conotor"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/liniassss"
                 android:ems="10"
                 android:gravity="center"
                 android:inputType="textPassword" />
@@ -108,18 +116,9 @@
                 android:layout_height="35dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
                 android:background="@drawable/botones"
                 android:text="Recuperar Contraseña"
-                android:textColor="@android:color/background_light" />
-            <Button
-                android:id="@+id/trys"
-                android:layout_width="203dp"
-                android:layout_height="35dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"
-                android:background="@drawable/buton2"
-                android:text="Intentar de nuevo"
                 android:textColor="@android:color/background_light" />
         </LinearLayout>
 
