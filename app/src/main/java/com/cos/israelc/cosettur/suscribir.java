@@ -23,7 +23,7 @@ public class suscribir extends AppCompatActivity {
     String alum;
     String tell;
     String call;
-     int pago;
+     String pago;
      int catrutas,catmodalidad,catgrado,catciclo;
 
     String grados;
@@ -238,19 +238,38 @@ calculo();
         sig.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                alum=child.getText().toString();
+                padres=namesf.getText().toString();//tutoR
+                alum=child.getText().toString();//tutoriado
+                local=lol.getSelectedItem().toString();//localidad
+                semestres=sems.getSelectedItem().toString();//semestre
+                tell=phones.getText().toString();//telefono
+                pago=pagar.getText().toString();//pago
                 user=getIntent().getStringExtra("user");
-              try {
+                grados= gradi.getSelectedItem().toString();
+                rutasol=rot.getSelectedItem().toString();
+                modal=mod.getSelectedItem().toString();
+                cicle=cic.getSelectedItem().toString();
+                try {
 
                     createpdf();
                     orden();
                 } catch (DocumentException e) {
                     e.printStackTrace();
                 }
-                Intent pago= new Intent(suscribir.this,horario.class);
-              pago.putExtra("alumn_name",alum);
-                pago.putExtra("user",user);
-                startActivity(pago);
+                Intent pagos= new Intent(suscribir.this,horario.class);
+
+                pagos.putExtra("alumno",alum);
+                pagos.putExtra("ciclo",cicle);
+                pagos.putExtra("modalidad",modal);
+                pagos.putExtra("ruta",rutasol);
+                pagos.putExtra("grado",grados);
+                pagos.putExtra("user",user);
+                pagos.putExtra("padres",padres);
+                pagos.putExtra("local",local);
+                pagos.putExtra("semestres",semestres);
+                pagos.putExtra("telefono", tell);
+                pagos.putExtra("pago",pago);
+                startActivity(pagos);
                 finish();
             }
         });
@@ -487,7 +506,7 @@ calculo();
         local=lol.getSelectedItem().toString();//localidad
         semestres=sems.getSelectedItem().toString();//semestre
         tell=phones.getText().toString();//telefono
-        pago=Integer.parseInt(pagar.getText().toString());//pago
+        pago=pagar.getText().toString();//pago
         user=getIntent().getStringExtra("user");
 //int user= 0;
     //  WebService.consumirWs(user,catgrado,semestres,catrutas,local,catmodalidad,catciclo,padres,alum,"","",pago,tell);

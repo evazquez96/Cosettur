@@ -9,12 +9,28 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 
+import com.cos.israelc.cosettur.helpers.HorarioHelper;
 import com.cos.israelc.cosettur.ws.WebService;
 import com.itextpdf.text.DocumentException;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class horario extends AppCompatActivity {
     Button fin;
     String lu1,lu2,ma1,ma2,mie1,mie2,ju1,ju2,vie1,vie2, user;
+
+    String usuario;
+    String alumno;
+    String padres;
+    String local;
+    String semestres;
+    String telefono;
+    String pago;
+    String ciclo;
+    String modalidad;
+    String grado;
+    String ruta;
 
     Spinner lunes1;
     Spinner lunes2;
@@ -52,12 +68,13 @@ public class horario extends AppCompatActivity {
         jueves2.setAdapter(new ArrayAdapter<String>(horario.this, android.R.layout.simple_spinner_item, grade1));
         viernes1.setAdapter(new ArrayAdapter<String>(horario.this, android.R.layout.simple_spinner_item, grade1));
         viernes2.setAdapter(new ArrayAdapter<String>(horario.this, android.R.layout.simple_spinner_item, grade1));
-
+        Date date = new Date();
         fin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 try {
+                    datos();
                     create();
                 } catch (DocumentException e) {
                     e.printStackTrace();
@@ -104,6 +121,13 @@ public class horario extends AppCompatActivity {
 
     public void datos(){
 
+
+        int nGrado = 0;
+        int nCiclo = 0;
+        int nModalidad = 0;
+        int nRuta = 0;
+        HorarioHelper helper[] = new HorarioHelper[5];
+
        lu1=lunes1.getSelectedItem().toString();
        lu2=lunes2.getSelectedItem().toString();
        ma1=martes1.getSelectedItem().toString();
@@ -116,7 +140,70 @@ public class horario extends AppCompatActivity {
        vie2=viernes2.getSelectedItem().toString();
        String entradas[] = new String[5];
        String salidas[]= new String[5];
-        user=getIntent().getStringExtra("user");
+        usuario =getIntent().getStringExtra("user");
+        alumno = getIntent().getStringExtra("alumno");
+        padres = getIntent().getStringExtra("padres");
+        local = getIntent().getStringExtra("local");
+        semestres = getIntent().getStringExtra("semestres");
+        telefono = getIntent().getStringExtra("telefono");
+        pago = getIntent().getStringExtra("pago");
+        ciclo = getIntent().getStringExtra("ciclo");
+        modalidad = getIntent().getStringExtra("modalidad");
+        ruta = getIntent().getStringExtra("ruta");
+        grado = getIntent().getStringExtra("grado");
+
+
+        if (grado.equals("Licenciatura")) {
+            nGrado = 2;
+        } else {
+            nGrado = 1;
+        }
+
+        if (ciclo.equals("ENERO-ABRIL")) {
+            nCiclo = 1;
+        }
+
+        if (ciclo.equals("MAYO-AGOSTO")) {
+            nCiclo = 2;
+        }
+
+        if (ciclo.equals("SEPTIEMBRE-DICIEMBRE")) {
+            nCiclo = 3;
+        }
+
+        if (modalidad.equals("Parcial")) {
+            nModalidad = 1;
+        }
+
+        if (modalidad.equals("Completo")) {
+            nModalidad = 2;
+        }
+
+        if (modalidad.equals("Parcial-Med")) {
+            nModalidad = 4;
+        }
+
+        if (modalidad.equals("Completo-Med")) {
+            nModalidad = 3;
+        }
+
+        if (ruta.equals("Naucalpan")) {
+            nRuta = 2;
+        }
+
+        if (ruta.equals("Tlanepantla")) {
+            nRuta = 4;
+        }
+
+        if (ruta.equals("Coacalco")) {
+            nRuta = 1;
+        }
+
+        if (ruta.equals("C.Izcalli")) {
+            nRuta = 3;
+        }
+
+        String total[] = new String[10];
 
         entradas[0]=lu1;
         entradas[1]=ma1;
@@ -130,10 +217,27 @@ public class horario extends AppCompatActivity {
         salidas[3]=ju2;
         salidas[4]=vie2;
 
-       // WebService servicio= new WebService();
+        HorarioHelper lunesh =new HorarioHelper(entradas[0],salidas[0]);
+        HorarioHelper martesh =new HorarioHelper(entradas[1],salidas[1]);
+        HorarioHelper miercolesh =new HorarioHelper(entradas[2],salidas[2]);
+        HorarioHelper juevesh =new HorarioHelper(entradas[3],salidas[3]);
+        HorarioHelper viernesh =new HorarioHelper(entradas[4],salidas[4]);
 
+        helper[0] = lunesh;
+        helper[1] = martesh;
+        helper[2] = miercolesh;
+        helper[3] = juevesh;
+        helper[4] = viernesh;
 
-//servicio.consumirWs(user,"","","","","","","","",entradas,salidas,"","");
+        SimpleDateFormat hour = new SimpleDateFormat("HH:mm:ss");
+
+        try {
+            WebService.consumirWs(usuario,nGrado,semestres,nRuta,local,nModalidad,nCiclo,padres,alumno,helper,pago,telefono);
+            Toast.makeText(horario.this,"Database ok", Toast.LENGTH_LONG).show();
+        } catch (Exception e) {
+            Toast.makeText(horario.this,e.getMessage(), Toast.LENGTH_LONG).show();
+        }
+
     }
 
 }
