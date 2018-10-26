@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 
 import com.cos.israelc.cosettur.helpers.HorarioHelper;
+import com.cos.israelc.cosettur.models.Response;
 import com.cos.israelc.cosettur.ws.WebService;
 import com.itextpdf.text.DocumentException;
 
@@ -42,13 +43,14 @@ public class horario extends AppCompatActivity {
     Spinner jueves2;
     Spinner   viernes1;
     Spinner   viernes2;
-    String[] grade1 = {"07:00","08:00","09:00","10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00","18:00","19:00","20:00","21:00","22:00"};
+    String[] grade1 = {"07:00:00","08:00:00","09:00:00","10:00:00","11:00:00","12:00:00","13:00:00","14:00:00","15:00:00","16:00:00","17:00:00","18:00:00","19:00:00","20:00:00","21:00:00","22:00:00"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_horario);
         fin=(Button)findViewById(R.id.siguiente);
         lunes1=(Spinner)findViewById(R.id.l1);
+
         lunes2=(Spinner)findViewById(R.id.l2);
         martes1=(Spinner)findViewById(R.id.m1);
         martes2=(Spinner)findViewById(R.id.m2);
@@ -121,12 +123,11 @@ public class horario extends AppCompatActivity {
 
     public void datos(){
 
-
+        Response response = new Response();
         int nGrado = 0;
         int nCiclo = 0;
         int nModalidad = 0;
         int nRuta = 0;
-        HorarioHelper helper[] = new HorarioHelper[5];
 
        lu1=lunes1.getSelectedItem().toString();
        lu2=lunes2.getSelectedItem().toString();
@@ -203,8 +204,6 @@ public class horario extends AppCompatActivity {
             nRuta = 3;
         }
 
-        String total[] = new String[10];
-
         entradas[0]=lu1;
         entradas[1]=ma1;
         entradas[2]=mie1;
@@ -217,27 +216,19 @@ public class horario extends AppCompatActivity {
         salidas[3]=ju2;
         salidas[4]=vie2;
 
-        HorarioHelper lunesh =new HorarioHelper(entradas[0],salidas[0]);
-        HorarioHelper martesh =new HorarioHelper(entradas[1],salidas[1]);
-        HorarioHelper miercolesh =new HorarioHelper(entradas[2],salidas[2]);
-        HorarioHelper juevesh =new HorarioHelper(entradas[3],salidas[3]);
-        HorarioHelper viernesh =new HorarioHelper(entradas[4],salidas[4]);
-
-        helper[0] = lunesh;
-        helper[1] = martesh;
-        helper[2] = miercolesh;
-        helper[3] = juevesh;
-        helper[4] = viernesh;
-
         SimpleDateFormat hour = new SimpleDateFormat("HH:mm:ss");
 
         try {
-            WebService.consumirWs(usuario,nGrado,semestres,nRuta,local,nModalidad,nCiclo,padres,alumno,helper,pago,telefono);
-            Toast.makeText(horario.this,"Database ok", Toast.LENGTH_LONG).show();
+            response = WebService.consumirWs(usuario,nGrado,semestres,nRuta,local,nModalidad,nCiclo,padres,alumno,entradas[0],salidas[0],entradas[1],salidas[1],entradas[2],salidas[2],entradas[3],salidas[3],entradas[4],salidas[4],pago,telefono);
         } catch (Exception e) {
             Toast.makeText(horario.this,e.getMessage(), Toast.LENGTH_LONG).show();
         }
 
+        if (response.equals(1)) {
+            Toast.makeText(horario.this,"Database ok", Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(horario.this,"Error", Toast.LENGTH_LONG).show();
+        }
     }
 
 }

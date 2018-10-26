@@ -24,21 +24,16 @@ public class WebService {
     // namespace + metodo
     private static final String accionSoap = "http://ws.cosettur.com/inscribirHorario";
     // Fichero de definicion del servcio web
-    private static final String url = "http://node37874-env-3073930.jl.serv.net.mx/ROOT-289/CosetturWS?wsdl";
+    private static final String url = "http://node37874-env-3073930.jl.serv.net.mx/ROOT-215/CosetturWS?wsdl";
     private static SoapPrimitive resultado;
 
 
 
-    public static Response consumirWs(String user, int grado, String semestre, int ruta, String localidad, int modalidad, int ciclo, String tutor, String tutorado, HorarioHelper[] horario, String pago, String tel) {
+    public static Response consumirWs(String user, int grado, String semestre, int ruta, String localidad, int modalidad, int ciclo, String tutor, String tutorado, String Linicio, String Lfin, String Marinicio, String Marfin, String Mierinicio, String Mierfin, String Jinicio, String Jfin, String Vinicio, String Vfin, String pago, String tel) {
 
         Response response = new Response();
-        PropertyInfo propertyInfo = new PropertyInfo();
 
         try {
-
-            propertyInfo.setName("horario");
-            propertyInfo.setValue(horario);
-            propertyInfo.setType(HorarioHelper.class);
 
             SoapObject request = new SoapObject(namespace, Metodo);
             request.addProperty("user", user);
@@ -50,7 +45,16 @@ public class WebService {
             request.addProperty("ciclo", ciclo);
             request.addProperty("tutor", tutor);
             request.addProperty("tutorado", tutorado);
-            request.addProperty(propertyInfo);
+            request.addProperty("Linicio",Linicio);
+            request.addProperty("Lfin",Lfin);
+            request.addProperty("Marinicio",Marinicio);
+            request.addProperty("Marfin",Marfin);
+            request.addProperty("Mierinicio",Mierinicio);
+            request.addProperty("Mierfin",Mierfin);
+            request.addProperty("Jinicio",Jinicio);
+            request.addProperty("Jfin",Jfin);
+            request.addProperty("Vinicio",Vinicio);
+            request.addProperty("Vfin",Vfin);
             request.addProperty("pago", pago);
             request.addProperty("tel", tel);
 
