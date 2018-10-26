@@ -22,7 +22,7 @@ public class recuperar extends AppCompatActivity {
     TextView r2;
     TextView r3;
     TextView r4;
-
+    String user;
     String correo;
     String contra;
     String result1;
@@ -140,6 +140,8 @@ public class recuperar extends AppCompatActivity {
         r3=(TextView)findViewById(R.id.passw1);
         r4=(TextView)findViewById(R.id.passw2);
         recovery = (Button)findViewById(R.id.recover);
+        user=getIntent().getStringExtra("mail");
+        r1.setText(user);
         r1.setHint("    Correo electronico");
         r3.setHint("    Nueva Contraseña");
         r4.setHint("    Confirmar Contraseña");
@@ -195,6 +197,9 @@ public class recuperar extends AppCompatActivity {
     public void validacion(){
         String numero ;
         String nams;
+
+
+        r1.setText(user);
         nams=r2.getText().toString();
         numero=getIntent().getStringExtra("number");
         if(r2.getText().toString().equals(numero)){

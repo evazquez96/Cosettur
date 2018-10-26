@@ -18,7 +18,8 @@
         android:roundIcon="@drawable/loc"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity
             android:name=".registro"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
@@ -33,7 +34,7 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".menu"
-            android:label="@string/title_activity_menu"
+            android:label="Bienvenido"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".mision" />
         <activity
@@ -66,9 +67,11 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".ayuda"
-            android:label="Ayuda"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".Main2Activity"></activity>
+        <activity android:name=".Main2Activity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+        </activity>
     </application>
 
 </manifest>

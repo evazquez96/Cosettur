@@ -34,7 +34,7 @@
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="30dp"
+
                     android:text="¿Olvidaste tu contraseña?"
                     android:textColor="#ffffff"
                     android:textSize="20dp" />
