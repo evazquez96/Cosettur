@@ -1,5 +1,6 @@
 package com.cos.israelc.cosettur;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -220,12 +221,18 @@ public class horario extends AppCompatActivity {
                     e.printStackTrace();
                 }
                 finish();
+           /* Intent pago= new Intent(horario.this,Paypal.class);
+                String money= pagos+"";
+                String alum= alumno;
+                pago.putExtra("pago",money);
+                pago.putExtra("doc",alum);
+                startActivity(pago)*/
             }
         });
 
     }
     public void create() throws DocumentException {
-        String alumnos=getIntent().getStringExtra("alumn_name");
+        String alumnos=getIntent().getStringExtra("alumno");
         String lu1=lunes1.getSelectedItem().toString();
         String lu2=lunes2.getSelectedItem().toString();
         String ma1=martes1.getSelectedItem().toString();

@@ -261,7 +261,7 @@
                 android:layout_width="30mm"
                 android:layout_height="7mm"
                 android:layout_gravity="center"
-                android:background="@drawable/botones"
+                android:background="@drawable/ev1"
                 android:layout_margin="10dp"
                 android:textColor="@android:color/background_light"
                 android:text="Guardar horario" />

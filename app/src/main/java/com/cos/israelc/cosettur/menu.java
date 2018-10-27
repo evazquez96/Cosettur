@@ -45,7 +45,7 @@ public class menu extends AppCompatActivity implements NavigationView.OnNavigati
         WebSettings webSettings = myWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
         myWebView.setWebViewClient(new WebViewClient());
-        myWebView.loadUrl("https://sites.google.com/view/cossetur/p%C3%A1gina-principal");
+        myWebView.loadUrl("https://www.cosettur.com/");
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -224,6 +224,14 @@ public class menu extends AppCompatActivity implements NavigationView.OnNavigati
             Intent intent = new Intent();
             intent.setAction(Intent.ACTION_GET_CONTENT); Uri myUri = Uri.parse(folderPath);
             intent.setDataAndType(myUri , "pdf/*"); startActivity(intent);
+
+        }else if (id == R.id.ayudar) {
+            WebView myWebView = (WebView) findViewById(R.id.we);
+            myWebView.setVisibility(View.VISIBLE);
+            WebSettings webSettings = myWebView.getSettings();
+            webSettings.setJavaScriptEnabled(true);
+            myWebView.setWebViewClient(new WebViewClient());
+            myWebView.loadUrl("https://sites.google.com/view/cosetturappayuda/intrucciones?authuser=1 ");
 
         }
 

@@ -117,8 +117,19 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
-                android:background="@drawable/botones"
+                android:background="@drawable/ev1"
                 android:text="Recuperar Contraseña"
+                android:textColor="@android:color/background_light" />
+
+            <Button
+                android:id="@+id/inte"
+                android:layout_width="203dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/ev2"
+                android:text="REINTENTAR"
                 android:textColor="@android:color/background_light" />
         </LinearLayout>
 

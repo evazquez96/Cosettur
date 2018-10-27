@@ -43,7 +43,7 @@ EditText contra;
 EditText usuarios;
 TextView recuperar;
 String a;
-   Context context = null;
+Context context = null;
 ProgressDialog pdialog = null;
 String b;
 String result1;
@@ -139,12 +139,13 @@ TextView aviso;
         public void llenarDatos() {
 
             if (result1.equals("1")) {
-                Toast.makeText(MainActivity.this,"Bienvenido", Toast.LENGTH_SHORT).show();
-            Intent activi = new Intent(MainActivity.this, menu.class);
+                pdialog = ProgressDialog.show(context, "", "Iniciando Sesion...", true);
+                Intent activi = new Intent(MainActivity.this, menu.class);
             activi.putExtra("user",a);
                 startActivity(activi);
                 finish();
             } else {
+
 
                 Toast.makeText(MainActivity.this,"Usuario o contraseña incorrecta", Toast.LENGTH_SHORT).show();
                 contra.setText("");
@@ -189,7 +190,7 @@ mein.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
 
-        Toast.makeText(MainActivity.this,"Espere un Momento..,", Toast.LENGTH_SHORT).show();
+
         if (usuarios.getText().toString().equals("")){
             usuarios.setHint("*Campo obligatorio");
         } else {
