@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#152E4D"
     tools:context=".suscribir">
 
 
@@ -161,7 +162,7 @@
                         android:layout_margin="10dp">
 
                         <android.support.design.widget.TextInputEditText
-                            android:id="@+id/Localidad"
+                            android:id="@+id/Localidaddir"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="Localidad" />
@@ -190,7 +191,21 @@
                         android:id="@+id/correoss"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="municipio"
+                        android:hint="municipio o delegacion"
+                        android:inputType="textPersonName" />
+                </android.support.design.widget.TextInputLayout>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <android.support.design.widget.TextInputEditText
+
+                        android:id="@+id/estado"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Estado o Ciudad"
                         android:inputType="textPersonName" />
                 </android.support.design.widget.TextInputLayout>
 
