@@ -13,7 +13,6 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.cos.israelc.cosettur.ws.WebService;
 import com.itextpdf.text.DocumentException;
 
 public class suscribir extends AppCompatActivity {

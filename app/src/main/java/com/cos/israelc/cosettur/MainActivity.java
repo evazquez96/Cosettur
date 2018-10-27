@@ -101,7 +101,7 @@ TextView aviso;
         }
     }
 
-    class asyncBitacora extends AsyncTask<String,String,String> {
+        class asyncBitacora extends AsyncTask<String,String,String> {
 
 
         @Override

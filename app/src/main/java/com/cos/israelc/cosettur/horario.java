@@ -1,7 +1,9 @@
 package com.cos.israelc.cosettur;
 
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -10,9 +12,13 @@ import android.widget.Toast;
 
 
 import com.cos.israelc.cosettur.helpers.HorarioHelper;
-import com.cos.israelc.cosettur.models.Response;
-import com.cos.israelc.cosettur.ws.WebService;
 import com.itextpdf.text.DocumentException;
+
+import org.ksoap2.SoapEnvelope;
+import org.ksoap2.serialization.SoapObject;
+import org.ksoap2.serialization.SoapPrimitive;
+import org.ksoap2.serialization.SoapSerializationEnvelope;
+import org.ksoap2.transport.HttpTransportSE;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -21,6 +27,13 @@ public class horario extends AppCompatActivity {
     Button fin;
     String lu1,lu2,ma1,ma2,mie1,mie2,ju1,ju2,vie1,vie2, user;
 
+    int nGrado = 0;
+    int nCiclo = 0;
+    int nModalidad = 0;
+    int nRuta = 0;
+    int semestree;
+    float pagos;
+    short rutes;
     String usuario;
     String alumno;
     String padres;
@@ -32,7 +45,9 @@ public class horario extends AppCompatActivity {
     String modalidad;
     String grado;
     String ruta;
-
+    String entradas[] = new String[5];
+    String salidas[]= new String[5];
+    int resultDos;
     Spinner lunes1;
     Spinner lunes2;
     Spinner martes1;
@@ -44,6 +59,127 @@ public class horario extends AppCompatActivity {
     Spinner   viernes1;
     Spinner   viernes2;
     String[] grade1 = {"07:00:00","08:00:00","09:00:00","10:00:00","11:00:00","12:00:00","13:00:00","14:00:00","15:00:00","16:00:00","17:00:00","18:00:00","19:00:00","20:00:00","21:00:00","22:00:00"};
+
+    // Metodo que queremos ejecutar en el servicio web
+    private static final String Metodo = "inscribirHorario";
+    // Namespace definido en el servicio web
+    private static final String namespace = "http://ws.cosettur.com/";
+    // namespace + metodo
+    private static final String accionSoap = "http://ws.cosettur.com/inscribirHorario";
+    // Fichero de definicion del servcio web
+    private static final String url = "http://node37874-env-3073930.jl.serv.net.mx/ROOT-215/CosetturWS?wsdl";
+    private static SoapPrimitive resultado;
+
+    String result1;
+
+    public boolean consumirWs() {
+
+        Boolean bandera = true;
+
+        try {
+            SoapObject request = new SoapObject(namespace, Metodo);
+            request.addProperty("user", usuario);
+            request.addProperty("grado", nGrado);
+            request.addProperty("semestre", semestree);
+            request.addProperty("ruta", nRuta);
+            request.addProperty("localidad", local);
+            request.addProperty("modalidad", nModalidad);
+            request.addProperty("ciclo", nCiclo);
+            request.addProperty("tutor", padres);
+            request.addProperty("tutorado", alumno);
+            request.addProperty("Linicio",entradas[0]);
+            request.addProperty("Lfin",salidas[0]);
+            request.addProperty("Marinicio",entradas[1]);
+            request.addProperty("Marfin",salidas[1]);
+            request.addProperty("Mierinicio",entradas[2]);
+            request.addProperty("Mierfin",salidas[2]);
+            request.addProperty("Jinicio",entradas[3]);
+            request.addProperty("Jfin",salidas[3]);
+            request.addProperty("Vinicio",entradas[4]);
+            request.addProperty("Vfin",salidas[4]);
+            request.addProperty("pago", pago);
+            request.addProperty("tel", telefono);
+
+            // Modelo el Sobre
+            SoapSerializationEnvelope sobre = new SoapSerializationEnvelope(SoapEnvelope.VER11);
+
+            //si esta en .net se pone true, se lo contrario false
+            sobre.dotNet = false;
+
+            sobre.setOutputSoapObject(request);
+
+            // Modelo el transporte
+            HttpTransportSE transporte = new HttpTransportSE(url, 600000);
+
+            // Llamada
+            transporte.call(accionSoap, sobre);
+
+            // Resultado
+            resultado = (SoapPrimitive) sobre.getResponse();
+
+        } catch (Exception e) {
+            Log.e("ERROR", e.getMessage());
+            bandera = false;
+        } finally {
+
+            return bandera;
+            /*
+             * El finally siempre se va a ejecutar, sin importar que se lanze
+             * una exepction
+             */
+        }
+    }
+
+    class asyncBitacora extends AsyncTask<String,String,String> {
+
+
+        @Override
+        protected void onPreExecute(){
+            super.onPreExecute();
+        }
+
+        @Override
+        protected String doInBackground(String... strings) {
+
+
+            if(consumirWs()){
+                return "ok";
+            }else
+                return "error";
+        }
+
+        @Override
+        protected void onPostExecute(String result){
+            if(result.equals("ok")){
+                try {
+                    result1 = resultado.toString();
+
+                    resultDos = Integer.parseInt(result1);
+
+                    llenarDatos();
+                } catch (Exception e) {
+                    Toast.makeText(horario.this,"Error de conexion Intente mas tarde", Toast.LENGTH_SHORT).show();
+                }
+            }else{
+                Log.e("ERROR", "Error al consumir el webService");
+                System.out.println("Error al consumir");
+
+            }
+        }
+
+        public void llenarDatos() {
+
+            if (resultDos != 0) {
+                Toast.makeText(horario.this,"Registro almacenado en base de datos con folio: "+resultDos, Toast.LENGTH_SHORT).show();
+
+            } else {
+                Toast.makeText(horario.this,"El dato no se almaceno en la base de datos, registra de nuevo tu horario", Toast.LENGTH_SHORT).show();
+            }
+
+        }
+    }
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,7 +212,9 @@ public class horario extends AppCompatActivity {
             public void onClick(View v) {
 
                 try {
+                    asyncBitacora ejec =new asyncBitacora();
                     datos();
+                    ejec.execute();
                     create();
                 } catch (DocumentException e) {
                     e.printStackTrace();
@@ -123,11 +261,6 @@ public class horario extends AppCompatActivity {
 
     public void datos(){
 
-        Response response = new Response();
-        int nGrado = 0;
-        int nCiclo = 0;
-        int nModalidad = 0;
-        int nRuta = 0;
 
        lu1=lunes1.getSelectedItem().toString();
        lu2=lunes2.getSelectedItem().toString();
@@ -139,8 +272,6 @@ public class horario extends AppCompatActivity {
        ju2=jueves2.getSelectedItem().toString();
        vie1=viernes1.getSelectedItem().toString();
        vie2=viernes2.getSelectedItem().toString();
-       String entradas[] = new String[5];
-       String salidas[]= new String[5];
         usuario =getIntent().getStringExtra("user");
         alumno = getIntent().getStringExtra("alumno");
         padres = getIntent().getStringExtra("padres");
@@ -152,7 +283,8 @@ public class horario extends AppCompatActivity {
         modalidad = getIntent().getStringExtra("modalidad");
         ruta = getIntent().getStringExtra("ruta");
         grado = getIntent().getStringExtra("grado");
-
+        semestree = Integer.parseInt(semestres);
+        pagos = Float.parseFloat(pago);
 
         if (grado.equals("Licenciatura")) {
             nGrado = 2;
@@ -216,19 +348,6 @@ public class horario extends AppCompatActivity {
         salidas[3]=ju2;
         salidas[4]=vie2;
 
-        SimpleDateFormat hour = new SimpleDateFormat("HH:mm:ss");
-
-        try {
-            response = WebService.consumirWs(usuario,nGrado,semestres,nRuta,local,nModalidad,nCiclo,padres,alumno,entradas[0],salidas[0],entradas[1],salidas[1],entradas[2],salidas[2],entradas[3],salidas[3],entradas[4],salidas[4],pago,telefono);
-        } catch (Exception e) {
-            Toast.makeText(horario.this,e.getMessage(), Toast.LENGTH_LONG).show();
-        }
-
-        if (response.equals(1)) {
-            Toast.makeText(horario.this,"Database ok", Toast.LENGTH_LONG).show();
-        } else {
-            Toast.makeText(horario.this,"Error", Toast.LENGTH_LONG).show();
-        }
     }
 
 }
