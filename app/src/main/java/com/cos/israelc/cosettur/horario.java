@@ -1,5 +1,7 @@
 package com.cos.israelc.cosettur;
 
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
@@ -27,7 +29,8 @@ import java.util.Date;
 public class horario extends AppCompatActivity {
     Button fin;
     String lu1,lu2,ma1,ma2,mie1,mie2,ju1,ju2,vie1,vie2, user;
-
+    Context context = null;
+    ProgressDialog pdialog = null;
     int nGrado = 0;
     int nCiclo = 0;
     int nModalidad = 0;
@@ -160,8 +163,11 @@ public class horario extends AppCompatActivity {
                     resultDos = Integer.parseInt(result1);
 
                     llenarDatos();
+                    pdialog.dismiss();
+
                 } catch (Exception e) {
                     Toast.makeText(horario.this,"Error de conexion Intente mas tarde", Toast.LENGTH_SHORT).show();
+                    pdialog.dismiss();
                 }
             }else{
                 Log.e("ERROR", "Error al consumir el webService");
@@ -187,6 +193,7 @@ public class horario extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_horario);
+        context=this;
         fin=(Button)findViewById(R.id.siguiente);
         lunes1=(Spinner)findViewById(R.id.l1);
 
@@ -215,6 +222,7 @@ public class horario extends AppCompatActivity {
             public void onClick(View v) {
 
                 try {
+                    pdialog = ProgressDialog.show(context, "", "Iniciando Sesion...", true);
                     asyncBitacora ejec =new asyncBitacora();
                     datos();
                     ejec.execute();

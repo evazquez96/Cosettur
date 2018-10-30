@@ -86,7 +86,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="40dp"
                                 android:background="@drawable/liniassss"
-                                android:hint="Usuario o Correo :"
+                                android:hint="Usuario :"
                                 android:textColorHint="#F6F6F6"
                                 android:textColor="#ffffff"
                               android:layout_marginLeft="30dp"

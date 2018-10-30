@@ -126,12 +126,16 @@ TextView aviso;
                     result1 = resultado.toString();
 
                     llenarDatos();
+                    pdialog.dismiss();
                 } catch (Exception e) {
                     Toast.makeText(MainActivity.this,"Error de conexion Intente mas tarde", Toast.LENGTH_SHORT).show();
+                    pdialog.dismiss();
+
                 }
             }else{
                 Log.e("ERROR", "Error al consumir el webService");
                 System.out.println("Error al consumir");
+                pdialog.dismiss();
 
             }
         }
@@ -139,7 +143,6 @@ TextView aviso;
         public void llenarDatos() {
 
             if (result1.equals("1")) {
-                pdialog = ProgressDialog.show(context, "", "Iniciando Sesion...", true);
                 Intent activi = new Intent(MainActivity.this, menu.class);
             activi.putExtra("user",a);
                 startActivity(activi);
@@ -203,6 +206,8 @@ mein.setOnClickListener(new View.OnClickListener() {
 
                 b = contra.getText().toString();
                 a = usuarios.getText().toString();
+
+                pdialog = ProgressDialog.show(context, "", "Iniciando Sesion...", true);
 
                 asyncBitacora ejec =new asyncBitacora();
                 ejec.execute();
