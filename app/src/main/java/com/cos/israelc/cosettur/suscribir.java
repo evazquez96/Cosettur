@@ -1,5 +1,7 @@
 package com.cos.israelc.cosettur;
 
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
@@ -24,6 +26,9 @@ public class suscribir extends AppCompatActivity {
     String call;
      String pago;
      int catrutas,catmodalidad,catgrado,catciclo;
+
+    Context context = null;
+    ProgressDialog pdialog = null;
 
     String grados;
     String semestres;
