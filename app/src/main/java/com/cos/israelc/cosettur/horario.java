@@ -118,6 +118,8 @@ public class horario extends AppCompatActivity {
             // Resultado
             resultado = (SoapPrimitive) sobre.getResponse();
 
+            Log.i("Resultado", resultado.toString());
+
         } catch (Exception e) {
             Log.e("ERROR", e.getMessage());
             bandera = false;
