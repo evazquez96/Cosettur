@@ -1,5 +1,7 @@
 package com.cos.israelc.cosettur;
 
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
@@ -20,6 +22,8 @@ import org.ksoap2.transport.HttpTransportSE;
 
 public class registro extends AppCompatActivity {
     Button inicio;
+    ProgressDialog pdialog = null;
+    Context context = null;
     EditText usuario;
     EditText nombre;
     EditText telefono;
@@ -62,11 +66,7 @@ public class registro extends AppCompatActivity {
             request.addProperty("telefono", dd);
             request.addProperty("correo", ee);
 
-            //request.addProperty("name", "MA0096");
-            // String s=new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(new java.util.Date());
 
-            //request.addProperty("date", s);
-            //Log.e("Date", s);
 
             //request.addProperty("user_id", 2); // Paso parametros al WS
 
@@ -126,6 +126,7 @@ public class registro extends AppCompatActivity {
                 Log.e("resultado",resultado.toString());
                 resulting = resultado.toString();
                 LlenarDatos();
+                pdialog.dismiss();
             }else{
                 Log.e("ERROR", "Error al consumir el webService");
             }
@@ -135,10 +136,6 @@ public class registro extends AppCompatActivity {
     public void LlenarDatos() {
 
         if (resulting.equals("1")) {
-
-           // Intent registro = new Intent(registro.this, MainActivity.class);
-           // startActivity(registro);
-
             Toast.makeText(registro.this, usuario.getText().toString() + " ha sido registrado correctaente", Toast.LENGTH_LONG).show();
          finish();
 
@@ -153,6 +150,7 @@ public class registro extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
+        context = this;
         inicio=(Button)findViewById(R.id.res);
         usuario = (EditText)findViewById(R.id.usuari);
         nombre = (EditText)findViewById(R.id.names);
@@ -210,7 +208,7 @@ confirmar.setHint(" Confirmar contraseña*");
                                         cc = confirmar.getText().toString();
                                         dd = telefono.getText().toString();
                                         ee = correo.getText().toString();
-
+                                        pdialog = ProgressDialog.show(context, "", "guardando registro...", true);
                                         asyncBitacora v = new asyncBitacora();
                                         v.execute();
 

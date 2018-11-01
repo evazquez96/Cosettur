@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -18,10 +19,12 @@ import org.json.JSONException;
 import java.math.BigDecimal;
 
 public class Paypal extends AppCompatActivity {
- Spinner spinner1;
- int costo;
+
+String costo;
+ String docu;
  String refe;
- String[] element = {"","Naucalpan servicio completo","Tlanepantla servicio completo","Coacalco servicio completo","C.Izcalli servicio completo","Naucalpan medio servicio","Tlanepantla medio servicio","Coacalco medio servicio","C.Izcalli medio servicio"};
+
+ Button pages;
     private static final String CONFIG_ENVIRONMENT = PayPalConfiguration.ENVIRONMENT_SANDBOX;
 
 
@@ -46,78 +49,17 @@ public class Paypal extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_paypal);
-     spinner1 = (Spinner) findViewById(R.id.rutass);
-    spinner1.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, element));
-
+        pages=(Button)findViewById(R.id.docu);
+      docu=getIntent().getStringExtra("doc");
+      costo=getIntent().getStringExtra("pago");
+      refe="COSETTUR SERVICIO DE TRANPORTE";
         Intent intent = new Intent(this, PayPalService.class);
         intent.putExtra(PayPalService.EXTRA_PAYPAL_CONFIGURATION, config);
         startService(intent);
-        spinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-
+        pages.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
+            public void onClick(View view) {
 
-
-
-
-                String msupplier=spinner1.getSelectedItem().toString();
-                switch (msupplier){
-                    case "Naucalpan servicio completo":
-
-
-                   costo=8480;
-                   refe="Nau-completo";
-                        break;
-                    case "Tlanepantla servicio completo":
-
-
-                       // costo=8480;
-                       // refe="Nau-completo";
-                        break;
-                    case "Coacalco servicio completo":
-
-
-                        costo=8480;
-                        refe="Coa-completo";
-                        break;
-                    case "C.Izcalli servicio completo":
-
-
-                        costo=8480;
-                        refe="CIzc-completo";
-                        break;
-                    case "Naucalpan medio servicio":
-
-
-                        costo=6360;
-                        refe="Nau-medio";
-                        break;
-                    case "Tlanepantla medio servicio":
-
-
-
-                        break;
-                    case "Coacalco medio servicio":
-
-
-                        costo=6360;
-                        refe="Coa-medio";
-                        break;
-                    case "C.Izcalli medio servicio":
-
-                        costo=6360;
-                        refe="CIzc-medio";
-                        break;
-                    case "":
-
-                        break;
-
-                }
-
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> arg0) {
 
             }
         });
@@ -127,7 +69,8 @@ public class Paypal extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                thingToBuy = new PayPalPayment(new BigDecimal(costo), "MXN",
+                int numero= Integer.parseInt(costo);
+                thingToBuy = new PayPalPayment(new BigDecimal(numero), "MXN",
                         refe, PayPalPayment.PAYMENT_INTENT_SALE);
                 Intent intent = new Intent(Paypal.this,
                         PaymentActivity.class);
@@ -137,6 +80,8 @@ public class Paypal extends AppCompatActivity {
                 startActivityForResult(intent, REQUEST_CODE_PAYMENT);
             }
         });
+
+
 
     }
 

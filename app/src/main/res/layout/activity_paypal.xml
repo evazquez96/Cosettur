@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/menuss"
+    android:background="#152E4D"
     android:orientation="vertical"
     tools:context=".Paypal">
 
@@ -38,36 +38,44 @@
                 android:textSize="25dp" />
 
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="match_parent"
-        android:layout_height="65dp"
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_margin="20dp"
-        android:gravity="center"
-        android:textColor="#393d42"
-        android:text="De click en procesar orden para crear una nueva orden de pago"
-        android:textSize="18dp" />
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginRight="1dp"
+        android:background="@drawable/header"
+        android:orientation="vertical">
 
 
-    <Spinner
-        android:id="@+id/rutass"
-        android:layout_width="280dp"
-        android:layout_height="40dp"
-        android:layout_gravity="center"
-        android:background="@android:drawable/btn_dropdown" />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="30dp" />
+
 
     <Button
         android:id="@+id/order"
-        android:layout_width="250dp"
-        android:layout_height="35dp"
+        android:layout_width="match_parent"
+        android:layout_height="69dp"
         android:layout_gravity="center"
-        android:background="@drawable/botones"
-        android:text="Procesar orden" />
+        android:layout_margin="10dp"
+        android:background="@android:color/transparent"
+        android:drawableLeft="@drawable/pay"
 
+        android:text="Pagar con paypal"
+
+        android:textColor="#152E4D" />
+
+    <Button
+        android:id="@+id/docu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:layout_marginBottom="20dp"
+        android:background="@android:color/transparent"
+        android:drawableLeft="@drawable/pagos"
+        android:text="Orden de pago"
+
+        android:textColor="#152E4D" />
+    </LinearLayout>
 
 </LinearLayout>

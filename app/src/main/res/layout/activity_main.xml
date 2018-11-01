@@ -86,7 +86,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="40dp"
                                 android:background="@drawable/liniassss"
-                                android:hint="Usuario o Correo :"
+                                android:hint="Usuario :"
                                 android:textColorHint="#F6F6F6"
                                 android:textColor="#ffffff"
                               android:layout_marginLeft="30dp"
@@ -135,7 +135,7 @@
                                     android:layout_marginTop="10dp"
                                   android:layout_marginLeft="30dp"
                                     android:layout_marginRight="30dp"
-                                    android:background="@drawable/botones"
+                                    android:background="@drawable/ev1"
                                     android:text="Iniciar sesion"
                                     android:textColor="@android:color/background_light" />
                                 <Button
@@ -147,7 +147,7 @@
                                     android:layout_marginRight="30dp"
                                     android:textSize="15dp"
                                     android:layout_marginTop="10dp"
-                                    android:background="@drawable/buton2"
+                                    android:background="@drawable/ev2"
                                     android:text="¡¡registrate!!"
                                     android:textColor="@android:color/background_light" />
 

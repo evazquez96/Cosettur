@@ -1,5 +1,7 @@
 package com.cos.israelc.cosettur;
 
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
@@ -24,6 +26,9 @@ public class suscribir extends AppCompatActivity {
     String call;
      String pago;
      int catrutas,catmodalidad,catgrado,catciclo;
+
+    Context context = null;
+    ProgressDialog pdialog = null;
 
     String grados;
     String semestres;
@@ -53,6 +58,8 @@ public class suscribir extends AppCompatActivity {
     TextInputEditText child;
     TextInputEditText phones;
     TextInputEditText cl;
+    TextInputEditText ni,ne,lolcali,nopo,states;
+    String sni,sne,sll,snopo,sta;
     TextView pagar;
     TextView texc;
     @Override
@@ -60,7 +67,12 @@ public class suscribir extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_suscribir);
+        ni=(TextInputEditText)findViewById(R.id.noint) ;
+        ne=(TextInputEditText)findViewById(R.id.noext) ;
+        states=(TextInputEditText)findViewById(R.id.estado) ;
+       lolcali=(TextInputEditText)findViewById(R.id.Localidaddir) ;
         lol=(Spinner)findViewById(R.id.localidad);
+        nopo=(TextInputEditText)findViewById(R.id.Nopost) ;
         atrass=(Button)findViewById(R.id.btnatr);
         gradi=(Spinner)findViewById(R.id.grado);
         sems=(Spinner)findViewById(R.id.semestre);
@@ -287,6 +299,11 @@ calculo();
         alum=child.getText().toString();
         tell=phones.getText().toString();
         call=cl.getText().toString();
+        sni=ni.getText().toString();
+        sne=ne.getText().toString();
+        sta=states.getText().toString();
+        snopo=nopo.getText().toString();
+        sll=lolcali.getText().toString();
         String pagarr=pagar.getText().toString();
         String txt=texc.getText().toString();
         Toast.makeText(suscribir.this,"Guardando archivo", Toast.LENGTH_SHORT).show();
@@ -318,8 +335,8 @@ calculo();
                 "equipos suficientes para el cumplimiento del objeto de este instrumento.");
       tem.addparagraph("II.- Declara el PADRE DE FAMILIA: ");
         tem.addparagraph("Ser el Padre o Tutor del alumno(a)  "+alum);
-        tem.addparagraph("Que cuenta con la capacidad legal, general y especial para celebrar el presente contrato, con domicilio en ");
-        tem.addparagraph("Tener como domicilio convencional el ubicado en:  ");
+        tem.addparagraph("Que cuenta con la capacidad legal, general y especial para celebrar el presente contrato");
+        tem.addparagraph("Tener como domicilio convencional el ubicado en:  "+sne+" "+sni+" "+snopo+" "+sll+" "+correos+" "+sta);//dir
         tem.addparagraph("Con número telefónico,:  "+tell);
         tem.addparagraph("III.- Que requiere y solicita del servicio de transporte escolar para la RUTA:   "+rutasol);
         tem.addparagraph("y punto de encuentro de ascenso en   "+local);
